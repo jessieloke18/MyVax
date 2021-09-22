@@ -20,7 +20,7 @@ a:hover{
 }
 
 .nav-link:hover{
-    color: #26b4d4;
+    opacity: 0.6;
 }
 
 
@@ -136,20 +136,60 @@ li{
 }
 .subscribe{
     background-color: #c7e3e7;
-    color:white;
+    color:grey;
 }
 
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 576px) {
+
+    /*Banner area*/
     #main-banner{
      
-        background-size: contain;
+        background-size:contain;
         background-position:center right;
         height: 55vh;
-        margin-top: -10%;
+        margin-top: -11%;
      
     }
 
- 
+    .banner-title{
+        font-size: 20px;
+        margin-top: -170px;
+
+     
+    }
+
+    .available-vax-btn{
+        font-size: 12px;
+    }
+
+    /*below banner*/
+
+    #provider{
+        padding: 20px 30px;
+        margin-top: 30%;
+        height: 5vh;
+        text-align: center;
+    
+    }
+
+    #doctor-pic{
+        height: 100%;
+        width: 80%;
+        margin-left: 5%;
       
+    }
+
+    .provider-btn, footer, .subscribe, .subscribe-email{
+        font-size: 12px;
+    }
+
+    footer{
+        font-size: 12px;
+    }
+
+    .footer-header{
+        font-size: 14px;
+    }
+
   }
   
