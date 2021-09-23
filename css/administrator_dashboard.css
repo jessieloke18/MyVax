@@ -33,7 +33,6 @@ a:hover{
 #dashfunc1{
     width: 60%;
     float: right;
-    
 }
 
 #dashfunc2{
@@ -42,5 +41,23 @@ a:hover{
 }
 
 .card-text {
-    color:black;
+    color:#17A2B8;
 }
+
+#covid-stats{
+    background-color: white;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.jumbotron{
+    margin: 10px 0px;
+ }
+
+ #jumbotron-color{
+    background-color:#17A2B8; 
+    color:white;
+ }
