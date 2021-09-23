@@ -145,17 +145,16 @@ li{
     #main-banner{
      
         background-size:contain;
-        background-position:center right;
         height: 55vh;
-        margin-top: -11%;
-     
+        margin-top: -12%; 
+    }
+
+    .banner-content{
+        height: 55vh;
     }
 
     .banner-title{
         font-size: 20px;
-        margin-top: -170px;
-
-     
     }
 
     .available-vax-btn{
@@ -165,10 +164,9 @@ li{
     /*below banner*/
 
     #provider{
-        padding: 20px 30px;
-        margin-top: 30%;
-        height: 5vh;
+        padding: 10px 30px;
         text-align: center;
+        height: 20vh;
     
     }
 
