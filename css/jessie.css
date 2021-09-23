@@ -4,7 +4,10 @@ body{
 }
 
 .body-bg{
-    background-color: #17A2B8;;
+    background-image: url(../images/gradientbg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
 }
 
 .btn, .form-control{
@@ -60,6 +63,34 @@ body{
 
 #admin-signup:hover{
     opacity: 0.8;
+}
+
+/*Login*/
+.login-pic{
+    background-image: url(../images/teddy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top right;
+    height: 80vh;
+}
+
+.login-body-bg{
+    background-image: url(../images/gradientbg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    
+}
+
+.login-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);  
+    background-color: white;
+}
+
+.login-form{
+    padding: 20px 30px;
 }
 
 /*selectDate*/
@@ -136,10 +167,30 @@ footer{
     color:white;
 }
 
+@media only screen and (max-width: 768px) { 
+    /*Login*/
+.login-pic{
+    height: 35vh;
+}
+
+}
+
 @media only screen and (max-width: 576px) {
+
+/*Sign Up*/
 .signup-container{
     padding: 10%;
     margin-top: -3%;
 }
   
+/*Login*/
+.login-pic{
+    height: 35vh;
+}
+
+.login-container{
+   
+   
+}
+
 }
