@@ -98,10 +98,17 @@ body{
     height: 40vh;
   
 }
+
+.search-vaccine-section{
+    height: 50vh;
+}
+
+
 /*for all banners*/
 .banner-title{
     color: white;
 }
+
 
 /*selectDate*/
 .batch-info{
