@@ -88,6 +88,21 @@ body{
     padding: 20px 30px;
 }
 
+/*View available vaccines*/
+.available-vaccine-banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url(../images/vaccines.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    height: 40vh;
+  
+}
+/*for all banners*/
+.banner-title{
+    color: white;
+}
+
 /*selectDate*/
 .batch-info{
     margin-top: 50px;
