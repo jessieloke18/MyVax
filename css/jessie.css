@@ -3,13 +3,6 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.body-bg{
-    background-image: url(../images/gradientbg2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center center;
-}
-
 .btn, .form-control{
     border-radius: 50px;
 }
@@ -50,7 +43,7 @@ body{
 }
 
 .signup-form-column{
-    background-color:white;
+    background-color:whitesmoke;
 }
 
 #ic-passport{
@@ -126,7 +119,7 @@ body{
 }
 
 /*Footer*/
-footer{
+/* footer{
     background-color:white;
 }
 
@@ -167,7 +160,7 @@ footer{
 .subscribe{
     background-color: #17A2B8;
     color:white;
-}
+} */
 
 @media only screen and (max-width: 768px) { 
     /*Login*/
