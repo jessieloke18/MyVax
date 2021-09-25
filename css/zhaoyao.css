@@ -23,6 +23,7 @@ a:hover{
     opacity:0.6 ;
 }
 
+/*Administrator Dashboard*/
 /*Alert Area*/
 .alert{
     margin-top: 50px;
@@ -62,7 +63,14 @@ a:hover{
     color:white;
  }
 
+ /*Record New Vaccine Batch*/
  .batchForm{
     margin:50px;
     padding:50px;
+}
+
+.buttonRow{
+    display: flex; 
+    align-items: center; 
+    justify-content:center;
 }
