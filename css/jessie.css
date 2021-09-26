@@ -166,6 +166,41 @@ body{
   
 }
 
+/*admin confirm appointment*/
+.fa-user{
+    font-size: 100px;
+    padding: 60px;
+    border-radius: 50%;
+    background-color: #d1e6e9;
+    color: white;
+}
+
+
+.reject-btn{
+    background-color: rgb(209, 88, 88);
+    color:white;
+}
+
+.confirm-btn, .reject-btn{
+    width: 60%;
+    
+}
+
+textarea{
+    border-radius: 0% !important;
+}
+
+.close-btn{
+    background-color: #d1e6e9;
+}
+.close-btn:hover{
+    filter: brightness(98%);
+}
+
+.appointment-info{
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
+    
+}
 
 
 
