@@ -9,33 +9,53 @@ $('#datepicker').datepicker("setDate", new Date());
 
 function selectCentre(){
     if(document.getElementById('existingCentre').checked) {
-    document.getElementById('newCentreName').disabled=true;
-    document.getElementById('newCentreAddress').disabled=true;
-    document.getElementById('listOfCentres').disabled=false;
+        document.getElementById('addCentre').style.display="none";
+        document.getElementById('listOfCentres').style.display="block";
+        document.getElementById("selectExistingCentre").style.display="block";
     }
     
     else if(document.getElementById('newCentre').checked){
-        document.getElementById('newCentreName').disabled=false;
-        document.getElementById('newCentreAddress').disabled=false;
-        document.getElementById('listOfCentres').disabled=true;
-    
+        document.getElementById('addCentre').style.display="block";
+        document.getElementById('listOfCentres').style.display="none";
+        document.getElementById("selectExistingCentre").style.display="none";
     }
 }
 
-
-var patient = document.getElementById('patient-signup');
-
-patient.onclick = (function(){
+function patientSelected(){
     document.getElementById('centre').style.display="none";
     document.getElementById('ic-passport').style.display="block";
     document.getElementById('signup-pic').style.backgroundImage="url(../images/maskwearer.jpg)";
-})
+}
 
-var admin = document.getElementById('admin-signup');
-    admin.onclick = (function(){
+
+function adminSelected(){
     document.getElementById('centre').style.display="block";
     document.getElementById('ic-passport').style.display="none";
     document.getElementById('signup-pic').style.backgroundImage="url(../images/nursebg.jpg)";
     
-})
+}
+
+function changeAddress(){
+
+    var myselect = document.getElementById("listOfCentres");
+    var address = document.getElementById("selected-centre-address");
+    address.innerHTML = "";
+    if(address.innerHTML.length<1){
+        if(myselect.options[myselect.selectedIndex].value == 1){
+            address.innerHTML += 
+                   "<small>126, Jln Jalil Perkasa 19, Bukit Jalil, 57000 Kuala Lumpur</small>";
+         }
+         else if(myselect.options[myselect.selectedIndex].value == 2){
+             address.innerHTML += 
+                   "<small>88, Jalan Sunway, 57000 Kuala Lumpur </small>";
+         }
+         else{
+            address.innerHTML += 
+            "<small>100, Jalan Pantai, 47300 Petaling Jaya </small>";
+         }
+
+
+    }
+ 
+}
 

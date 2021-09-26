@@ -25,6 +25,11 @@ body{
 }
 
 /*Sign up*/
+
+#addCentre{
+    display: none;
+}
+
 .signup-container{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -36,6 +41,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center center;
+  
 }
 
 .signup-form{
@@ -254,6 +260,10 @@ textarea{
     height: 35vh;
 }
 
+#signup-pic{
+    display: none; 
+}
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -263,6 +273,7 @@ textarea{
     padding: 10%;
     margin-top: -3%;
 }
+
   
 /*Login*/
 .login-pic{

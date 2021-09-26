@@ -31,14 +31,14 @@
       </nav>
       <div class="container signup-container">
           <div class="row">
-              <div class="col-lg-5 signup-form-column">
+              <div class="col-md-7 col-lg-5 signup-form-column">
                 <h1 class="text-center pt-5">Sign Up</h1>
                 <div class="row px-4">
                   <div class="col-6">
-                    <button type="submit" class="btn btn-outline-info mt-4" id="admin-signup">As Administrator</button>
+                    <button type="submit" class="btn btn-outline-info mt-4" id="admin-signup" onclick= adminSelected()>As Admin</button>
                   </div>
                   <div class="col-6">
-                    <button type="submit" class="btn btn-outline-info mt-4" id="patient-signup">As Patient</button>
+                    <button type="submit" class="btn btn-outline-info mt-4" id="patient-signup" onclick= patientSelected()>As Patient</button>
                   </div>
                 </div>
                 <form class="signup-form">
@@ -52,54 +52,55 @@
                       <label class="form-check-label" for="newCentre">New Centre</label>
                     </div>
 
-                    <div class="form-group">
-                      <select class="form-control" id="listOfCentres">
+                    <div class="form-group" id="selectExistingCentre">
+                      <select class="form-control" id="listOfCentres" onchange="changeAddress()">
                         <option>Select a healthcare centre</option>
-                        <option>IMU Healthcare</option>
-                        <option>Sunway Velocity Medical Centre</option>
-                        <option>Pantai Hospital</option>
+                        <option value="1">IMU Healthcare</option>
+                        <option value="2">Sunway Velocity Medical Centre</option>
+                        <option value="3">Pantai Hospital</option>
                       </select>
-                      <small>Address:</small>
+                      <div id="selected-centre-address"></div>
 
                     </div>
 
-                    
+                    <div id="addCentre">
                       <div class="form-group">
                         <label for="newCentreName">Centre Name</label>
-                        <input type="text" class="form-control" id="newCentreName" aria-describedby="newCentreName" disabled>
+                        <input type="text" class="form-control" id="newCentreName" placeholder="Enter centre name" aria-describedby="newCentreName">
                       </div>
                       <div class="form-group">
                         <label for="newCentreAddress">Centre Address</label>
-                        <input type="text" class="form-control" id="newCentreAddress" aria-describedby="newCentreAddress" disabled>
+                        <input type="text" class="form-control" id="newCentreAddress" placeholder="Enter centre address"aria-describedby="newCentreAddress">
                       </div>
-
+                    </div>
+                      
                       <div class="form-group">
                         <label for="staffID">Staff ID</label>
-                        <input type="staffID" class="form-control" id="staffID" aria-describedby="staffID"> 
+                        <input type="staffID" class="form-control" id="staffID" placeholder="Enter staff ID" aria-describedby="staffID"> 
                       </div>
                   </div>
                   
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="username">
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" aria-describedby="username">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
                   </div>
                   <div class="form-group">
                     <label for="fullName">Full Name</label>
-                    <input type="fullName" class="form-control" id="fullName">
+                    <input type="fullName" class="form-control" id="fullName" placeholder="Enter full name">
                   </div>
                   <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="email">
+                    <input type="email" class="form-control" id="email"placeholder="Enter email" aria-describedby="email">
                     
                   </div>
                   
                   <div class="form-group" id="ic-passport">
                     <label for="staffID">IC/Passport</label>
-                    <input type="ICPassport" class="form-control" id="ICPassport" aria-describedby="ICPassport"> 
+                    <input type="ICPassport" class="form-control" id="ICPassport" placeholder="Enter IC/passport" aria-describedby="ICPassport"> 
                   </div>
                  
                   <div class="row d-flex justify-content-center">
@@ -113,7 +114,7 @@
                 </form>
 
               </div>
-              <div class="col-lg-7" id="signup-pic"></div>
+              <div class="col-md-5 col-lg-7" id="signup-pic"></div>
           </div>
       </div>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
