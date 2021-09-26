@@ -1,4 +1,13 @@
- function selectCentre(){
+//datepicker
+$('#datepicker').datepicker({
+    weekStart: 1,
+    daysOfWeekHighlighted: "6,0",
+    autoclose: true,
+    todayHighlight: true,
+});
+$('#datepicker').datepicker("setDate", new Date());
+
+function selectCentre(){
     if(document.getElementById('existingCentre').checked) {
     document.getElementById('newCentreName').disabled=true;
     document.getElementById('newCentreAddress').disabled=true;
@@ -29,3 +38,4 @@ var admin = document.getElementById('admin-signup');
     document.getElementById('signup-pic').style.backgroundImage="url(../images/nursebg.jpg)";
     
 })
+
