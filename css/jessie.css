@@ -127,10 +127,6 @@ a{
     height: 40vh;
 }
 
-.fa-chevron-right{
-    color:black;
-}
-
 /*Select vaccine batch*/
 .vaccine-batch-banner{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
@@ -299,7 +295,7 @@ input{
     font-size: 25px;
 }
 
-.available-vaccine-banner{
+.available-vaccine-banner, .healthcare-centre-banner{
     height: 30vh;
 }
 
@@ -326,6 +322,10 @@ input{
     padding:0 5%;
 }
 
+/*Select centre*/
+.hospital-name{
+    font-size: 18px;
+}
 
 /*select date*/
 .batch-info ul{

@@ -58,4 +58,15 @@ function changeAddress(){
     }
  
 }
+//Make hospital name bold when hovered
+function hospitalNameBold(){
+     $(document).ready(function(){
+        $(".hospital-block").mouseover(function(){
+          $(".hospital-name", this).css("font-weight", "bold");
+        });
+        $(".hospital-block").mouseout(function(){
+          $(".hospital-name", this).css("font-weight", "100");
+        });
+      });
+}
 
