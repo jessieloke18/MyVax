@@ -172,6 +172,24 @@ body{
   
 }
 
+
+/*after booking*/
+.fa-check-circle{
+    background-color:#d1e6e9 ;
+    color: white;
+    font-size: 80px;
+}
+
+.success-header{
+    background-color:#d1e6e9;
+    box-shadow: 0 6px 6px -6px grey;
+}
+
+.card{
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
+}
+
+
 /*admin confirm appointment*/
 .fa-user{
     font-size: 100px;
