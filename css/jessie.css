@@ -7,6 +7,10 @@ body{
     border-radius: 50px;
 }
 
+a{
+    color:#17A2B8;
+}
+
 /*Navigation area (overwrite style.css)*/
 .nav-link{
     color: white!important;
@@ -56,7 +60,11 @@ body{
     display: none;
 }
 
-#admin-signup, #patient-signup, .submit-btn{
+#admin-signup, #patient-signup{
+    width: 100%;
+}
+
+.submit-btn{
     width: 100%;
 }
 
@@ -70,13 +78,10 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top right;
-    height: 80vh;
+   
 }
 
-
-
 .login-btn{
-    background-color: white;
     width: 100%;
 }
 
@@ -85,9 +90,6 @@ body{
     margin-bottom: 50px;
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);  
     background-color: whitesmoke;
-    /* background: linear-gradient(315deg, hsla(187, 35%, 87%, 1) 0%, hsla(188, 78%, 41%, 1) 100%, hsla(188, 71%, 48%, 1) 100%); */
-
-
 }
 
 .login-form{
@@ -271,13 +273,14 @@ textarea{
     background-color: #17A2B8;
     color:white;
 } */
-
-@media only screen and (max-width: 768px) { 
-    /*Login*/
+@media only screen and (max-width: 990px) { 
+/*Login*/
 .login-pic{
-    height: 35vh;
+   display: none;
+    }
 }
-
+@media only screen and (max-width: 768px) { 
+/*sign up*/
 #signup-pic{
     display: none; 
 }
@@ -292,11 +295,10 @@ textarea{
     margin-top: -3%;
 }
 
-  
 /*Login*/
-.login-pic{
-    height: 35vh;
+.login-container{
+    padding: 5%;
+    width: 85%;
 }
-
 
 }
