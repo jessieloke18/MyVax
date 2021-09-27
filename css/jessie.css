@@ -191,6 +191,11 @@ a{
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
 }
 
+.booking-info ul{
+    text-align: center;
+    padding-left: 0;
+}
+
 
 /*admin confirm appointment*/
 .fa-user{
