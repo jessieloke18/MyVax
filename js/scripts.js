@@ -43,15 +43,15 @@ function changeAddress(){
     if(address.innerHTML.length<1){
         if(myselect.options[myselect.selectedIndex].value == 1){
             address.innerHTML += 
-                   "<small>126, Jln Jalil Perkasa 19, Bukit Jalil, 57000 Kuala Lumpur</small>";
+                   "<small style='margin-left:10px'>126, Jln Jalil Perkasa 19, Bukit Jalil, 57000 Kuala Lumpur</small>";
          }
          else if(myselect.options[myselect.selectedIndex].value == 2){
              address.innerHTML += 
-                   "<small>88, Jalan Sunway, 57000 Kuala Lumpur </small>";
+                   "<small style='margin-left:10px'>88, Jalan Sunway, 57000 Kuala Lumpur </small>";
          }
          else{
             address.innerHTML += 
-            "<small>100, Jalan Pantai, 47300 Petaling Jaya </small>";
+            "<small style='margin-left:10px'>100, Jalan Pantai, 47300 Petaling Jaya </small>";
          }
 
 
