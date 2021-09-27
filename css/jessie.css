@@ -286,10 +286,46 @@ textarea{
 }
 
 @media only screen and (max-width: 768px) { 
+p{
+    font-size: 15px;
+}
+
+input{
+    font-size: 15px !important;
+}
+
+/*banner size*/
+.banner-title{
+    font-size: 25px;
+}
+
+.available-vaccine-banner{
+    height: 30vh;
+}
+
 /*sign up*/
 #signup-pic{
     display: none; 
 }
+
+/*available vaccine*/
+#choice-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.smiling-doc{
+    margin-left: -40px;
+}
+
+.search-vaccine-section{
+    height: 30vh;
+}
+
+.available-vac-container{
+    padding:0 5%;
+}
+
 
 /*select date*/
 .batch-info ul{
@@ -297,15 +333,16 @@ textarea{
     padding-left: 0;
 
 }
-.appointment-info ul{
-    text-align: center;
-    padding-left: 0;
-}
 
+/*confirm appointment*/
 .fa-user{
     margin:30px 0;
 }
 
+.appointment-info ul{
+    text-align: center;
+    padding-left: 0;
+}
 .reject-btn, .confirm-btn{
     margin: 10px 0;
 }
