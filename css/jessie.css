@@ -36,8 +36,11 @@ a{
 
 .signup-container{
     margin-top: 50px;
-    margin-bottom: 50px;
-    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);  
+    margin-bottom: 50px;  
+}
+
+.alert{
+    width: 100%;
 }
 
 #signup-pic{
@@ -286,6 +289,11 @@ textarea{
 }
 
 @media only screen and (max-width: 768px) { 
+
+.btn{
+ font-size: 15px;
+}   
+
 p{
     font-size: 15px;
 }
@@ -306,6 +314,10 @@ input{
 /*sign up*/
 #signup-pic{
     display: none; 
+}
+
+.signup-container{
+    margin-bottom: 0;  
 }
 
 /*available vaccine*/
@@ -370,6 +382,10 @@ input{
 
 .appointment-info{
     width: 85%;
+}
+
+#vax-id{
+    font-size: 30px;
 }
 
 /*after booking*/

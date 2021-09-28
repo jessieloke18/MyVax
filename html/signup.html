@@ -30,6 +30,15 @@
       </div>
       </nav>
       <div class="container signup-container">
+        <div class="row">
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>Congratulations!</strong> Your account has been created.
+             Please proceed to the <a href="login.html">login </a>page to begin your journey with MyVax
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
           <div class="row">
               <div class="col-md-7 col-lg-5 signup-form-column">
                 <h1 class="text-center pt-5">Sign Up</h1>
@@ -66,41 +75,41 @@
                     <div id="addCentre">
                       <div class="form-group">
                         <label for="newCentreName">Centre Name</label>
-                        <input type="text" class="form-control" id="newCentreName" placeholder="Enter your centre name" aria-describedby="newCentreName">
+                        <input type="text" class="form-control" id="newCentreName" placeholder="Enter your centre name" aria-describedby="newCentreName" required>
                       </div>
                       <div class="form-group">
                         <label for="newCentreAddress">Centre Address</label>
-                        <input type="text" class="form-control" id="newCentreAddress" placeholder="Enter your centre address"aria-describedby="newCentreAddress">
+                        <input type="text" class="form-control" id="newCentreAddress" placeholder="Enter your centre address"aria-describedby="newCentreAddress" required>
                       </div>
                     </div>
                       
                       <div class="form-group">
                         <label for="staffID">Staff ID</label>
-                        <input type="staffID" class="form-control" id="staffID" placeholder="Enter your staff ID" aria-describedby="staffID"> 
+                        <input type="staffID" class="form-control" id="staffID" placeholder="Enter your staff ID" aria-describedby="staffID" required> 
                       </div>
                   </div>
                   
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter your username" aria-describedby="username">
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username" aria-describedby="username" required>
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
                   </div>
                   <div class="form-group">
                     <label for="fullName">Full Name</label>
-                    <input type="fullName" class="form-control" id="fullName" placeholder="Enter your full name">
+                    <input type="fullName" class="form-control" id="fullName" placeholder="Enter your full name" required>
                   </div>
                   <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email"placeholder="Enter your email address" aria-describedby="email">
+                    <input type="email" class="form-control" id="email"placeholder="Enter your email address" aria-describedby="email" required>
                     
                   </div>
                   
                   <div class="form-group" id="ic-passport">
                     <label for="staffID">IC/Passport</label>
-                    <input type="ICPassport" class="form-control" id="ICPassport" placeholder="Enter your IC or passport" aria-describedby="ICPassport"> 
+                    <input type="ICPassport" class="form-control" id="ICPassport" placeholder="Enter your IC or passport" aria-describedby="ICPassport" required> 
                   </div>
                  
                   <div class="d-flex justify-content-center align-items-center flex-column">
