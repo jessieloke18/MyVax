@@ -295,7 +295,7 @@ input{
     font-size: 25px;
 }
 
-.available-vaccine-banner, .healthcare-centre-banner{
+.available-vaccine-banner, .healthcare-centre-banner, .batch-banner{
     height: 30vh;
 }
 
@@ -334,6 +334,10 @@ input{
 
 }
 
+.batch-info{
+    width: 85%;
+}
+
 /*confirm appointment*/
 .fa-user{
     margin:30px 0;
@@ -349,6 +353,11 @@ input{
 
 .appointment-info{
     width: 85%;
+}
+
+/*after booking*/
+.success-title{
+    font-size: 30px;
 }
 
 }
