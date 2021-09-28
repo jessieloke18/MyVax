@@ -150,6 +150,10 @@ a{
     padding:20px;
 }
 
+#next-batch{
+    margin-top: 30px;
+}
+
 
 /*selectDate*/
 .batch-info{
@@ -295,7 +299,7 @@ input{
     font-size: 25px;
 }
 
-.available-vaccine-banner, .healthcare-centre-banner, .batch-banner{
+.available-vaccine-banner, .healthcare-centre-banner, .batch-banner, .vaccine-batch-banner{
     height: 30vh;
 }
 
@@ -325,6 +329,19 @@ input{
 /*Select centre*/
 .hospital-name{
     font-size: 18px;
+}
+
+/*select batch*/
+.batch-card{
+    margin: 10px 0;
+}
+
+.batch-container{
+    width: 85%;;
+}
+
+#next-batch{
+    margin-top: 10px;
 }
 
 /*select date*/
