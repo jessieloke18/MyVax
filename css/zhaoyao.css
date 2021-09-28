@@ -23,40 +23,45 @@ a:hover{
     opacity:0.6 ;
 }
 
+.btn, .form-control{
+    border-radius: 50px;
+}
+
 /*Administrator Dashboard*/
 /*Alert Area*/
 .alert{
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
-/*Function Area*/
-#dashfunc1{
-    width: 60%;
-    float: right;
+#admin-alert{
+    width: 80%;
 }
 
-#dashfunc2{
-    width: 60%;
-
+/*Function Area*/
+#admin-functions{
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .card-text {
     color:#17A2B8;
 }
 
+.card{
+    margin-bottom:20px;
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
+}
+
 #covid-stats{
     background-color: white;
-    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin:10px 0px;
 }
-
-.jumbotron{
-    margin: 10px 0px;
- }
 
  #jumbotron-color{
     background-color:#17A2B8; 
@@ -64,9 +69,9 @@ a:hover{
  }
 
  /*Record New Vaccine Batch*/
-.batch-form{
-    margin:50px;
-    padding:50px;
+.batch-form {
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);  
+    padding:60px;
 }
 
 #button-row{
@@ -96,3 +101,13 @@ th, td {
     margin: 0 auto;
     padding: 10px;
 }
+
+/*Record Vaccination Administered*/
+h3{
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+
