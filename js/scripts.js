@@ -79,3 +79,13 @@ function accountSuccessMessage(){
 function signInAlert(){
     document.querySelector(".sign-in-alert").style.display="block";
 }
+
+//redirect to different pages depending on type of user
+function loginRedirect(){
+    if(document.getElementById("username").value=="admin123"){
+        document.getElementById("redirect-login").href="administrator_dashboard.html"
+    }
+    else
+    document.getElementById("redirect-login").href="javascript:history.back()"
+    
+}
