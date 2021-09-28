@@ -37,7 +37,10 @@ a{
 .signup-container{
     margin-top: 50px;
     margin-bottom: 50px;  
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);  
+    background-color: whitesmoke;
 }
+
 
 .alert{
     width: 100%;
@@ -319,10 +322,10 @@ input{
 #signup-pic{
     display: none; 
 }
-
-.signup-container{
-    margin-bottom: 0;  
+.sign-up-title,.login-title{
+    font-size: 30px;
 }
+
 
 /*available vaccine*/
 #choice-title{
@@ -403,8 +406,8 @@ input{
 
 /*Sign Up*/
 .signup-container{
-    padding: 10%;
-    margin-top: -3%;
+    padding: 5%;
+    width: 85%;
 }
 
 /*Login*/
