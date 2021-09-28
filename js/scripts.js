@@ -70,3 +70,8 @@ function hospitalNameBold(){
       });
 }
 
+//Account success alert
+function accountSuccessMessage(){
+    document.getElementById("account-success").style.display="block";
+}
+

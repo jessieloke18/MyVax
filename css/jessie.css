@@ -43,6 +43,10 @@ a{
     width: 100%;
 }
 
+#account-success{
+    display: none;
+}
+
 #signup-pic{
     background-image: url(../images/nursebg.jpg);
     background-repeat: no-repeat;
