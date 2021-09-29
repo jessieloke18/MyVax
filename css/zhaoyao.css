@@ -81,6 +81,11 @@ a:hover{
     padding:10px;
 }
 
+.button-pcvs{
+    margin: 20px;
+    width: 250px;
+}
+
 /*View Vaccine Batch Info*/
 h2 {
     text-align: center; 
@@ -99,7 +104,12 @@ th, td {
 .info-section{
     width:75%; 
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
+}
+
+.combo-section{
+    padding:30px; 
+    width:80%;
 }
 
 /*Record Vaccination Administered*/
