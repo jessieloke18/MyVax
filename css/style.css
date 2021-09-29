@@ -3,6 +3,10 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.btn, .form-control{
+    border-radius: 50px;
+}
+
 a:hover{
     text-decoration: none;
 }
@@ -52,20 +56,31 @@ a:hover{
 
 }
 
-#covid-update{
-    background-color: #0ca3c4;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    
+/*Below banner area*/
+.provider-btn{
+  padding-left:20px;
+  padding-right:20px;
+
 }
 
-.jumbotron{
-   margin-top: 20px;
-   margin-bottom: 20px;
-    
+.steps-card{
+    height: 36vh; 
+}
+.card{
+    border-radius: 20px;
+    border:none;
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.steps-container{
+    background-color:#e6f3f5;
+}
+
+.fa-clipboard-list, .fa-syringe, .fa-hospital, .fa-calendar-plus{
+    font-size: 48px;
+    color:#17A2B8 !important;
+    padding: 20px 10px;
 }
 
 /*Footer*/
@@ -139,6 +154,7 @@ li{
     color:grey;
 }
 
+
 @media only screen and (max-width: 576px) {
 
     /*Banner area*/
@@ -155,6 +171,7 @@ li{
 
     .banner-title{
         font-size: 20px;
+        font-weight: bold;
     }
 
     .available-vax-btn{
@@ -182,6 +199,38 @@ li{
         font-size: 12px;
     }
 
+    
+    .card{
+        margin-bottom: 20px;
+    }
+
+    .card-text{
+        font-size: 15px;
+    }
+
+    .steps-inner-container{
+        width: 80%;
+    }
+
+    .steps-container{
+        padding: 10px 0 10px 0 !important;
+    }
+
+   
+
+    .card-title{
+        font-size: 18px;
+    }
+
+    .steps-card{
+        height: 30vh; 
+    }
+
+    .fa-clipboard-list, .fa-syringe, .fa-hospital, .fa-calendar-plus{
+        font-size: 30px;
+
+    }
+    
     footer{
         font-size: 12px;
     }
