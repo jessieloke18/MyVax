@@ -64,7 +64,7 @@ a:hover{
 }
 
 .steps-card{
-    height: 36vh; 
+    height: 38vh; 
 }
 .card{
     border-radius: 20px;
@@ -209,7 +209,7 @@ li{
     }
 
     .steps-inner-container{
-        width: 80%;
+        width: 70%;
     }
 
     .steps-container{
