@@ -89,3 +89,26 @@ function loginRedirect(){
     document.getElementById("redirect-login").href="javascript:history.back()"
     
 }
+
+//compare dates
+function compareDates(){
+
+    var dateParts;
+
+    var batchExpiryDate = document.getElementById("batch-expiry-date").getAttribute("data-value");
+ 
+    var selectedDate = document.getElementById("datepicker").value;
+
+    dateParts= batchExpiryDate.split("/");
+    batchExpiryDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+
+    dateParts = selectedDate.split("/");
+    selectedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+
+    if(selectedDate>batchExpiryDate){
+        document.getElementById("date-alert").style.display="block";
+    }
+       
+    else
+        window.location.href = "afterbooking.html";
+}

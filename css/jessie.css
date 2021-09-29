@@ -190,6 +190,10 @@ a{
   
 }
 
+#date-alert{
+    display: none;
+}
+
 
 /*after booking*/
 .fa-check-circle{

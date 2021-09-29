@@ -50,6 +50,9 @@
     </div>
     <!--Batch info-->
     <div class="container batch-info">
+      <div class="alert alert-danger alert" role="alert" id="date-alert">
+        <strong>Oops!</strong> The batch will have expired by then. Please select a different date
+      </div>
         <div class="row">
             <div class="col-md-6">
                 <ul>
@@ -57,8 +60,8 @@
                   <li>00005</li>
                 </ul>
                 <ul>
-                  <li class="font-weight-bold">Vaccine Expiry Date</li>
-                  <li>12/12/2021</li>
+                  <li class="font-weight-bold">Batch Expiry Date</li>
+                  <li id="batch-expiry-date" data-value="12/12/2021">12/12/2021</li>
                 </ul>
                 <ul>
                   <li class="font-weight-bold">Quantity Available</li>
@@ -71,7 +74,7 @@
                 <div class="input-group mb-3 w-75">
                   <input data-date-format="dd/mm/yyyy" id="datepicker" class="form-control">
                   <div class="input-group-append">
-                    <button type="button" class="btn btn-info" id="selectDate">Submit</button>
+                    <button type="button" class="btn btn-info" id="selectDate" onclick=compareDates()>Submit</button>
                   </div>
                 </div>
             </div>
