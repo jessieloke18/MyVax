@@ -154,6 +154,40 @@ li{
     color:grey;
 }
 
+@media only screen and (max-width: 768px) { 
+    /*Banner area*/
+    #main-banner{
+      height: 60vh;
+    }
+
+    
+    .banner-content{
+        height: 60vh;
+    }
+
+    .banner-title{
+        font-size: 33px;
+    }
+
+    /*provider*/
+    #provider{
+        text-align: center;
+        padding: 80px 0 0 0;
+        height: 40vh;
+    }
+    #doctor-pic{
+        height: 100%;
+        width: 80%;
+        margin-left: 8%;
+        padding-top: 10px;
+      
+    }
+    /*steps*/
+
+    .steps-inner-container{
+        width: 70%;
+    }
+}
 
 @media only screen and (max-width: 576px) {
 
@@ -182,7 +216,6 @@ li{
 
     #provider{
         padding: 10px 30px;
-        text-align: center;
         height: 20vh;
     
     }
