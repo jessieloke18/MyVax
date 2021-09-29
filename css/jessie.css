@@ -24,6 +24,20 @@ a{
   box-shadow: 0 6px 6px -6px grey;
 }
 
+.fa-bars{
+font-size: 28px;
+font-weight: lighter;
+}
+
+.fa-bars:hover{
+    opacity: 0.8;
+}
+    
+
+.navbar-toggler{
+padding:5px 5px 5px 15px;
+}
+
 .nav-link:hover{
     opacity: 0.8;
 }
