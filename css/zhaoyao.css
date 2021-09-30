@@ -35,30 +35,44 @@ li{
 /*Alert Area*/
 .alert{
     text-align: center;
+    font-weight: bolder;
 }
 
 #admin-alert{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     width: 80%;
 }
 
 /*Function Area*/
 #admin-functions{
     width: 80%;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .card-text {
     color:#17A2B8;
 }
 
+#overview-text{
+    color:white;
+}
+
 .card{
-    border:none;
-    margin-bottom:20px;
+    border: none;
+    margin-bottom: 20px;
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
     border-radius: 20px;
+}
+
+.card:hover{
+    opacity: 0.9;
+}
+
+.card-img-top{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #covid-stats{
@@ -157,6 +171,10 @@ textarea{
 .appointment-info{
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
     
+}
+
+i {
+    color: white;
 }
 
 
