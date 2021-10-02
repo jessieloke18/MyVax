@@ -81,12 +81,29 @@ function signInAlert(){
 }
 
 //redirect to different pages depending on type of user
-function loginRedirect(){
-    if(document.getElementById("username").value=="admin123"){
-        document.getElementById("redirect-login").href="administrator_dashboard.html"
+function loginValidationAndRedirect(){
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+
+    if(username.value == "" ||password.value == ""){
+        if(username.value == "")
+        username.className +=" is-invalid";
+        else
+            username.classList.remove("is-invalid");
+
+        if(password.value == "")
+            password.className +=" is-invalid"; 
+        else
+            password.classList.remove("is-invalid");
     }
-    else
-    document.getElementById("redirect-login").href="javascript:history.back()"
+       
+    else{
+        if(document.getElementById("username").value=="admin123"){
+            document.getElementById("redirect-login").href="administrator_dashboard.html"
+        }
+        else
+        document.getElementById("redirect-login").href="javascript:history.back()"
+    }
     
 }
 
