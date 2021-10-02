@@ -131,19 +131,22 @@ th, td {
 
 .table-section{
     width: 80%; 
-    padding: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .info-section{
-    width:75%; 
+    width: 75%; 
     margin: 0 auto;
     padding: 20px;
 }
 
 .combo-section{
-    padding:30px; 
-    width:80%;
+    padding: 30px; 
+    width: 80%;
 }
+
 
 /*Record Vaccination Administered*/
 h3{
