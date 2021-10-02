@@ -73,8 +73,8 @@
             </div>
 
             <div class="form-group" id="selectExistingCentre">
-              <select class="form-control" id="listOfCentres" onchange="changeAddress()">
-                <option>Select a healthcare centre</option>
+              <select class="form-control" id="listOfCentres" onchange="changeAddress()" required>
+                <option value="">Select a healthcare centre</option>
                 <option value="1">IMU Healthcare</option>
                 <option value="2">Sunway Velocity Medical Centre</option>
                 <option value="3">Pantai Hospital</option>
@@ -130,7 +130,7 @@
           </div>
 
           <div class="d-flex justify-content-center align-items-center flex-column">
-            <button type="submit" class="btn btn-info submit-btn mt-5" onclick=accountSuccessMessage()>Submit</button>
+            <button type="submit" class="btn btn-info submit-btn mt-5" onclick=signUpValidation()>Submit</button>
             <p class="pt-4 pb-3"><small>Already have an account? <a href="login.html">Log in here</a></small></p>
           </div>
 
