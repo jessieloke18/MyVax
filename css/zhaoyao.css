@@ -177,4 +177,9 @@ i {
     color: white;
 }
 
+@media (max-width: 576px) { 
+    .card{
+        height:100px;
+    }
+}
 
