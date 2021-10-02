@@ -6,6 +6,7 @@ body{
 a:hover{
     text-decoration: none;
 }
+
 /*Navigation area*/
 .nav-link{
     color: white !important;
@@ -13,22 +14,28 @@ a:hover{
     margin-right: 15px;
    
 }
+
 .navbar{
-  background-color: #17A2B8;
-  padding:5px 50px 5px 50px;
-  box-shadow: 0 6px 6px -6px grey;
+    background-color: #17A2B8;
+    padding:5px 50px 5px 50px;
+    box-shadow: 0 6px 6px -6px grey;
+}
+
+.fa-bars{
+    font-size: 28px;
+    font-weight: lighter;
+}
+    
+.fa-bars:hover{
+    opacity: 0.8;
+}
+        
+.navbar-toggler{
+    padding:5px 15px 5px 15px;
 }
 
 .nav-link:hover{
     opacity:0.6 ;
-}
-
-.btn, .form-control{
-    border-radius: 50px;
-}
-
-li{
-    list-style-type: none;
 }
 
 /*Administrator Dashboard*/
@@ -40,8 +47,13 @@ li{
 
 #admin-alert{
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 80%;
+}
+
+/* Format Icons */
+i {
+    color: white;
 }
 
 /*Function Area*/
@@ -59,21 +71,18 @@ li{
     color:white;
 }
 
-.card{
+.overview-card{
     border: none;
     margin-bottom: 20px;
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
     border-radius: 20px;
 }
 
-.card:hover{
+.function-card:hover{
     opacity: 0.9;
 }
 
-.card-img-top{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
+
 
 #covid-stats{
     background-color: white;
@@ -104,6 +113,10 @@ li{
 .button-pcvs{
     margin: 20px;
     width: 250px;
+}
+
+.btn, .form-control{
+    border-radius: 50px;
 }
 
 /*View Vaccine Batch Info*/
@@ -146,6 +159,9 @@ h3{
     color: white;
 }
 
+li{
+    list-style-type: none;
+}
 
 .reject-btn{
     background-color: rgb(209, 88, 88);
@@ -173,9 +189,7 @@ textarea{
     
 }
 
-i {
-    color: white;
-}
+
 
 @media (max-width: 576px) { 
     .card{
