@@ -91,22 +91,22 @@
         <div class="row">
             <div class="col-md-6">
                 <p class="font-weight-bold">No. Of Pending Vaccination:</p>
-                <p>10</p>
+                <p id="pending"></p>
             </div>
             <div class="col-md-6">
                 <p class="font-weight-bold">Batch Expiry Date:</p>
-                <p>31/12/2021</p>
+                <p id="batchExDate"></p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-6">
                 <p class="font-weight-bold">No. of Available Vaccination:</p>
-                <p>79</p>
+                <p id="available"></p>
             </div>
             <div class="col-md-6">
                 <p class="font-weight-bold">No. of Administered Vaccination:</p>
-                <p>23</p>
+                <p id="administered"></p>
             </div>
         </div>
 
@@ -115,10 +115,11 @@
     <div class="container combo-section">
         <form action="view_vaccination_info.html">
             <div class="form-group row" style="margin:0 auto;">
-                    <label for="batchNo" class="col-form-label col-sm-6" >BatchNo</label>
+                    <label for="selectedBatch" class="col-form-label col-sm-6" >BatchNo</label>
                     <div class="col-sm-6">
-                    <select id="batchNo" class="form-control">
-                        <option selected>00001</option>
+                    <select id="selectedBatch" class="form-control" onchange="changeBatch()">
+                        <option>Select a BatchID to see details</option>
+                        <option>00001</option>
                         <option>00002</option>
                         <option>00003</option>
                         <option>00004</option>
@@ -143,7 +144,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
+    <script src="../js/zhaoyao.js"></script>
 </body>
 
 </html>

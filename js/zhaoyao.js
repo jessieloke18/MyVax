@@ -35,4 +35,46 @@ function changeVaccine() {
 
 }
 
+//Change batch information when admin choose a different batch
+function changeBatch() {
+    var selectedBatch = document.getElementById("selectedBatch");
+    var batchExDate = document.getElementById("batchExDate");
+    var pending = document.getElementById("pending");
+    var administered = document.getElementById("administered");
+    var available = document.getElementById("available");
+
+
+    if (selectedBatch.options[selectedBatch.selectedIndex].value == 1) {
+        batchExDate.innerHTML = "15/12/2021";
+        pending.innerHTML = "48";
+        administered.innerHTML = "66";
+        available.innerHTML = "70";
+    }
+    else if (selectedBatch.options[selectedBatch.selectedIndex].value == 2){
+        batchExDate.innerHTML = "29/05/2022";
+        pending.innerHTML = "50";
+        administered.innerHTML = "31";
+        available.innerHTML = "62";
+    }
+    else if (selectedBatch.options[selectedBatch.selectedIndex].value == 3){
+        batchExDate.innerHTML = "08/01/2022";
+        pending.innerHTML = "39";
+        administered.innerHTML = "14";
+        available.innerHTML = "100";
+    }
+    else if (selectedBatch.options[selectedBatch.selectedIndex].value == 4){
+        batchExDate.innerHTML = "05/11/2021";
+        pending.innerHTML = "39";
+        administered.innerHTML = "56";
+        available.innerHTML = "29";
+    }
+    else {
+        batchExDate.innerHTML = "";
+        pending.innerHTML = "";
+        administered.innerHTML = "";
+        available.innerHTML = "";
+    }
+}
+
+
 
