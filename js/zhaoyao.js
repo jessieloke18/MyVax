@@ -35,6 +35,4 @@ function changeVaccine() {
 
 }
 
-//Alert add batch successfully then go back to dashboard
-
 

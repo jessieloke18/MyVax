@@ -56,29 +56,29 @@
                 <tr>
                     <th scope="col">BatchNo</th>
                     <th scope="col">Vaccine Name</th>
-                    <th scope="col">Num</th>
+                    <th scope="col">Pending</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">100000</th>
+                    <th scope="row">00001</th>
                     <td>Comirnaty</td>
                     <td>48</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">100001</th>
+                    <th scope="row">00002</th>
                     <td>Sinovac</td>
                     <td>35</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">100002</th>
+                    <th scope="row">00003</th>
                     <td>Cansino</td>
                     <td>17</td>
                 </tr>
                 <tr>
-                    <th scope="row">100003</th>
+                    <th scope="row">00004</th>
                     <td>AstraZeneca</td>
                     <td>24</td>
                 </tr>
@@ -113,22 +113,22 @@
     </div>
 
     <div class="container combo-section">
-        <form>
+        <form action="view_vaccination_info.html">
             <div class="form-group row" style="margin:0 auto;">
                     <label for="batchNo" class="col-form-label col-sm-6" >BatchNo</label>
                     <div class="col-sm-6">
                     <select id="batchNo" class="form-control">
-                        <option selected>100000</option>
-                        <option>100001</option>
-                        <option>100002</option>
-                        <option>100003</option>
+                        <option selected>00001</option>
+                        <option>00002</option>
+                        <option>00003</option>
+                        <option>00004</option>
                     </select>
                     </div>
             </div>
 
             <div class="form-row" id="button-row">
                 <button type="submit" class="btn btn-info button-pcvs">Vaccinations In This Batch</button>
-                <button type="reset" class="btn btn-light button-pcvs">Back To Dashboard</button>
+                <a href="administrator_dashboard.html" type="button" class="btn button-pcvs btn-light">Back To Dashboard</a>
             </div>
 
         </form>
