@@ -52,7 +52,7 @@ a:hover{
 }
 
 /* Format Icons */
-i {
+i{
     color: white;
 }
 
@@ -63,7 +63,7 @@ i {
     margin-bottom: 25px;
 }
 
-.card-text {
+.card-text{
     color:#17A2B8;
 }
 
@@ -76,6 +76,7 @@ i {
     margin-bottom: 20px;
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
     border-radius: 20px;
+    height: 10rem;
 }
 
 .function-card:hover{
@@ -96,7 +97,7 @@ i {
  }
 
  /*Record New Vaccine Batch*/
-.batch-form {
+.batch-form{
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);  
     padding:50px;
 }
@@ -120,12 +121,12 @@ i {
 }
 
 /*View Vaccine Batch Info*/
-h2 {
+h2{
     text-align: center; 
     margin-top: 30px;
 }
 
-th, td {
+th, td{
     text-align: center;
 }
 
