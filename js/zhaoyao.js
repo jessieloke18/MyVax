@@ -37,12 +37,12 @@ function changeVaccine() {
 
 //Change batch information when admin choose a different batch
 function changeBatch() {
+    
     var selectedBatch = document.getElementById("selectedBatch");
     var batchExDate = document.getElementById("batchExDate");
     var pending = document.getElementById("pending");
     var administered = document.getElementById("administered");
     var available = document.getElementById("available");
-
 
     if (selectedBatch.options[selectedBatch.selectedIndex].value == 1) {
         batchExDate.innerHTML = "15/12/2021";
@@ -76,5 +76,35 @@ function changeBatch() {
     }
 }
 
+//Change vaccination information when admin choose a diffenrent vaccination
+function changeVax() {
+    
+    var selectedVax = document.getElementById("selectedVax");
+    var pname = document.getElementById("pname");
+    var vicpass = document.getElementById("vicpass");
+    var vbatchno = document.getElementById("vbatchno");
+    var vname = document.getElementById("vname");
+    var vstatus = document.getElementById("vstatus");
 
+    if (selectedVax.options[selectedVax.selectedIndex].value == 1){
+        pname.innerHTML = "Lim Jia Yi";
+        vicpass.innerHTML = "P10000";
+        vbatchno.innerHTML = "00001";
+        vname.innerHTML = "Comirnaty";
+        vstatus.innerHTML = "Pending";
+    } else if (selectedVax.options[selectedVax.selectedIndex].value == 2){
+        pname.innerHTML = "Lim Yi Jui";
+        vicpass.innerHTML = "P10001";
+        vbatchno.innerHTML = "00002";
+        vname.innerHTML = "Sinovac";
+        vstatus.innerHTML = "Pending";
+    } else {
+        pname.innerHTML = "";
+        vicpass.innerHTML = "";
+        vbatchno.innerHTML = "";
+        vname.innerHTML = "";
+        vstatus.innerHTML = "";
+    }
+
+}
 

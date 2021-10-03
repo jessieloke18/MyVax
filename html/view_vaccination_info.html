@@ -89,27 +89,27 @@
         <div class="row">
             <div class="col-md-6">
                 <p class="font-weight-bold">Patient Name:</p> 
-                <p>Lim Jia Yi</p>
+                <p id="pname"></p>
             </div>
             <div class="col-md-6">
                 <p class="font-weight-bold">Patient IC/Passport:</p> 
-                <p>P100000</p>
+                <p id="vicpass"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <p class="font-weight-bold">BatchNo:</p> 
-                <p>00001</p>
+                <p id="vbatchno"></p>
             </div>
             <div class="col-md-6">
                 <p class="font-weight-bold">Vaccine Name:</p> 
-                <p>Comirnaty</p>
+                <p id="vname"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <p>Status:</p> 
-                <p>Pending</p>
+                <p class="font-weight-bold">Status:</p> 
+                <p id="vstatus"></p>
             </div>
         </div>
     </div>
@@ -117,13 +117,14 @@
     <div class="container combo-section">
         <form>
             <div class="form-group row" style="margin:0 auto;">
-                    <label for="vaccinationID" class="col-form-label col-sm-6" >VaccinationID</label>
+                    <label for="selectedVax" class="col-form-label col-sm-6" >VaccinationID</label>
                     <div class="col-sm-6">
-                    <select id="vaccinationID" class="form-control">
-                        <option selected>VAX00001</option>
-                        <option>VAX00002</option>
-                        <option>VAX00003</option>
-                        <option>VAX00004</option>
+                    <select id="selectedVax" class="form-control" onchange="changeVax()" required>
+                        <option value="">Select a vaccineID to view details</option>
+                        <option value="1">VAX00001</option>
+                        <option value="2">VAX00002</option>
+                        <option value="3">VAX00003</option>
+                        <option value="4">VAX00004</option>
                     </select>
                     </div>
             </div>
@@ -146,7 +147,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
+    <script src="../js/zhaoyao.js"></script>
 </body>
 
 </html>

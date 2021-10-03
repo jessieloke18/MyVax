@@ -117,12 +117,12 @@
             <div class="form-group row" style="margin:0 auto;">
                     <label for="selectedBatch" class="col-form-label col-sm-6" >BatchNo</label>
                     <div class="col-sm-6">
-                    <select id="selectedBatch" class="form-control" onchange="changeBatch()">
-                        <option>Select a BatchID to see details</option>
-                        <option>00001</option>
-                        <option>00002</option>
-                        <option>00003</option>
-                        <option>00004</option>
+                    <select id="selectedBatch" class="form-control" onchange="changeBatch()" required>
+                        <option value="">Select a BatchID to see details</option>
+                        <option value="1">00001</option>
+                        <option value="2">00002</option>
+                        <option value="3">00003</option>
+                        <option value="4">00004</option>
                     </select>
                     </div>
             </div>
