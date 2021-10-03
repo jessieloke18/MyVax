@@ -107,6 +107,18 @@ function hospitalNameBold() {
     });
 }
 
+//Make batchNo bold when hovered
+function batchNoBold() {
+    $(document).ready(function () {
+        $(".batch-card").mouseover(function () {
+            $(".card-title", this).css("font-weight", "bold");
+        });
+        $(".batch-card").mouseout(function () {
+            $(".card-title", this).css("font-weight", "100");
+        });
+    });
+}
+
 //Account success alert
 function accountSuccessMessage() {
     document.getElementById("account-success").style.display = "block";
