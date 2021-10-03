@@ -130,10 +130,18 @@ padding:5px 5px 5px 15px;
   
 }
 
+#choice-title{
+    font-weight: bold;
+}
+
+
 .search-vaccine-section{
     height: 50vh;
 }
 
+#search-alert{
+    display: none;
+}
 
 /*for all banners*/
 .banner-title{
@@ -148,10 +156,6 @@ padding:5px 5px 5px 15px;
     background-size: cover;
     background-position:center center;
     height: 40vh;
-}
-
-#search-alert{
-    display: none;
 }
 
 /*Select vaccine batch*/
@@ -226,6 +230,10 @@ padding:5px 5px 5px 15px;
 .success-header{
     background-color:#d1e6e9;
     box-shadow: 0 6px 6px -6px grey;
+}
+
+.success-title{
+    font-weight:bold;
 }
 
 .card{

@@ -40,6 +40,7 @@ a:hover{
 
 .banner-title{
     padding-bottom: 10px;
+    font-weight: bold;
    
 }
 
@@ -71,6 +72,10 @@ a:hover{
     border:none;
     margin-bottom: 20px;
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
+}
+
+.how-to{
+    font-weight: bold;
 }
 
 .steps-container{
