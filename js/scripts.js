@@ -144,6 +144,24 @@ function loginValidationAndRedirect() {
 
 }
 
+//check to see if vaccine ID exists
+function searchVaccine(){
+    var enteredVaccineID = document.getElementById("enteredVaccine").value;
+    var vaccines = ['V00001', 'V00002', 'V00003', 'V00004'];
+    for(let i=0; i<vaccines.length; i++){
+        //if both values match, direct patient to the next page
+        if(enteredVaccineID.toLowerCase()==vaccines[i].toLowerCase()){
+            window.location.href = "selectCentre.html";
+        }
+           
+        else{
+            //display alert if user enters a vaccine ID that doesn not exist
+            document.getElementById("search-alert").style.display = "block";
+        }
+
+    }
+}
+
 //compare dates
 function compareDates() {
 

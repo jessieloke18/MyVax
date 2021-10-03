@@ -50,22 +50,22 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">V1</th>
+          <th scope="row">V00001</th>
           <td>Pfizer</td>
           <td>BioNTech</td>
         </tr>
         <tr>
-          <th scope="row">V2</th>
+          <th scope="row">V00002</th>
           <td>AstraZeneca</td>
           <td>AZ Inc</td>
         </tr>
         <tr>
-          <th scope="row">V3</th>
+          <th scope="row">V00003</th>
           <td>Moderna</td>
           <td>Moderna Inc</td>
         </tr>
         <tr>
-          <th scope="row">V4</th>
+          <th scope="row">V00004</th>
           <td>Sinovac</td>
           <td>Sinovac Biotech Ltd</td>
         </tr>
@@ -77,11 +77,14 @@
         class="com-sm-11 col-md-7 search-vaccine-section d-flex justify-content-center align-items-center flex-column text-center">
         <h1 id="choice-title">Made your choice?</h1>
         <p>Find our which healthcare centres are offering your preferred vaccines</p>
+        <div class="alert alert-warning fade show" role="alert" id="search-alert">
+          <strong>Oops!</strong> That vaccine does not exist.
+        </div>
         <div class="input-group mb-3 w-75">
-          <input type="text" class="form-control" placeholder="Enter vaccine ID" aria-label="searchVaccine"
-            aria-describedby="searchVaccine">
+          <input type="text" class="form-control" placeholder="Enter vaccine ID" aria-label="enteredVaccine"
+            aria-describedby="enteredVaccine" id="enteredVaccine">
           <div class="input-group-append">
-            <a href="selectCentre.html" class="btn btn-info" id="searchVaccine">Search</a>
+            <a href="#" class="btn btn-info" id="searchVaccine" onclick=searchVaccine()>Search</a>
           </div>
         </div>
       </div>

@@ -150,6 +150,10 @@ padding:5px 5px 5px 15px;
     height: 40vh;
 }
 
+#search-alert{
+    display: none;
+}
+
 /*Select vaccine batch*/
 .vaccine-batch-banner{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
