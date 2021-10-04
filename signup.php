@@ -1,3 +1,4 @@
+<!--Header-->
 <?php include 'header.php';?>
 <link rel="stylesheet" href="css/jessie.css">
   <!--Sign up form area-->
@@ -106,4 +107,5 @@
       <div class="col-md-5 col-lg-7" id="signup-pic"></div>
     </div>
   </div>
+  <!--Footer-->
 <?php include 'footer.php';?>

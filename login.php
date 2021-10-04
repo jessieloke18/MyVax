@@ -1,3 +1,4 @@
+<!--Header-->
 <?php include 'header.php';?>
 <link rel="stylesheet" href="css/jessie.css">
   <!--Login form area-->
@@ -41,4 +42,5 @@
       </div>
     </div>
   </div>
+  <!--Footer-->
 <?php include 'footer.php';?>
