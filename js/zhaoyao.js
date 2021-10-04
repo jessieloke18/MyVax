@@ -108,3 +108,15 @@ function changeVax() {
 
 }
 
+//Bold card text when hovered 
+function boldCardText() {
+    $(document).ready(function () {
+        $(".card-links").mouseover(function () {
+            $(".card-text", this).css("font-weight", "bolder");
+        });
+        $(".card-links").mouseout(function () {
+            $(".card-text", this).css("font-weight", "100");
+        });
+    });
+}
+
