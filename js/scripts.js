@@ -28,7 +28,7 @@ var isAdmin = true;
 function patientSelected() {
     document.getElementById('centre').style.display = "none";
     document.getElementById('ic-passport').style.display = "block";
-    document.getElementById('signup-pic').style.backgroundImage = "url(../images/maskwearer.jpg)";
+    document.getElementById('signup-pic').style.backgroundImage = "url(images/maskwearer.jpg)";
     isPatient = true;
     isAdmin = false;
 }
@@ -37,7 +37,7 @@ function patientSelected() {
 function adminSelected() {
     document.getElementById('centre').style.display = "block";
     document.getElementById('ic-passport').style.display = "none";
-    document.getElementById('signup-pic').style.backgroundImage = "url(../images/nursebg.jpg)";
+    document.getElementById('signup-pic').style.backgroundImage = "url(images/nursebg.jpg)";
     isAdmin = true;
     isPatient = false;
 }
