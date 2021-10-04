@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>MyVax Home</title>
 </head>
@@ -18,7 +18,7 @@
   <!--Navigation bar-->
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="MyVax Logo" width="110" height="50"> </a>
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="MyVax Logo" width="110" height="50"> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
         <a href="signup.html" class="btn btn-info provider-btn">I'm a provider</a>
       </div>
       <div class="col-lg-5">
-        <img src="../images/doctor.png" alt="Healthcare provider" id="doctor-pic" width="620" height="450">
+        <img src="images/doctor.png" alt="Healthcare provider" id="doctor-pic" width="620" height="450">
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
-  <script src="../js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
 
   <footer>
     <div class="container">
