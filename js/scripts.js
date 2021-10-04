@@ -151,7 +151,7 @@ function loginValidationAndRedirect() {
             document.getElementById("redirect-login").href = "administrator_dashboard.html"
         }
         else
-            document.getElementById("redirect-login").href = "javascript:history.back()"
+            document.getElementById("redirect-login").href = "viewAvailableVaccine.html"
     }
 
 }
