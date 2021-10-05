@@ -41,7 +41,7 @@ include 'dbconnect.php';
 
 
         <div class="form-group" id="selectExistingCentre">
-          <select class="form-control" id="listOfCentres" name="listOfCentres" onclick="changeAddress()">
+          <select class="form-control" id="listOfCentres" name="listOfCentres" onclick="changeAddress()" required>
             <option value="">Select a healthcare centre</option>
             <?php
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");

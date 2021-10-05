@@ -7,17 +7,25 @@ $('#datepicker').datepicker({
 });
 $('#datepicker').datepicker("setDate", new Date());
 
+//if existing centre radio button is chosen, hide add centre option and unhide select centre option
+//if new centre radio button is chosen, unhide add centre option and hide select centre option
 function selectCentre() {
     if (document.getElementById('existingCentre').checked) {
         document.getElementById('addCentre').style.display = "none";
         document.getElementById('listOfCentres').style.display = "block";
         document.getElementById("selectExistingCentre").style.display = "block";
+        document.getElementById("listOfCentres").required=true;
+        document.getElementById("newCentreName").required=false;
+        document.getElementById("newCentreAddress").required=false;
     }
 
     else if (document.getElementById('newCentre').checked) {
         document.getElementById('addCentre').style.display = "block";
         document.getElementById('listOfCentres').style.display = "none";
         document.getElementById("selectExistingCentre").style.display = "none";
+        document.getElementById("newCentreName").required=true;
+        document.getElementById("newCentreAddress").required=true;
+        document.getElementById("listOfCentres").required=false;
     }
 }
 
@@ -42,34 +50,34 @@ function adminSelected() {
     isPatient = false;
 }
 
-//validate sign up form
-function signUpValidation() {
-    var centreName = document.getElementById("newCentreName");
-    var centreAddress = document.getElementById("newCentreAddress");
-    var staffID = document.getElementById("staffID");
-    var username = document.getElementById("username");
-    var password = document.getElementById("password");
-    var fullName = document.getElementById("fullName");
-    var email = document.getElementById("email");
-    var ICPassport = document.getElementById("ICPassport");
+// //validate sign up form
+// function signUpValidation() {
+//     var centreName = document.getElementById("newCentreName");
+//     var centreAddress = document.getElementById("newCentreAddress");
+//     var staffID = document.getElementById("staffID");
+//     var username = document.getElementById("username");
+//     var password = document.getElementById("password");
+//     var fullName = document.getElementById("fullName");
+//     var email = document.getElementById("email");
+//     var ICPassport = document.getElementById("ICPassport");
 
-    if (isPatient) 
-        if(username.value!="" && password.value!="" && fullName.value!="" && email.value!="" && ICPassport.value!=""){
+//     if (isPatient) 
+//         if(username.value!="" && password.value!="" && fullName.value!="" && email.value!="" && ICPassport.value!=""){
          
-            document.getElementById("account-success").style.display = "block";
-        }
+//             document.getElementById("account-success").style.display = "block";
+//         }
             
-    if(isAdmin)
-        if(document.getElementById('existingCentre').checked){
-            if(staffID.value!="" &&username.value!="" && password.value!="" && fullName.value!="" && email.value.includes("@"))
-            document.getElementById("account-success").style.display = "block";
+//     if(isAdmin)
+//         if(document.getElementById('existingCentre').checked){
+//             if(staffID.value!="" &&username.value!="" && password.value!="" && fullName.value!="" && email.value.includes("@"))
+//             document.getElementById("account-success").style.display = "block";
     
-        }
-        else if(centreName.value!="" &&centreAddress.value!="" &&staffID.value!="" &&username.value!="" 
-        && password.value!="" && fullName.value!="" && email.value!="")
-            document.getElementById("account-success").style.display = "block";
+//         }
+//         else if(centreName.value!="" &&centreAddress.value!="" &&staffID.value!="" &&username.value!="" 
+//         && password.value!="" && fullName.value!="" && email.value!="")
+//             document.getElementById("account-success").style.display = "block";
     
-}
+// }
 
 //changed the displayed address according to the selection
 function changeAddress() {
