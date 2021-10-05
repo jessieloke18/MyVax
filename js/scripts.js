@@ -26,8 +26,8 @@ var isAdmin = true;
 
 //if user wants to register as patient
 function patientSelected() {
-    document.getElementById('centre').style.display = "none";
-    document.getElementById('ic-passport').style.display = "block";
+    document.querySelector('.signup-form-patient').style.display = "block";
+    document.querySelector('.signup-form-admin').style.display = "none";
     document.getElementById('signup-pic').style.backgroundImage = "url(images/maskwearer.jpg)";
     isPatient = true;
     isAdmin = false;
@@ -35,8 +35,8 @@ function patientSelected() {
 
 //if user wants to register as admin
 function adminSelected() {
-    document.getElementById('centre').style.display = "block";
-    document.getElementById('ic-passport').style.display = "none";
+    document.querySelector('.signup-form-patient').style.display = "none";
+    document.querySelector('.signup-form-admin').style.display = "block";
     document.getElementById('signup-pic').style.backgroundImage = "url(images/nursebg.jpg)";
     isAdmin = true;
     isPatient = false;

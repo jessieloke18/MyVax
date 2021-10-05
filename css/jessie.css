@@ -71,17 +71,20 @@ padding:5px 5px 5px 15px;
   
 }
 
-.signup-form{
+.signup-form-admin, .signup-form-patient{
     padding: 20px 30px;
+}
+.signup-form-patient{
+    display: none;
 }
 
 .signup-form-column{
     background-color:whitesmoke;
 }
 
-#ic-passport{
+/* #ic-passport{
     display: none;
-}
+} */
 
 #admin-signup, #patient-signup{
     width: 100%;
