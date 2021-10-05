@@ -78,20 +78,29 @@ function changeAddress() {
     var address = document.getElementById("selected-centre-address");
     address.innerHTML = "";
     if (address.innerHTML.length < 1) {
-        if (myselect.options[myselect.selectedIndex].value == 1) {
+        if (myselect.options[myselect.selectedIndex].value == "Assunta Hospital") {
+            address.style.display="block";
             address.innerHTML +=
-                "<small style='margin-left:10px'>126, Jln Jalil Perkasa 19, Bukit Jalil, 57000 Kuala Lumpur</small>";
+                "<small> Jalan Templer, Pjs 4, 46050 Petaling Jaya, Selangor</small>";
         }
-        else if (myselect.options[myselect.selectedIndex].value == 2) {
+        else if (myselect.options[myselect.selectedIndex].value == "HELP Healthcare Centre") {
+            address.style.display="block";
             address.innerHTML +=
-                "<small style='margin-left:10px'>88, Jalan Sunway, 57000 Kuala Lumpur </small>";
+                "<small> 123 Jalan HELP Healthcare Centre 47300 PJ</small>";
         }
-        else {
+        else if (myselect.options[myselect.selectedIndex].value == "IMU Medical Centre"){
+            address.style.display="block";
             address.innerHTML +=
-                "<small style='margin-left:10px'>100, Jalan Pantai, 47300 Petaling Jaya </small>";
+                "<small> 126, Jln Jalil Perkasa 19, Bukit Jalil, 57000 Kuala Lumpur, Federal Territory of Kuala Lumpur</small>";
         }
-
-
+        else if (myselect.options[myselect.selectedIndex].value == "Sunway Medical Centre"){
+            address.style.display="block";
+            address.innerHTML +=
+                "<small> 5, Jalan Lagoon Selatan, Bandar Sunway, 47500 Petaling Jaya, Selangor</small>";
+        }
+        else{
+           address.style.display="none";
+        }
     }
 
 }

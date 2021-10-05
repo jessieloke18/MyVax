@@ -41,13 +41,13 @@ include 'dbconnect.php';
 
         
         <div class="form-group" id="selectExistingCentre">
-          <select class="form-control" id="listOfCentres">
+          <select class="form-control" id="listOfCentres" onclick="changeAddress()">
             <option value="">Select a healthcare centre</option>
             <?php
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
             while ($row = mysqli_fetch_array($res)) {
             ?>
-              <option value=<?php echo $row["centreName"]; ?>><?php echo $row["centreName"]; ?></option>
+              <option value="<?php echo $row["centreName"];?>"><?php echo $row["centreName"]?></option>
             <?php
             }
             ?>
