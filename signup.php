@@ -39,15 +39,15 @@ include 'dbconnect.php';
           <label class="form-check-label" for="newCentre">New Centre</label>
         </div>
 
-        
+
         <div class="form-group" id="selectExistingCentre">
-          <select class="form-control" id="listOfCentres" onclick="changeAddress()">
+          <select class="form-control" id="listOfCentres" name="listOfCentres" onclick="changeAddress()">
             <option value="">Select a healthcare centre</option>
             <?php
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
             while ($row = mysqli_fetch_array($res)) {
             ?>
-              <option value="<?php echo $row["centreName"];?>"><?php echo $row["centreName"]?></option>
+              <option value="<?php echo $row["centreName"]; ?>"><?php echo $row["centreName"] ?></option>
             <?php
             }
             ?>
@@ -174,32 +174,35 @@ include 'dbconnect.php';
     $staffID = $_POST['staffID'];
 
     echo '<script>alert("ADMIN");</script>';
-    $exist = $_POST['radioCentre'];
+    $centre = $_POST['radioCentre'];
 
-    if ($exist == "existingCentre") {
-      echo 'existing';
-    } else if ($exist == "newCentre") {
-
+    if ($centre == "existingCentre") {
+      if (isset($_POST['listOfCentres']))
+        $centreName = $_POST['listOfCentres'];
       $query = "INSERT INTO user(username, password, email, fullName)
-                VALUES('$username','$password', '$email','$fullName');";
+        VALUES('$username','$password', '$email','$fullName');";
+      $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
+        VALUES('$username','$staffID', '$centreName')";
+    } 
+    else {
+      $query = "INSERT INTO user(username, password, email, fullName)
+      VALUES('$username','$password', '$email','$fullName');";
       $query .= "INSERT INTO healthcarecentre(centreName, centreAddress)
-                VALUES('$centreName','$centreAddress');";
+            VALUES('$centreName','$centreAddress');";
 
       $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
-                VALUES('$username','$staffID', '$centreName')";
-      $query_run = mysqli_multi_query($conn, $query);
-      if ($query_run) {
-        echo '<script>alert("You have registered");</script>';
-        echo ("<script>location.href = 'index.php'</script>");
-      } else {
-        echo '<script>alert("Unsuccessful");</script>';
-        printf("error: %s\n", mysqli_error($conn));
-      }
+            VALUES('$username','$staffID', '$centreName')";
+    }
+
+    $query_run = mysqli_multi_query($conn, $query);
+    if ($query_run) {
+      echo '<script>alert("You have registered");</script>';
+      echo ("<script>location.href = 'index.php'</script>");
+    } else {
+      echo '<script>alert("Unsuccessful");</script>';
+      printf("error: %s\n", mysqli_error($conn));
     }
   }
-
-
-
   ?>
 
 </div>
