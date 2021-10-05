@@ -141,6 +141,11 @@ function accountSuccessMessage() {
     document.getElementById("account-success").style.display = "block";
 }
 
+//Invalid username/password alert
+function invalidLoginMessage() {
+    document.getElementById("invalid-login").style.display = "block";
+}
+
 //display alert if user is not logged in when choosing a batch
 function signInAlert() {
     document.querySelector(".sign-in-alert").style.display = "block";

@@ -122,6 +122,10 @@ padding:5px 5px 5px 15px;
     padding: 20px 30px;
 }
 
+#invalid-login{
+    display: none;
+}
+
 /*View available vaccines*/
 .available-vaccine-banner{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
