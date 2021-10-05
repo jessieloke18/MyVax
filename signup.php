@@ -89,6 +89,7 @@ include 'dbconnect.php';
           <label for="email">Email address</label>
           <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" aria-describedby="email" required>
         </div>
+        <input type="hidden" name="userType" value="admin">
         <div class="d-flex justify-content-center align-items-center flex-column">
           <button type="submit" class="btn btn-info submit-btn mt-5" name="admin-submit" onclick=signUpValidation()>Submit</button>
           <p class="pt-4 pb-3"><small>Already have an account? <a href="login.html">Log in here</a></small></p>
@@ -119,6 +120,7 @@ include 'dbconnect.php';
           <label for="staffID">IC/Passport</label>
           <input type="ICPassport" class="form-control" id="ICPassport" name="ICPassport" placeholder="Enter your IC or passport" aria-describedby="ICPassport" required>
         </div>
+        <input type="hidden" name="userType" value="patient">
 
         <div class="d-flex justify-content-center align-items-center flex-column">
           <button type="submit" class="btn btn-info submit-btn mt-5" name="patient-submit" onclick=signUpValidation()>Submit</button>
@@ -142,6 +144,7 @@ $ICPassport = '';
 $centreName = '';
 $centreAddress = '';
 $staffID = '';
+$userType= '';
 
 if (isset($_POST['patient-submit'])) {
   $username = $_POST['username'];
@@ -149,9 +152,10 @@ if (isset($_POST['patient-submit'])) {
   $email = $_POST['email'];
   $fullName = $_POST['fullName'];
   $ICPassport = $_POST['ICPassport'];
+  $userType = $_POST['userType'];
 
-  $query = "INSERT INTO user(username, password, email, fullName)
-                VALUES('$username','$password', '$email','$fullName');";
+  $query = "INSERT INTO user(username, password, email, fullName, userType)
+                VALUES('$username','$password', '$email','$fullName', '$userType');";
   $query .= "INSERT INTO patient(username, ICPassport)
                 VALUES('$username','$ICPassport')";
   $query_run = mysqli_multi_query($conn, $query);
@@ -172,17 +176,18 @@ if (isset($_POST['patient-submit'])) {
   $centreAddress = $_POST['centreAddress'];
   $staffID = $_POST['staffID'];
   $centre = $_POST['radioCentre'];
+  $userType = $_POST['userType'];
 
   if ($centre == "existingCentre") {
     if (isset($_POST['listOfCentres']))
       $centreName = $_POST['listOfCentres'];
-    $query = "INSERT INTO user(username, password, email, fullName)
-        VALUES('$username','$password', '$email','$fullName');";
+    $query = "INSERT INTO user(username, password, email, fullName, userType)
+        VALUES('$username','$password', '$email','$fullName', '$userType');";
     $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
         VALUES('$username','$staffID', '$centreName')";
   } else {
-    $query = "INSERT INTO user(username, password, email, fullName)
-      VALUES('$username','$password', '$email','$fullName');";
+    $query = "INSERT INTO user(username, password, email, fullName, userType)
+      VALUES('$username','$password', '$email','$fullName', '$userType');";
     $query .= "INSERT INTO healthcarecentre(centreName, centreAddress)
             VALUES('$centreName','$centreAddress');";
 
