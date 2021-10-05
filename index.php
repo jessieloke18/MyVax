@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-6 offset-6">
           <h1 class="banner-title">Book your COVID-19 vaccination appointment today</h1>
-          <a href="viewAvailableVaccine.html" class="btn btn-info available-vax-btn">See what vaccine is available</a>
+          <a href="login.php" class="btn btn-info available-vax-btn">See what vaccine is available</a>
         </div>
 
       </div>
@@ -19,7 +19,7 @@
         <h1 class="banner-title">Are you a healthcare provider?</h1>
         <p>Sign up as an administrator for your healthcare centre to help manage your centre's vaccinations
         </p>
-        <a href="signup.html" class="btn btn-info provider-btn">I'm a provider</a>
+        <a href="signup.php" class="btn btn-info provider-btn">I'm a provider</a>
       </div>
       <div class="col-lg-5">
         <img src="images/doctor.png" alt="Healthcare provider" id="doctor-pic" width="620" height="450">

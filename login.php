@@ -36,7 +36,7 @@
             </div>
           </div>
           <a href="#" id="redirect-login" class="btn btn-info login-btn mt-5" onclick=loginValidationAndRedirect()>Login</a>
-          <p class="pt-4 pb-3 text-center"><small>New here? <a href="signup.html">Sign up now</a></small></p>
+          <p class="pt-4 pb-3 text-center"><small>New here? <a href="signup.php">Sign up now</a></small></p>
 
         </form>
       </div>

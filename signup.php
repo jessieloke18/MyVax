@@ -122,7 +122,7 @@ include 'dbconnect.php';
 
         <div class="d-flex justify-content-center align-items-center flex-column">
           <button type="submit" class="btn btn-info submit-btn mt-5" name="patient-submit" onclick=signUpValidation()>Submit</button>
-          <p class="pt-4 pb-3"><small>Already have an account? <a href="login.html">Log in here</a></small></p>
+          <p class="pt-4 pb-3"><small>Already have an account? <a href="login.php">Log in here</a></small></p>
         </div>
 
       </form>
