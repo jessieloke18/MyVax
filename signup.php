@@ -1,7 +1,7 @@
 <!--Header-->
-<?php 
+<?php
 include 'header.php';
-include 'dbconnect.php'; 
+include 'dbconnect.php';
 ?>
 <link rel="stylesheet" href="css/jessie.css">
 <!--Sign up form area-->
@@ -39,12 +39,18 @@ include 'dbconnect.php';
           <label class="form-check-label" for="newCentre">New Centre</label>
         </div>
 
+        
         <div class="form-group" id="selectExistingCentre">
-          <select class="form-control" id="listOfCentres" onchange="changeAddress()">
+          <select class="form-control" id="listOfCentres">
             <option value="">Select a healthcare centre</option>
-            <option value="1">IMU Healthcare</option>
-            <option value="2">Sunway Velocity Medical Centre</option>
-            <option value="3">Pantai Hospital</option>
+            <?php
+            $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
+            while ($row = mysqli_fetch_array($res)) {
+            ?>
+              <option value=<?php echo $row["centreName"]; ?>><?php echo $row["centreName"]; ?></option>
+            <?php
+            }
+            ?>
           </select>
           <div id="selected-centre-address"></div>
 
