@@ -117,6 +117,12 @@ function accountSuccessMessage() {
     document.getElementById("account-success").style.display = "block";
 }
 
+
+//Invalid username/password alert
+function duplicateUsername() {
+    document.getElementById("duplicate-username").style.display = "block";
+}
+
 //Invalid username/password alert
 function invalidLoginMessage() {
     document.getElementById("invalid-login").style.display = "block";

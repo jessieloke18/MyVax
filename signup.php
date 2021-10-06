@@ -1,15 +1,14 @@
 <!--Header and dbconnect-->
-<?php 
+<?php
 session_start();
 include 'dbconnect.php';
 ?>
 
 <?php
-if (isset($_SESSION['username'])){
-    include 'header-logged.php';
-}
-else{
-    include 'header.php';
+if (isset($_SESSION['username'])) {
+  include 'header-logged.php';
+} else {
+  include 'header.php';
 }
 ?>
 <link rel="stylesheet" href="css/jessie.css">
@@ -24,7 +23,16 @@ else{
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
+
+    <!--Alert message for duplicate username-->
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="duplicate-username">
+      <strong>Woops!</strong> This username already exists. Please use a different username
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
   </div>
+ <!--Sign Up form area-->
   <div class="row">
     <div class="col-md-7 col-lg-5 signup-form-column">
       <h1 class="text-center pt-5 sign-up-title">Sign Up</h1>
@@ -38,6 +46,7 @@ else{
             Patient</button>
         </div>
       </div>
+      <!--admin form-->
       <form class="signup-form-admin" action="signup.php" method="POST">
         <div class="form-check form-check-inline py-3">
           <input class="form-check-input" type="radio" name="radioCentre" id="existingCentre" value="existingCentre" checked onclick=selectCentre()>
@@ -144,6 +153,7 @@ else{
 </div>
 <!--Footer-->
 <?php include 'footer.php'; ?>
+<!--form action-->
 <?php
 $username = '';
 $password = '';
@@ -153,7 +163,7 @@ $ICPassport = '';
 $centreName = '';
 $centreAddress = '';
 $staffID = '';
-$userType= '';
+$userType = '';
 
 if (isset($_POST['patient-submit'])) {
   $username = $_POST['username'];
@@ -163,17 +173,23 @@ if (isset($_POST['patient-submit'])) {
   $ICPassport = $_POST['ICPassport'];
   $userType = $_POST['userType'];
 
-  $query = "INSERT INTO user(username, password, email, fullName, userType)
-                VALUES('$username','$password', '$email','$fullName', '$userType');";
-  $query .= "INSERT INTO patient(username, ICPassport)
-                VALUES('$username','$ICPassport')";
-  $query_run = mysqli_multi_query($conn, $query);
-
-  if ($query_run) {
-    echo '<script>accountSuccessMessage();</script>';
+  $sql = mysqli_query($conn, "SELECT* FROM user WHERE username='$username'");
+  if (mysqli_num_rows($sql) >= 1) {
+    echo '<script>duplicateUsername();</script>';
   } else {
-    echo '<script>alert("Unsuccessful");</script>';
-    printf("error: %s\n", mysqli_error($conn));
+
+    $query = "INSERT INTO user(username, password, email, fullName, userType)
+    VALUES('$username','$password', '$email','$fullName', '$userType');";
+    $query .= "INSERT INTO patient(username, ICPassport)
+    VALUES('$username','$ICPassport')";
+    $query_run = mysqli_multi_query($conn, $query);
+
+    if ($query_run) {
+      echo '<script>accountSuccessMessage();</script>';
+    } else {
+      echo '<script>alert("Unsuccessful");</script>';
+      printf("error: %s\n", mysqli_error($conn));
+    }
   }
 } else if (isset($_POST['admin-submit'])) {
 
@@ -187,29 +203,35 @@ if (isset($_POST['patient-submit'])) {
   $centre = $_POST['radioCentre'];
   $userType = $_POST['userType'];
 
-  if ($centre == "existingCentre") {
-    if (isset($_POST['listOfCentres']))
-      $centreName = $_POST['listOfCentres'];
-    $query = "INSERT INTO user(username, password, email, fullName, userType)
+  $sql = mysqli_query($conn, "SELECT* FROM user WHERE username='$username'");
+  if (mysqli_num_rows($sql) >= 1) {
+    echo '<script>duplicateUsername();</script>';
+  } 
+  else {
+    if ($centre == "existingCentre") {
+      if (isset($_POST['listOfCentres']))
+        $centreName = $_POST['listOfCentres'];
+      $query = "INSERT INTO user(username, password, email, fullName, userType)
+          VALUES('$username','$password', '$email','$fullName', '$userType');";
+      $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
+          VALUES('$username','$staffID', '$centreName')";
+    } else {
+      $query = "INSERT INTO user(username, password, email, fullName, userType)
         VALUES('$username','$password', '$email','$fullName', '$userType');";
-    $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
-        VALUES('$username','$staffID', '$centreName')";
-  } else {
-    $query = "INSERT INTO user(username, password, email, fullName, userType)
-      VALUES('$username','$password', '$email','$fullName', '$userType');";
-    $query .= "INSERT INTO healthcarecentre(centreName, centreAddress)
-            VALUES('$centreName','$centreAddress');";
+      $query .= "INSERT INTO healthcarecentre(centreName, centreAddress)
+              VALUES('$centreName','$centreAddress');";
 
-    $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
-            VALUES('$username','$staffID', '$centreName')";
-  }
+      $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
+              VALUES('$username','$staffID', '$centreName')";
+    }
 
-  $query_run = mysqli_multi_query($conn, $query);
-  if ($query_run) {
-    echo '<script>accountSuccessMessage();</script>';
-  } else {
-    echo '<script>alert("Unsuccessful");</script>';
-    printf("error: %s\n", mysqli_error($conn));
+    $query_run = mysqli_multi_query($conn, $query);
+    if ($query_run) {
+      echo '<script>accountSuccessMessage();</script>';
+    } else {
+      echo '<script>alert("Unsuccessful");</script>';
+      printf("error: %s\n", mysqli_error($conn));
+    }
   }
 }
 ?>
