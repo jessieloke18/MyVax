@@ -1,7 +1,16 @@
-<!--Header-->
+<!--Header and dbconnect-->
 <?php 
-include 'header.php';
+session_start();
 include 'dbconnect.php';
+?>
+
+<?php
+if (isset($_SESSION['username'])){
+    include 'header-logged.php';
+}
+else{
+    include 'header.php';
+}
 ?>
 <link rel="stylesheet" href="css/jessie.css">
   <!--Login form area-->
@@ -60,12 +69,13 @@ if(isset($_POST['login-submit']))
   $result=mysqli_fetch_assoc($query_run);
 
   if($result!== null && $result['userType']=="admin"){
-    echo '<script>alert("Success! Logged in as admin");</script>';
-
+    $_SESSION['username']=$username;
+    echo "<script>window.location.href='index.php';</script>";
   }
   
   else if($result!== null && $result['userType']=="patient"){
-    echo '<script>alert("Success! Logged in as patient");</script>';
+    $_SESSION['username']=$username;
+    echo "<script>window.location.href='index.php';</script>";
   }
   
   else

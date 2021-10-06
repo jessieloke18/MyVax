@@ -1,5 +1,17 @@
-<!--Header-->
-<?php include 'header-index.php';?>
+<!--Header and dbconnect-->
+<?php 
+session_start();
+include 'dbconnect.php';
+?>
+
+<?php
+if (isset($_SESSION['username'])){
+    include 'header-logged.php';
+}
+else{
+    include 'header-index.php';
+}
+?>
   <!--Main banner-->
   <div id="main-banner">
     <div class="container-fluid d-flex justify-content-end align-items-center banner-content">
