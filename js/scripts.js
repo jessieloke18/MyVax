@@ -79,39 +79,15 @@ function adminSelected() {
     
 // }
 
-//changed the displayed address according to the selection
+//change the displayed address according to the selection
 function changeAddress() {
-
-    var myselect = document.getElementById("listOfCentres");
+    var selectedCentre = document.getElementById("listOfCentres");
     var address = document.getElementById("selected-centre-address");
-    address.innerHTML = "";
-    if (address.innerHTML.length < 1) {
-        if (myselect.options[myselect.selectedIndex].value == "Assunta Hospital") {
-            address.style.display="block";
-            address.innerHTML +=
-                "<small> Jalan Templer, Pjs 4, 46050 Petaling Jaya, Selangor</small>";
-        }
-        else if (myselect.options[myselect.selectedIndex].value == "HELP Healthcare Centre") {
-            address.style.display="block";
-            address.innerHTML +=
-                "<small> 123 Jalan HELP Healthcare Centre 47300 PJ</small>";
-        }
-        else if (myselect.options[myselect.selectedIndex].value == "IMU Medical Centre"){
-            address.style.display="block";
-            address.innerHTML +=
-                "<small> 126, Jln Jalil Perkasa 19, Bukit Jalil, 57000 Kuala Lumpur, Federal Territory of Kuala Lumpur</small>";
-        }
-        else if (myselect.options[myselect.selectedIndex].value == "Sunway Medical Centre"){
-            address.style.display="block";
-            address.innerHTML +=
-                "<small> 5, Jalan Lagoon Selatan, Bandar Sunway, 47500 Petaling Jaya, Selangor</small>";
-        }
-        else{
-           address.style.display="none";
-        }
-    }
-
+    address.innerHTML = "<small> Address: </small>";
+    var addr = selectedCentre.options[selectedCentre.selectedIndex].value;
+    address.innerHTML += "<small>" + addr + "</small>";
 }
+
 //Make hospital name bold when hovered
 function hospitalNameBold() {
     $(document).ready(function () {
