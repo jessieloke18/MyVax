@@ -98,6 +98,18 @@ function changeVax() {
         vbatchno.innerHTML = "00002";
         vname.innerHTML = "Sinovac";
         vstatus.innerHTML = "Pending";
+    } else if (selectedVax.options[selectedVax.selectedIndex].value == 3) {
+        pname.innerHTML = "Wong Yi Han";
+        vicpass.innerHTML = "P10002";
+        vbatchno.innerHTML = "00003";
+        vname.innerHTML = "AstraZeneca";
+        vstatus.innerHTML = "Confirmed";
+    } else if (selectedVax.options[selectedVax.selectedIndex].value == 4) {
+        pname.innerHTML = "Li Xu Duo";
+        vicpass.innerHTML = "P10003";
+        vbatchno.innerHTML = "00004";
+        vname.innerHTML = "Cansino";
+        vstatus.innerHTML = "Confirmed";
     } else {
         pname.innerHTML = "";
         vicpass.innerHTML = "";
