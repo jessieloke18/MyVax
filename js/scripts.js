@@ -50,34 +50,91 @@ function adminSelected() {
     isPatient = false;
 }
 
-// //validate sign up form
-// function signUpValidation() {
-//     var centreName = document.getElementById("newCentreName");
-//     var centreAddress = document.getElementById("newCentreAddress");
-//     var staffID = document.getElementById("staffID");
-//     var username = document.getElementById("username");
-//     var password = document.getElementById("password");
-//     var fullName = document.getElementById("fullName");
-//     var email = document.getElementById("email");
-//     var ICPassport = document.getElementById("ICPassport");
+//validate sign up form
+function signUpValidation() {
+    var centreName = document.getElementById("newCentreName");
+    var centreAddress = document.getElementById("newCentreAddress");
+    var staffID = document.getElementById("staffID");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var fullName = document.getElementById("fullName");
+    var email = document.getElementById("email");
+    var usernameP = document.getElementById("usernameP");
+    var passwordP = document.getElementById("passwordP");
+    var fullNameP = document.getElementById("fullNameP");
+    var emailP = document.getElementById("emailP");
+    var ICPassport = document.getElementById("ICPassport");
+    var selectCentre = document.getElementById("listOfCentres");
 
-//     if (isPatient) 
-//         if(username.value!="" && password.value!="" && fullName.value!="" && email.value!="" && ICPassport.value!=""){
-         
-//             document.getElementById("account-success").style.display = "block";
-//         }
-            
-//     if(isAdmin)
-//         if(document.getElementById('existingCentre').checked){
-//             if(staffID.value!="" &&username.value!="" && password.value!="" && fullName.value!="" && email.value.includes("@"))
-//             document.getElementById("account-success").style.display = "block";
-    
-//         }
-//         else if(centreName.value!="" &&centreAddress.value!="" &&staffID.value!="" &&username.value!="" 
-//         && password.value!="" && fullName.value!="" && email.value!="")
-//             document.getElementById("account-success").style.display = "block";
-    
-// }
+
+    //put all the input variables in an array
+    var arrayInput = [centreName, centreAddress, staffID, username, password, fullName, email, usernameP, passwordP, fullNameP, emailP, ICPassport];
+
+    for (let i = 0; i < arrayInput.length; i++) {
+        if (arrayInput[i].value == "" || arrayInput[i].value.length < 6) {
+            arrayInput[i].className += " is-invalid";
+        }
+        else {
+            arrayInput[i].classList.remove("is-invalid");
+            arrayInput[i].className += " is-valid";
+        }
+    }
+    //check email format admin
+    if (!email.value.includes("@")) {
+        email.className += " is-invalid";
+    }
+    else {
+        email.classList.remove("is-invalid");
+        email.className += " is-valid";
+    }
+
+    //check email format patient
+    if (!emailP.value.includes("@")) {
+        emailP.className += " is-invalid";
+    }
+    else {
+        emailP.classList.remove("is-invalid");
+        emailP.className += " is-valid";
+    }
+
+    //check whether option was selected
+
+    if (selectCentre.options[selectCentre.selectedIndex].value == "") {
+        selectCentre.className += " is-invalid";
+    }
+    else {
+        selectCentre.classList.remove("is-invalid");
+        selectCentre.className += " is-valid";
+    }
+
+
+    //if user chose to create Patient account
+    //if all inputs are filled, display success message
+    if (isPatient == true)
+        if (usernameP.value != "" && passwordP.value != "" && fullNameP.value != "" && emailP.value.includes("@") && ICPassport.value != "") {
+            document.getElementById("account-success").style.display = "block";
+        }
+
+    //if user chose to create Admin account
+    if (isAdmin == true) {
+
+        if (document.getElementById('existingCentre').checked) {
+            if (selectCentre.options[selectCentre.selectedIndex].value != "" && staffID.value != "" && username.value != ""
+                && password.value != "" && fullName.value != "" && email.value.includes("@")) {
+                document.getElementById("account-success").style.display = "block";
+            }
+
+
+        }
+        else if (centreName.value != "" && centreAddress.value != "" && staffID.value != "" && username.value != ""
+            && password.value != "" && fullName.value != "" && email.value != "") {
+            document.getElementById("account-success").style.display = "block";
+        }
+
+    }
+
+
+}
 
 //change the displayed address according to the selection
 function changeAddress() {
@@ -134,7 +191,7 @@ function signInAlert() {
 }
 
 //perform input validation and redirect to different pages depending on type of user
-function loginValidationAndRedirect() {
+function loginValidation() {
     var username = document.getElementById("username");
     var password = document.getElementById("password");
 
@@ -149,15 +206,6 @@ function loginValidationAndRedirect() {
         else
             password.classList.remove("is-invalid");
     }
-
-    else {
-        if (document.getElementById("username").value == "admin123") {
-            document.getElementById("redirect-login").href = "administrator_dashboard.html"
-        }
-        else
-            document.getElementById("redirect-login").href = "viewAvailableVaccine.html"
-    }
-
 }
 
 //check to see if vaccine ID exists

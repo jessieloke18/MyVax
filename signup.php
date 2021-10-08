@@ -70,6 +70,9 @@ if (isset($_SESSION['username'])) {
             }
             ?>
           </select>
+          <div class="invalid-feedback">
+                Please select a centre address.
+              </div>
           <div id="selected-centre-address"></div>
 
         </div>
@@ -78,34 +81,55 @@ if (isset($_SESSION['username'])) {
           <div class="form-group">
             <label for="newCentreName">Centre Name</label>
             <input type="text" class="form-control" id="newCentreName" name="centreName" placeholder="Enter your centre name" minlength="8">
+            <div class="invalid-feedback">
+                    Please enter a valid centre name.
+                  </div>
           </div>
           <div class="form-group">
             <label for="newCentreAddress">Centre Address</label>
             <input type="text" class="form-control" id="newCentreAddress" name="centreAddress" placeholder="Enter your centre address">
+            <div class="invalid-feedback">
+                    Please enter a valid centre address.
+                  </div>
           </div>
         </div>
 
         <div class="form-group">
           <label for="staffID">Staff ID</label>
           <input type="staffID" class="form-control" id="staffID" name="staffID" placeholder="Enter your staff ID" minlength="5" required>
+          <div class="invalid-feedback">
+                  Please enter a valid staffID.
+                </div>
         </div>
 
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" minlength="5" required>
+          <div class="invalid-feedback">
+                Please enter a valid username.
+              </div>
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" minlength="5" required>
+          <div class="invalid-feedback">
+                Please enter a valid password.
+              </div>
         </div>
         <div class="form-group">
           <label for="fullName">Full Name</label>
           <input type="fullName" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" minlength="5" required>
+          <div class="invalid-feedback">
+                Please enter a valid full name.
+              </div>
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
           <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+          <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
         </div>
         <input type="hidden" name="userType" value="admin">
         <div class="d-flex justify-content-center align-items-center flex-column">
@@ -119,24 +143,39 @@ if (isset($_SESSION['username'])) {
       <form class="signup-form-patient" action="signup.php" method="POST">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" aria-describedby="username" required>
+          <input type="text" class="form-control" id="usernameP" name="username" placeholder="Enter your username" aria-describedby="username" required>
+          <div class="invalid-feedback">
+                Please enter a valid username.
+              </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+          <input type="password" class="form-control" id="passwordP" name="password" placeholder="Enter your password" required>
+          <div class="invalid-feedback">
+                Please enter a valid password.
+              </div>
         </div>
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input type="fullName" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          <input type="fullName" class="form-control" id="fullNameP" name="fullName" placeholder="Enter your full name" required>
+          <div class="invalid-feedback">
+                Please enter a valid full name.
+              </div>
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" aria-describedby="email" required>
+          <input type="email" class="form-control" id="emailP" name="email" placeholder="Enter your email address" aria-describedby="email" required>
+          <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
         </div>
 
         <div class="form-group" id="ic-passport">
           <label for="staffID">IC/Passport</label>
           <input type="ICPassport" class="form-control" id="ICPassport" name="ICPassport" placeholder="Enter your IC or passport" aria-describedby="ICPassport" required>
+          <div class="invalid-feedback">
+                Please enter a valid IC or passport number.
+              </div>
         </div>
         <input type="hidden" name="userType" value="patient">
 
