@@ -62,7 +62,7 @@
     <div class="container d-flex align-items-center" id="admin-functions" onmouseover="boldCardText()">
         <div class="row">
             <div class="col-sm-6 col-lg-3 mb-3">
-                <a href="record_new_vaccine_batch.html" class="card-links">
+                <a href="record_new_vaccine_batch.php" class="card-links">
                     <div class="card function-card h-100">
                         <img src="../images/function4.jpg" class="card-img-top" alt="Record Vaccine Batch">
                         <div class="card-body">
@@ -179,41 +179,6 @@
 
         </div>
     </div>
-
-    <!-- <div id="covid-stats">
-        <div class="container" style="width:80%;">
-            <div class="jumbotron text-center" id="jumbotron-color">
-                <h1 class="display-4">COVID-19 Update in Malaysia</h1>
-                <p class="lead">Last updated: 23 September 2021, 11:22</p>
-                <hr class="my-4">
-                <div class="row">
-                    <div class="col">
-                        <h4>2,130,502</h4>
-                    </div>
-                    <div class="col">
-                        <h4>15,759</h4>
-                    </div>
-                    <div class="col">
-                        <h4>24,078</h4>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <h4>Total Cases</h4>
-                    </div>
-                    <div class="col">
-                        <h4>New Cases</h4>
-                    </div>
-                    <div class="col">
-                        <h4>Total Deaths</h4>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
