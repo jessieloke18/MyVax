@@ -52,7 +52,7 @@ include 'header.php';
 
 
         <div class="form-group" id="selectExistingCentre">
-          <select class="form-control" id="listOfCentres" name="listOfCentres" onclick="changeAddress()" required>
+          <select class="form-control admin-input" id="listOfCentres" name="listOfCentres" onclick="changeAddress()" required>
             <option value="">Select a healthcare centre</option>
             <?php
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
@@ -73,7 +73,7 @@ include 'header.php';
         <div id="addCentre">
           <div class="form-group">
             <label for="newCentreName">Centre Name</label>
-            <input type="text" class="form-control" id="newCentreName" name="centreName" placeholder="Enter your centre name" minlength="8">
+            <input type="text" class="form-control" id="newCentreName" name="centreName" placeholder="Enter your centre name" minlength="5">
             <div class="invalid-feedback">
                     Please enter a valid centre name.
                   </div>
@@ -136,28 +136,28 @@ include 'header.php';
       <form class="signup-form-patient" action="signup.php" method="POST">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="usernameP" name="username" placeholder="Enter your username" aria-describedby="username" required>
+          <input type="text" class="form-control" id="usernameP" name="username" placeholder="Enter your username" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid username.
               </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="passwordP" name="password" placeholder="Enter your password" required>
+          <input type="password" class="form-control" id="passwordP" name="password" placeholder="Enter your password" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid password.
               </div>
         </div>
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input type="fullName" class="form-control" id="fullNameP" name="fullName" placeholder="Enter your full name" required>
+          <input type="fullName" class="form-control" id="fullNameP" name="fullName" placeholder="Enter your full name"  minlength="5"required>
           <div class="invalid-feedback">
                 Please enter a valid full name.
               </div>
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="emailP" name="email" placeholder="Enter your email address" aria-describedby="email" required>
+          <input type="email" class="form-control" id="emailP" name="email" placeholder="Enter your email address" minlength="5" required>
           <div class="invalid-feedback">
               Please enter a valid email address.
             </div>
@@ -165,7 +165,7 @@ include 'header.php';
 
         <div class="form-group" id="ic-passport">
           <label for="staffID">IC/Passport</label>
-          <input type="ICPassport" class="form-control" id="ICPassport" name="ICPassport" placeholder="Enter your IC or passport" aria-describedby="ICPassport" required>
+          <input type="ICPassport" class="form-control" id="ICPassport" name="ICPassport" placeholder="Enter your IC or passport" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid IC or passport number.
               </div>

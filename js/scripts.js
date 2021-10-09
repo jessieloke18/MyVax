@@ -14,31 +14,26 @@ function selectCentre() {
         document.getElementById('addCentre').style.display = "none";
         document.getElementById('listOfCentres').style.display = "block";
         document.getElementById("selectExistingCentre").style.display = "block";
-        document.getElementById("listOfCentres").required=true;
-        document.getElementById("newCentreName").required=false;
-        document.getElementById("newCentreAddress").required=false;
+        document.getElementById("listOfCentres").required = true;
+        document.getElementById("newCentreName").required = false;
+        document.getElementById("newCentreAddress").required = false;
     }
 
     else if (document.getElementById('newCentre').checked) {
         document.getElementById('addCentre').style.display = "block";
         document.getElementById('listOfCentres').style.display = "none";
         document.getElementById("selectExistingCentre").style.display = "none";
-        document.getElementById("newCentreName").required=true;
-        document.getElementById("newCentreAddress").required=true;
-        document.getElementById("listOfCentres").required=false;
+        document.getElementById("newCentreName").required = true;
+        document.getElementById("newCentreAddress").required = true;
+        document.getElementById("listOfCentres").required = false;
     }
 }
-
-var isPatient = false;
-var isAdmin = true;
 
 //if user wants to register as patient
 function patientSelected() {
     document.querySelector('.signup-form-patient').style.display = "block";
     document.querySelector('.signup-form-admin').style.display = "none";
     document.getElementById('signup-pic').style.backgroundImage = "url(images/maskwearer.jpg)";
-    isPatient = true;
-    isAdmin = false;
 }
 
 //if user wants to register as admin
@@ -46,30 +41,14 @@ function adminSelected() {
     document.querySelector('.signup-form-patient').style.display = "none";
     document.querySelector('.signup-form-admin').style.display = "block";
     document.getElementById('signup-pic').style.backgroundImage = "url(images/nursebg.jpg)";
-    isAdmin = true;
-    isPatient = false;
 }
 
 //validate sign up form
 function signUpValidation() {
-    var centreName = document.getElementById("newCentreName");
-    var centreAddress = document.getElementById("newCentreAddress");
-    var staffID = document.getElementById("staffID");
-    var username = document.getElementById("username");
-    var password = document.getElementById("password");
-    var fullName = document.getElementById("fullName");
     var email = document.getElementById("email");
-    var usernameP = document.getElementById("usernameP");
-    var passwordP = document.getElementById("passwordP");
-    var fullNameP = document.getElementById("fullNameP");
     var emailP = document.getElementById("emailP");
-    var ICPassport = document.getElementById("ICPassport");
-    var selectCentre = document.getElementById("listOfCentres");
 
-
-    //put all the input variables in an array
-    var arrayInput = [centreName, centreAddress, staffID, username, password, fullName, email, usernameP, passwordP, fullNameP, emailP, ICPassport];
-
+    var arrayInput = document.querySelectorAll(".form-control");
     for (let i = 0; i < arrayInput.length; i++) {
         if (arrayInput[i].value == "" || arrayInput[i].value.length < 5) {
             arrayInput[i].className += " is-invalid";
@@ -96,44 +75,6 @@ function signUpValidation() {
         emailP.classList.remove("is-invalid");
         emailP.className += " is-valid";
     }
-
-    //check whether option was selected
-
-    if (selectCentre.options[selectCentre.selectedIndex].value == "") {
-        selectCentre.className += " is-invalid";
-    }
-    else {
-        selectCentre.classList.remove("is-invalid");
-        selectCentre.className += " is-valid";
-    }
-
-
-    //if user chose to create Patient account
-    //if all inputs are filled, display success message
-    if (isPatient == true)
-        if (usernameP.value != "" && passwordP.value != "" && fullNameP.value != "" && emailP.value.includes("@") && ICPassport.value != "") {
-            document.getElementById("account-success").style.display = "block";
-        }
-
-    //if user chose to create Admin account
-    if (isAdmin == true) {
-
-        if (document.getElementById('existingCentre').checked) {
-            if (selectCentre.options[selectCentre.selectedIndex].value != "" && staffID.value != "" && username.value != ""
-                && password.value != "" && fullName.value != "" && email.value.includes("@")) {
-                document.getElementById("account-success").style.display = "block";
-            }
-
-
-        }
-        else if (centreName.value != "" && centreAddress.value != "" && staffID.value != "" && username.value != ""
-            && password.value != "" && fullName.value != "" && email.value != "") {
-            document.getElementById("account-success").style.display = "block";
-        }
-
-    }
-
-
 }
 
 //change the displayed address according to the selection
@@ -209,16 +150,16 @@ function loginValidation() {
 }
 
 //check to see if vaccine ID exists
-function searchVaccine(){
+function searchVaccine() {
     var enteredVaccineID = document.getElementById("enteredVaccine").value;
     var vaccines = ['V00001', 'V00002', 'V00003', 'V00004'];
-    for(let i=0; i<vaccines.length; i++){
+    for (let i = 0; i < vaccines.length; i++) {
         //if both values match, direct patient to the next page
-        if(enteredVaccineID.toLowerCase()==vaccines[i].toLowerCase()){
+        if (enteredVaccineID.toLowerCase() == vaccines[i].toLowerCase()) {
             window.location.href = "selectCentre.html";
         }
-           
-        else{
+
+        else {
             //display alert if user enters a vaccine ID that doesn not exist
             document.getElementById("search-alert").style.display = "block";
         }
