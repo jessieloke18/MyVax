@@ -2,14 +2,7 @@
 <?php
 session_start();
 include 'dbconnect.php';
-?>
-
-<?php
-if (isset($_SESSION['username'])) {
-  include 'header-logged.php';
-} else {
-  include 'header.php';
-}
+include 'header.php';
 ?>
 <link rel="stylesheet" href="css/jessie.css">
 <!--Sign up form area-->
