@@ -71,7 +71,7 @@ function signUpValidation() {
     var arrayInput = [centreName, centreAddress, staffID, username, password, fullName, email, usernameP, passwordP, fullNameP, emailP, ICPassport];
 
     for (let i = 0; i < arrayInput.length; i++) {
-        if (arrayInput[i].value == "" || arrayInput[i].value.length < 6) {
+        if (arrayInput[i].value == "" || arrayInput[i].value.length < 5) {
             arrayInput[i].className += " is-invalid";
         }
         else {
