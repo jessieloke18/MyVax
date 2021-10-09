@@ -16,22 +16,28 @@ function changeVaccine() {
 
     vacInfo.innerHTML = "";
 
-    if (selectedVac.options[selectedVac.selectedIndex].value == 1) {
+    if (selectedVac.options[selectedVac.selectedIndex].value == "V00001") {
         vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Pfizer-BioNTech</small> <small id='vacName' class='form-text text-muted'>Name: Comirnaty</small>";
+            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: BioNTech</small> <small id='vacName' class='form-text text-muted'>Name: Pfizer</small>";
     }
-    else if (selectedVac.options[selectedVac.selectedIndex].value == 2) {
+    else if (selectedVac.options[selectedVac.selectedIndex].value == "V00002") {
         vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Oxford</small> <small id='vacName' class='form-text text-muted'>Name: AstraZeneca</small>";
+            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: AZ Inc</small> <small id='vacName' class='form-text text-muted'>Name: AstraZeneca</small>";
     }
-    else if (selectedVac.options[selectedVac.selectedIndex].value == 0) {
+    else if (selectedVac.options[selectedVac.selectedIndex].value == "V00003") {
+        vacInfo.innerHTML =
+            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Moderna Inc</small> <small id='vacName' class='form-text text-muted'>Name: Moderna</small>";
+    }
+    else if (selectedVac.options[selectedVac.selectedIndex].value == "V00004") {
+        vacInfo.innerHTML =
+            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Sinovac Biotech Ltd</small> <small id='vacName' class='form-text text-muted'>Name: Sinovac</small>";
+    }
+
+    else {
         vacInfo.innerHTML =
             "<small id='vacMaker' class='form-text text-muted'>Please select a vaccineID.</small>";
     }
-    else {
-        vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Sinovac Biotech Ltd.</small> <small id='vacName' class='form-text text-muted'>Name: Sinovac</small>";
-    }
+    
 
 }
 

@@ -51,7 +51,7 @@
 
     <div class="container batch-form" style="width:80%;">
         <h1 class="text-center mb-5">Record New Vaccine Batch</h1>
-        <form action="addbatch.php" method="POST">
+        <form action="addBatch.php" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputVacID">VaccineID</label>
@@ -60,6 +60,7 @@
                         <option value="V00001">V00001</option>
                         <option value="V00002">V00002</option>
                         <option value="V00003">V00003</option>
+                        <option value="V00004">V00004</option>
                     </select>
                     <div id="vacInfo">
                       <small id='vacMaker' class='form-text text-muted'>Please select a vaccineID.</small>
@@ -74,7 +75,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputBatchNo">Batch Number</label>
-                    <input type="text" class="form-control" id="inputBatchNo" placeholder="e.g. 00001" name="batchNo" required>
+                    <input type="text" class="form-control" id="inputBatchNo" placeholder="e.g. B00001" name="batchNo" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputNumDoses">Quality of Doses</label>
