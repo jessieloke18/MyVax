@@ -58,8 +58,10 @@ function signUpValidation() {
             arrayInput[i].className += " is-valid";
         }
     }
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     //check email format admin
-    if (!email.value.includes("@")) {
+    if (!email.value.match(validRegex)) {
         email.className += " is-invalid";
     }
     else {
@@ -68,7 +70,7 @@ function signUpValidation() {
     }
 
     //check email format patient
-    if (!emailP.value.includes("@")) {
+    if (!email.value.match(validRegex)) {
         emailP.className += " is-invalid";
     }
     else {
