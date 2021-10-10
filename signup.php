@@ -118,7 +118,7 @@ include 'header.php';
               </div>
         </div>
         <div class="form-group">
-          <label for="email">Email address</label>
+          <label for="email">Email Address</label>
           <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
           <div class="invalid-feedback">
               Please enter a valid email address.
@@ -156,7 +156,7 @@ include 'header.php';
               </div>
         </div>
         <div class="form-group">
-          <label for="email">Email address</label>
+          <label for="email">Email Address</label>
           <input type="email" class="form-control" id="emailP" name="email" placeholder="Enter your email address" minlength="5" required>
           <div class="invalid-feedback">
               Please enter a valid email address.
@@ -187,16 +187,6 @@ include 'header.php';
 <?php include 'footer.php'; ?>
 <!--form action-->
 <?php
-$username = '';
-$password = '';
-$email = '';
-$fullName = '';
-$ICPassport = '';
-$centreName = '';
-$centreAddress = '';
-$staffID = '';
-$userType = '';
-
 if (isset($_POST['patient-submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
