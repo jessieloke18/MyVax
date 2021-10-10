@@ -51,7 +51,7 @@
 
     <div class="container batch-form" style="width:80%;">
         <h1 class="text-center mb-5">Record New Vaccine Batch</h1>
-        <form action="addBatch.php" method="POST">
+        <form action="addBatch.php" method="POST" name="batchForm" onsubmit="return(validateBatch());">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputVacID">VaccineID</label>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputNumDoses">Quality of Doses</label>
-                    <input type="number" class="form-control" id="inputNumDoses" placeholder="integer" name="numDoses" required>
+                    <input type="number" class="form-control" id="inputNumDoses" placeholder="e.g. 100" name="numDoses" required>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ $('#datepicker').datepicker({
     daysOfWeekHighlighted: "6,0",
     autoclose: true,
     todayHighlight: true,
+    startDate: new Date()
 });
 
 $('#datepicker').datepicker("setDate", new Date());
@@ -136,5 +137,20 @@ function boldCardText() {
             $(".card-text", this).css("font-weight", "100");
         });
     });
+}
+
+//To validate batch form input 
+function validateBatch() {
+    if (document.batchForm.numDoses.value <= 0 ){
+        alert("Number of doses must be a positive number!");
+        document.batchForm.numDoses.focus();
+        return false;
+    } 
+    if (document.batchForm.batchNo.value[0] != "B"){
+        alert('Batch number must start with "B"!');
+        document.batchForm.batchNo.focus();
+        return false;
+    }
+    return true;
 }
 
