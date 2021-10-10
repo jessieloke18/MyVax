@@ -96,25 +96,25 @@ function changeVax() {
     if (selectedVax.options[selectedVax.selectedIndex].value == 1){
         pname.innerHTML = "Lim Jia Yi";
         vicpass.innerHTML = "P10000";
-        vbatchno.innerHTML = "00001";
+        vbatchno.innerHTML = "B00001";
         vname.innerHTML = "Comirnaty";
         vstatus.innerHTML = "Pending";
     } else if (selectedVax.options[selectedVax.selectedIndex].value == 2){
         pname.innerHTML = "Lim Yi Jui";
         vicpass.innerHTML = "P10001";
-        vbatchno.innerHTML = "00002";
+        vbatchno.innerHTML = "B00002";
         vname.innerHTML = "Sinovac";
         vstatus.innerHTML = "Pending";
     } else if (selectedVax.options[selectedVax.selectedIndex].value == 3) {
         pname.innerHTML = "Wong Yi Han";
         vicpass.innerHTML = "P10002";
-        vbatchno.innerHTML = "00003";
+        vbatchno.innerHTML = "B00003";
         vname.innerHTML = "AstraZeneca";
         vstatus.innerHTML = "Confirmed";
     } else if (selectedVax.options[selectedVax.selectedIndex].value == 4) {
         pname.innerHTML = "Li Xu Duo";
         vicpass.innerHTML = "P10003";
-        vbatchno.innerHTML = "00004";
+        vbatchno.innerHTML = "B00004";
         vname.innerHTML = "Cansino";
         vstatus.innerHTML = "Confirmed";
     } else {
