@@ -6,12 +6,19 @@ include 'header.php';
 ?>
 <title>Administrator Dashboard</title>
 <link rel="stylesheet" href="css/zhaoyao.css">
+<?php
+$username = $_SESSION['username'];
+$result = mysqli_query($conn, "SELECT* FROM healthcareadministrator WHERE username='$username'");
+$row = mysqli_fetch_assoc($result);
+$centreName =  $row['centreName'];
+$_SESSION["centreName"] = $centreName;
+?>
     <div class="container" id="admin-alert">
         <div class="alert alert-info" role="alert">
-            Hi Administrator Eddie. You're now managing: HELP Healthcare Centre.
+            Hi Administrator <?php echo $username ?>. You're now managing: <?php echo $centreName ?>.
         </div>
     </div>
-
+    
     <div class="container d-flex align-items-center" id="admin-functions" onmouseover="boldCardText()">
         <div class="row">
             <div class="col-sm-6 col-lg-3 mb-3">
