@@ -58,7 +58,7 @@ include 'header.php';
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
             while ($row = mysqli_fetch_array($res)) {
             ?>
-              <option value="<?php echo $row["centreName"]; ?>"><?php echo $row["centreName"] ?></option>
+              <option value="<?php echo $row["centreName"]; ?>" data-address="<?php echo $row["centreAddress"]; ?>"><?php echo $row["centreName"] ?></option>
             <?php
             }
             ?>
