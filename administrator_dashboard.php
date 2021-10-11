@@ -23,7 +23,7 @@ $_SESSION["centreName"] = $centreName;
         <div class="row">
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="record_new_vaccine_batch.php" class="card-links">
-                    <div class="card function-card h-100">
+                    <div class="card function-card h-100 rounded-0">
                         <img src="images/function4.jpg" class="card-img-top" alt="Record Vaccine Batch">
                         <div class="card-body">
                             <p class="card-text">
@@ -36,7 +36,7 @@ $_SESSION["centreName"] = $centreName;
 
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="view_vaccine_batch_info.html" class="card-links">
-                    <div class="card function-card h-100">
+                    <div class="card function-card h-100 rounded-0">
                         <img src="images/function3.jpg" class="card-img-top" alt="View Batch Info">
                         <div class="card-body">
                             <p class="card-text">
@@ -49,7 +49,7 @@ $_SESSION["centreName"] = $centreName;
 
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="#" class="card-links">
-                    <div class="card function-card h-100">
+                    <div class="card function-card h-100 rounded-0">
                         <img src="images/editprofile.jpg" class="card-img-top" alt="Edit Profile">
                         <div class="card-body">
                             <p class="card-text">
@@ -62,7 +62,7 @@ $_SESSION["centreName"] = $centreName;
 
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="index.html" class="card-links">
-                    <div class="card function-card h-100">
+                    <div class="card function-card h-100 rounded-0">
                         <img src="images/logout.jpg" class="card-img-top" alt="Logout">
                         <div class="card-body">
                             <p class="card-text">
