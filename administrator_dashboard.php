@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/zhaoyao.css">
+    <link rel="stylesheet" href="css/zhaoyao.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://kit.fontawesome.com/2310cb5c3b.js" crossorigin="anonymous"></script>
     <title>Administrator Dashboard</title>
@@ -23,7 +23,7 @@
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="../images/logowhite1.png" alt="MyVax Logo" width="110"
+            <a class="navbar-brand" href="index.html"><img src="images/logowhite1.png" alt="MyVax Logo" width="110"
                     height="50">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -64,7 +64,7 @@
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="record_new_vaccine_batch.php" class="card-links">
                     <div class="card function-card h-100">
-                        <img src="../images/function4.jpg" class="card-img-top" alt="Record Vaccine Batch">
+                        <img src="images/function4.jpg" class="card-img-top" alt="Record Vaccine Batch">
                         <div class="card-body">
                             <p class="card-text">
                                 Record Vaccine Batch
@@ -77,7 +77,7 @@
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="view_vaccine_batch_info.html" class="card-links">
                     <div class="card function-card h-100">
-                        <img src="../images/function3.jpg" class="card-img-top" alt="View Batch Info">
+                        <img src="images/function3.jpg" class="card-img-top" alt="View Batch Info">
                         <div class="card-body">
                             <p class="card-text">
                                 View Batch Info
@@ -90,7 +90,7 @@
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="#" class="card-links">
                     <div class="card function-card h-100">
-                        <img src="../images/editprofile.jpg" class="card-img-top" alt="Edit Profile">
+                        <img src="images/editprofile.jpg" class="card-img-top" alt="Edit Profile">
                         <div class="card-body">
                             <p class="card-text">
                                 Edit Profile
@@ -103,7 +103,7 @@
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="index.html" class="card-links">
                     <div class="card function-card h-100">
-                        <img src="../images/logout.jpg" class="card-img-top" alt="Logout">
+                        <img src="images/logout.jpg" class="card-img-top" alt="Logout">
                         <div class="card-body">
                             <p class="card-text">
                                 Logout
@@ -186,7 +186,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    <script src="../js/zhaoyao.js"></script>
+    <script src="js/zhaoyao.js"></script>
 </body>
 
 </html>
