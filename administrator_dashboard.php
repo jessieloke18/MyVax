@@ -1,58 +1,11 @@
+<!--Header and dbconnect-->
 <?php
-    include 'dbconnet.php';
+session_start();
+include 'dbconnect.php';
+include 'header.php';
 ?>
-
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/zhaoyao.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://kit.fontawesome.com/2310cb5c3b.js" crossorigin="anonymous"></script>
-    <title>Administrator Dashboard</title>
-</head>
-
-<body>
-    <!--Navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="images/logowhite1.png" alt="MyVax Logo" width="110"
-                    height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Eddie Zhao Yao
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Edit Profile</a>
-                            <a class="dropdown-item" href="index.html">Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<title>Administrator Dashboard</title>
+<link rel="stylesheet" href="css/zhaoyao.css">
     <div class="container" id="admin-alert">
         <div class="alert alert-info" role="alert">
             Hi Administrator Eddie. You're now managing: HELP Healthcare Centre.
@@ -119,13 +72,13 @@
         <h5>Overview</h5>
     </div>
 
-    <div class="container" style="width:80%">
+    <div class="container mb-5" style="width:80%">
         <div class="row">
             <div class="col-md-3">
                 <div class="card overview-card bg-success">
                     <div class="card-body d-flex flex-column">
                         <div class="ml-auto">
-                            <i class="fas fa-syringe fa-2x"></i>
+                            <i class="fas fa-syringe syringe-admin fa-2x" style="color:white !important; padding:0"></i>
                         </div>
                         <div class="mt-auto">
                             <p class="card-text" id="overview-text">Vaccinations <span
@@ -139,7 +92,7 @@
                 <div class="card overview-card bg-warning">
                     <div class="card-body d-flex flex-column">
                         <div class="ml-auto">
-                            <i class="far fa-list-alt fa-2x"></i>
+                            <i class="far fa-list-alt fa-2x" style="color:white"></i>
                         </div>
                         <div class="mt-auto">
                             <p class="card-text" id="overview-text">Pending <span
@@ -153,7 +106,7 @@
                 <div class="card overview-card bg-danger">
                     <div class="card-body d-flex flex-column">
                         <div class="ml-auto">
-                            <i class="far fa-check-circle fa-2x"></i>
+                            <i class="far fa-check-circle fa-2x" style="color:white"></i>
                         </div>
                         <div class="mt-auto">
                             <p class="card-text" id="overview-text">Administered <span
@@ -180,13 +133,8 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
-    <script src="js/zhaoyao.js"></script>
-</body>
+    <!--Footer-->
+<?php include 'footer.php'; ?>
+
 
 </html>
