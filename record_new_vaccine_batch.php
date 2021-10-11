@@ -43,7 +43,7 @@ include 'header.php';
 
             <div class="form-row" id="button-row">
                 <button type="submit" class="btn button-pcvs btn-info" name="submit">Submit</button>
-                <a href="administrator_dashboard.php" type="button" class="btn button-pcvs btn-light">Cancel</a>
+                <a href="administrator_dashboard.php" type="button" class="btn button-pcvs btn-secondary">Cancel</a>
             </div>
 
         </form>

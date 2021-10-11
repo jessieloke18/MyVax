@@ -15,7 +15,7 @@ $_SESSION["centreName"] = $centreName;
 ?>
     <div class="container" id="admin-alert">
         <div class="alert alert-info" role="alert">
-            Hi Administrator <?php echo $username ?>. You're now managing: <?php echo $centreName ?>.
+            Hi Administrator <?php echo $username ?>. You are now managing: <?php echo $centreName ?>.
         </div>
     </div>
     
