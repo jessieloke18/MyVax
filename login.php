@@ -56,6 +56,7 @@ include 'header.php';
 </div>
 <!--Footer-->
 <?php include 'footer.php'; ?>
+<script src="js/scripts.js"></script>
 
 <?php
 if (isset($_POST['login-submit'])) {

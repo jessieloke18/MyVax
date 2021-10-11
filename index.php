@@ -77,3 +77,4 @@ include 'header-index.php';
   </div>
 <!--Footer-->
 <?php include 'footer.php';?>
+<script src="js/scripts.js"></script>
