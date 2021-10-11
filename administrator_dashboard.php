@@ -134,7 +134,5 @@ include 'header.php';
     </div>
 
     <!--Footer-->
+<script src="js/zhaoyao.js"></script>
 <?php include 'footer.php'; ?>
-
-
-</html>

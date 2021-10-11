@@ -1,3 +1,13 @@
+//Datepicker
+$('#datepicker').datepicker({
+    weekStart: 1,
+    autoclose: true,
+    todayHighlight: true,
+    startDate: new Date()
+});
+
+$('#datepicker').datepicker("setDate", new Date());
+
 //Change vaccine information when admin choose a different vaccine
 function changeVaccine() {
 
