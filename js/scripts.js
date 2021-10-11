@@ -81,11 +81,15 @@ function signUpValidation() {
 
 //change the displayed address according to the selection
 function changeAddress() {
-    var selectedCentre = document.getElementById("listOfCentres");
+   var selectedCentre = document.getElementById("listOfCentres");
     var address = document.getElementById("selected-centre-address");
     address.innerHTML = "<small> Address: </small>";
-    var addr = selectedCentre.options[selectedCentre.selectedIndex].value;
+    var addr = selectedCentre.options[selectedCentre.selectedIndex.value].text();
     address.innerHTML += "<small>" + addr + "</small>";
+
+    // var x = $('#listOfCentres').find("option:selected").attr('label');
+ 
+  
 }
 
 //Make hospital name bold when hovered

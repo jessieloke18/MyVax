@@ -58,7 +58,7 @@ include 'header.php';
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
             while ($row = mysqli_fetch_array($res)) {
             ?>
-              <option value="<?php echo $row["centreAddress"]; ?>"><?php echo $row["centreName"] ?></option>
+              <option value="<?php echo $row["centreName"]; ?>"><?php echo $row["centreName"] ?></option>
             <?php
             }
             ?>
@@ -232,12 +232,16 @@ if (isset($_POST['patient-submit'])) {
   } 
   else {
     if ($centre == "existingCentre") {
-      if (isset($_POST['listOfCentres']))
+      if (isset($_POST['listOfCentres'])){
         $centreName = $_POST['listOfCentres'];
-      $query = "INSERT INTO user(username, password, email, fullName, userType)
-          VALUES('$username','$password', '$email','$fullName', '$userType');";
-      $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
-          VALUES('$username','$staffID', '$centreName')";
+        $query = "INSERT INTO user(username, password, email, fullName, userType)
+            VALUES('$username','$password', '$email','$fullName', '$userType');";
+        $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
+        VALUES('$username','$staffID', '$centreName')";
+           printf("error: %s\n", $centreName);
+        
+      }
+       
     } else {
       $query = "INSERT INTO user(username, password, email, fullName, userType)
         VALUES('$username','$password', '$email','$fullName', '$userType');";
