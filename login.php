@@ -68,7 +68,7 @@ if (isset($_POST['login-submit'])) {
 
   if ($result !== null && $result['userType'] == "admin") {
     $_SESSION['username'] = $username;
-    echo "<script>window.location.href='administrator-dashboard.php';</script>";
+    echo "<script>window.location.href='administrator_dashboard.php';</script>";
   } else if ($result !== null && $result['userType'] == "patient") {
     $_SESSION['username'] = $username;
     echo "<script>window.location.href='index.php';</script>";
