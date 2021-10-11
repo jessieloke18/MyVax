@@ -41,14 +41,18 @@ include 'dbconnect.php';
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
             <?php
             $username = $_SESSION['username'];
             $result = mysqli_query($conn, "SELECT* FROM user WHERE username='$username'");
             $row = mysqli_fetch_assoc($result);
+            $navItem;
+            if ($row['userType'] == "admin")
+              $navItem = '<a class="nav-link" href="administrator_dashboard.php">Dashboard</a>';
+            else
+              $navItem = '<a class="nav-link" href="#">Contact Us</a>';
             ?>
+            <li class="nav-item">
+              <?php echo $navItem ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php echo $row['fullName'] ?>

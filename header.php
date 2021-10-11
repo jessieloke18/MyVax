@@ -25,7 +25,7 @@ include 'dbconnect.php';
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+  <!--If username session is not set, use these nav links-->
       <?php
       if (!isset($_SESSION['username'])) { ?>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -35,21 +35,27 @@ include 'dbconnect.php';
             <a class="nav-link" href="login.php">Login</a>
           </div>
         </div>
-
+ <!--If username session is set, use these nav links-->
       <?php } else { ?>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
             </li>
             <?php
             $username = $_SESSION['username'];
             $result = mysqli_query($conn, "SELECT* FROM user WHERE username='$username'");
             $row = mysqli_fetch_assoc($result);
+            $navItem;
+            //if user is an admin, have "Dashboard" in the navbar; if user is a patient, have "Contact Us" instead
+            if ($row['userType'] == "admin")
+              $navItem = '<a class="nav-link" href="administrator_dashboard.php">Dashboard</a>';
+            else
+              $navItem = '<a class="nav-link" href="#">Contact Us</a>';
             ?>
+            <li class="nav-item">
+              <?php echo $navItem ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php echo $row['fullName'] ?>
