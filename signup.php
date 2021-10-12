@@ -238,8 +238,6 @@ if (isset($_POST['patient-submit'])) {
             VALUES('$username','$password', '$email','$fullName', '$userType');";
         $query .= "INSERT INTO healthcareadministrator(username, staffID, centreName)
         VALUES('$username','$staffID', '$centreName')";
-           printf("error: %s\n", $centreName);
-        
       }
        
     } else {
