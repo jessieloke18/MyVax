@@ -201,7 +201,7 @@ li{
      
         background-size:contain;
         height: 55vh;
-        margin-top: -12%; 
+        margin-top: -2%; 
     }
 
     .banner-content{
@@ -220,8 +220,8 @@ li{
     /*below banner*/
 
     #provider{
-        padding: 10px 30px;
-        height: 20vh;
+        padding: 50px 30px;
+        height: 30vh;
     
     }
 
@@ -229,7 +229,7 @@ li{
         height: 100%;
         width: 80%;
         margin-left: 5%;
-        padding-top: 10px;
+        padding-top: 50px;
       
     }
 
@@ -239,7 +239,7 @@ li{
 
     
     .card{
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .card-text{
@@ -261,7 +261,7 @@ li{
     }
 
     .steps-card{
-        height: 30vh; 
+        height: 40vh; 
     }
 
     .fa-clipboard-list, .fa-syringe, .fa-hospital, .fa-calendar-plus{
