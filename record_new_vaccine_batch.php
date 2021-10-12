@@ -36,7 +36,7 @@ include 'header.php';
                     <input type="text" class="form-control" id="inputBatchNo" placeholder="e.g. B00001" name="batchNo" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputNumDoses">Quality of Doses</label>
+                    <label for="inputNumDoses">Quantity of Doses</label>
                     <input type="number" class="form-control" id="inputNumDoses" placeholder="e.g. 100" name="numDoses" required>
                 </div>
             </div>
