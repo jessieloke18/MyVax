@@ -63,10 +63,10 @@ $_SESSION["centreName"] = $centreName;
             <div class="col-sm-6 col-lg-3 mb-3">
                 <a href="index.html" class="card-links">
                     <div class="card function-card h-100 rounded-0">
-                        <img src="images/logout.jpg" class="card-img-top" alt="Logout">
+                        <img src="images/function4.jpg" class="card-img-top" alt="Logout">
                         <div class="card-body">
                             <p class="card-text">
-                                Logout
+                                Manage Patients
                             </p>
                         </div>
                     </div>
