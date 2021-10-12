@@ -11,7 +11,7 @@
     $numDoses = $_POST['numDoses'];
     $centreName = $_SESSION['centreName'];
     
-    $sql = "INSERT INTO batch VALUES ('$batchNo','$dateFormatted',$numDoses, 0, '$vacID', '$centreName')";
+    $sql = "INSERT INTO batch VALUES ('$batchNo','$dateFormatted',$numDoses, 0, 0, '$vacID', '$centreName')";
     
     $query_run = mysqli_multi_query($conn, $sql);
     if ($query_run) {
