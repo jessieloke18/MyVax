@@ -5,6 +5,7 @@ include 'dbconnect.php';
 include 'header.php';
 ?>
 <link rel="stylesheet" href="css/jessie.css">
+<title>Sign Up</title>
 <!--Sign up form area-->
 <div class="container signup-container">
   <div class="row">
@@ -58,7 +59,7 @@ include 'header.php';
             $res = mysqli_query($conn, "SELECT* FROM healthcarecentre");
             while ($row = mysqli_fetch_array($res)) {
             ?>
-              <option value="<?php echo $row["centreName"]; ?>" data-address="<?php echo $row["centreAddress"]; ?>"><?php echo $row["centreName"] ?></option>
+              <option value="<?php echo $row["centreName"]; ?>" <?php echo (isset($_POST['listOfCentres']) && $_POST['listOfCentres'] ==  $row["centreName"]) ? 'selected' : ''; ?> data-address="<?php echo $row["centreAddress"]; ?>"><?php echo $row["centreName"] ?></option>
             <?php
             }
             ?>
@@ -73,14 +74,14 @@ include 'header.php';
         <div id="addCentre">
           <div class="form-group">
             <label for="newCentreName">Centre Name</label>
-            <input type="text" class="form-control" id="newCentreName" name="centreName" placeholder="Enter your centre name" minlength="5">
+            <input type="text" class="form-control" id="newCentreName" name="centreName" placeholder="Enter your centre name" value="<?php echo isset($_POST["centreName"]) ? $_POST["centreName"] : ''; ?>" minlength="5">
             <div class="invalid-feedback">
                     Please enter a valid centre name.
                   </div>
           </div>
           <div class="form-group">
             <label for="newCentreAddress">Centre Address</label>
-            <input type="text" class="form-control" id="newCentreAddress" name="centreAddress" placeholder="Enter your centre address">
+            <input type="text" class="form-control" id="newCentreAddress" name="centreAddress" value="<?php echo isset($_POST["centreAddress"]) ? $_POST["centreAddress"] : ''; ?>" placeholder="Enter your centre address">
             <div class="invalid-feedback">
                     Please enter a valid centre address.
                   </div>
@@ -89,7 +90,7 @@ include 'header.php';
 
         <div class="form-group">
           <label for="staffID">Staff ID</label>
-          <input type="staffID" class="form-control" id="staffID" name="staffID" placeholder="Enter your staff ID" minlength="5" required>
+          <input type="staffID" class="form-control" id="staffID" name="staffID" value="<?php echo isset($_POST["staffID"]) ? $_POST["staffID"] : ''; ?>" placeholder="Enter your staff ID" minlength="5" required>
           <div class="invalid-feedback">
                   Please enter a valid staffID.
                 </div>
@@ -97,7 +98,7 @@ include 'header.php';
 
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" minlength="5" required>
+          <input type="text" class="form-control" id="username" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>" placeholder="Enter your username" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid username.
               </div>
@@ -105,21 +106,23 @@ include 'header.php';
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" minlength="5" required>
+          <input type="password" class="form-control" id="password" name="password" value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"  placeholder="Enter your password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{5,20}$"
+           minlength="5" required>
           <div class="invalid-feedback">
-                Please enter a valid password.
-              </div>
+                Must contain at least one lowercase letter, one uppercase letter and one number
+            </div>
+         
         </div>
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input type="fullName" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" minlength="5" required>
+          <input type="fullName" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" value="<?php echo isset($_POST["fullName"]) ? $_POST["fullName"] : ''; ?>" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid full name.
               </div>
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+          <input type="email" class="form-control" id="email" name="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>" placeholder="Enter your email address" required>
           <div class="invalid-feedback">
               Please enter a valid email address.
             </div>
@@ -136,28 +139,30 @@ include 'header.php';
       <form class="signup-form-patient" action="signup.php" method="POST">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="usernameP" name="username" placeholder="Enter your username" minlength="5" required>
+          <input type="text" class="form-control" id="usernameP" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>" placeholder="Enter your username" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid username.
               </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="passwordP" name="password" placeholder="Enter your password" minlength="5" required>
+          <input type="password" class="form-control" id="passwordP" name="password" value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"  placeholder="Enter your password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{5,20}$"
+           minlength="5" required>
           <div class="invalid-feedback">
-                Please enter a valid password.
-              </div>
+                Must contain at least one lowercase letter, one uppercase letter and one number
+            </div>
+         
         </div>
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input type="fullName" class="form-control" id="fullNameP" name="fullName" placeholder="Enter your full name"  minlength="5"required>
+          <input type="fullName" class="form-control" id="fullNameP" name="fullName" value="<?php echo isset($_POST["fullName"]) ? $_POST["fullName"] : ''; ?>" placeholder="Enter your full name"  minlength="5"required>
           <div class="invalid-feedback">
                 Please enter a valid full name.
               </div>
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" class="form-control" id="emailP" name="email" placeholder="Enter your email address" minlength="5" required>
+          <input type="email" class="form-control" id="emailP" name="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>" placeholder="Enter your email address" minlength="5" required>
           <div class="invalid-feedback">
               Please enter a valid email address.
             </div>
@@ -165,7 +170,7 @@ include 'header.php';
 
         <div class="form-group" id="ic-passport">
           <label for="staffID">IC/Passport</label>
-          <input type="ICPassport" class="form-control" id="ICPassport" name="ICPassport" placeholder="Enter your IC or passport" minlength="5" required>
+          <input type="ICPassport" class="form-control" id="ICPassport" name="ICPassport" value="<?php echo isset($_POST["ICPassport"]) ? $_POST["ICPassport"] : ''; ?>" placeholder="Enter your IC or passport" minlength="5" required>
           <div class="invalid-feedback">
                 Please enter a valid IC or passport number.
               </div>
@@ -229,6 +234,7 @@ if (isset($_POST['patient-submit'])) {
   $sql = mysqli_query($conn, "SELECT* FROM user WHERE username='$username'");
   if (mysqli_num_rows($sql) >= 1) {
     echo '<script>duplicateUsername();</script>';
+    $_POST['username'] =="";
   } 
   else {
     if ($centre == "existingCentre") {

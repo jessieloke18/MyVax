@@ -48,6 +48,11 @@ function signUpValidation() {
     var email = document.getElementById("email");
     var emailP = document.getElementById("emailP");
 
+  
+    var password = document.getElementById("password");
+    var passwordP = document.getElementById("passwordP");
+
+
     var arrayInput = document.querySelectorAll(".form-control");
     for (let i = 0; i < arrayInput.length; i++) {
         if (arrayInput[i].value == "" || arrayInput[i].value.length < 5) {
@@ -57,6 +62,23 @@ function signUpValidation() {
             arrayInput[i].classList.remove("is-invalid");
             arrayInput[i].className += " is-valid";
         }
+    }
+
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    if(!password.value.match(passw)) {
+        password.className += " is-invalid";
+    }
+    else {
+        password.classList.remove("is-invalid");
+        password.className += " is-valid";
+    }
+
+    if(!passwordP.value.match(passw)) {
+        passwordP.className += " is-invalid";
+    }
+    else {
+        passwordP.classList.remove("is-invalid");
+        passwordP.className += " is-valid";
     }
 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -70,7 +92,7 @@ function signUpValidation() {
     }
 
     //check email format patient
-    if (!email.value.match(validRegex)) {
+    if (!emailP.value.match(validRegex)) {
         emailP.className += " is-invalid";
     }
     else {
@@ -118,12 +140,21 @@ function batchNoBold() {
 //Account success alert
 function accountSuccessMessage() {
     document.getElementById("account-success").style.display = "block";
+    var arrayInput = document.querySelectorAll(".form-control");
+
+    for (let i = 0; i < arrayInput.length; i++) {
+        arrayInput[i].value="";
+    }
+    
+    document.getElementById("listOfCentres").selectedIndex = 0;
 }
 
 
 //Invalid username/password alert
 function duplicateUsername() {
     document.getElementById("duplicate-username").style.display = "block";
+    document.getElementById("username").value="";
+    document.getElementById("username").focus();
 }
 
 //Invalid username/password alert
