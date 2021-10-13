@@ -234,7 +234,6 @@ if (isset($_POST['patient-submit'])) {
   $sql = mysqli_query($conn, "SELECT* FROM user WHERE username='$username'");
   if (mysqli_num_rows($sql) >= 1) {
     echo '<script>duplicateUsername();</script>';
-    $_POST['username'] =="";
   } 
   else {
     if ($centre == "existingCentre") {
