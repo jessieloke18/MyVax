@@ -64,7 +64,7 @@ function signUpValidation() {
         }
     }
 
-    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$/;
     if(!password.value.match(passw)) {
         password.className += " is-invalid";
     }

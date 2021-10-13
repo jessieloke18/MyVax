@@ -4,6 +4,7 @@ session_start();
 include 'dbconnect.php';
 include 'header-index.php';
 ?>
+<title>Home</title>
 
   <!--Main banner-->
   <div id="main-banner">
