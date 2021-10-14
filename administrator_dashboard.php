@@ -21,7 +21,7 @@ $_SESSION["centreName"] = $centreName;
     
     <div class="container d-flex align-items-center" id="admin-functions" onmouseover="boldCardText()">
         <div class="row">
-            <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="col-6 col-lg-3 mb-3">
                 <a href="record_new_vaccine_batch.php" class="card-links">
                     <div class="card function-card h-100 rounded-0">
                         <img src="images/function4.jpg" class="card-img-top" alt="Record Vaccine Batch">
@@ -34,7 +34,7 @@ $_SESSION["centreName"] = $centreName;
                 </a>
             </div>
 
-            <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="col-6 col-lg-3 mb-3">
                 <a href="view_vaccine_batch_info.html" class="card-links">
                     <div class="card function-card h-100 rounded-0">
                         <img src="images/function3.jpg" class="card-img-top" alt="View Batch Info">
@@ -47,23 +47,23 @@ $_SESSION["centreName"] = $centreName;
                 </a>
             </div>
 
-            <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="col-6 col-lg-3 mb-3">
                 <a href="#" class="card-links">
                     <div class="card function-card h-100 rounded-0">
                         <img src="images/editprofile.jpg" class="card-img-top" alt="Edit Profile">
                         <div class="card-body">
                             <p class="card-text">
-                                Edit Profile
+                                Manage Centre
                             </p>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-lg-3 mb-3">
-                <a href="index.html" class="card-links">
+            <div class="col-6 col-lg-3 mb-3">
+                <a href="#" class="card-links">
                     <div class="card function-card h-100 rounded-0">
-                        <img src="images/function4.jpg" class="card-img-top" alt="Logout">
+                        <img src="images/managepatients.jpg" class="card-img-top" alt="Logout">
                         <div class="card-body">
                             <p class="card-text">
                                 Manage Patients
