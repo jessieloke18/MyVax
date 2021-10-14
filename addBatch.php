@@ -11,6 +11,12 @@
     $numDoses = $_POST['numDoses'];
     $centreName = $_SESSION['centreName'];
     
+    $checkDupBatch = mysqli_query($conn, "SELECT * FROM batch WHERE batchNo = '$batchNo'");
+    if(mysqli_num_rows($checkDupBatch) >= 1){
+        echo '<script>alert("Batch number already exists!");</script>';
+        echo "<script>window.location.href='record_new_vaccine_batch.php';</script>";
+
+    } else{
     $sql = "INSERT INTO batch VALUES ('$batchNo','$dateFormatted',$numDoses, 0, 0, '$vacID', '$centreName')";
     
     $query_run = mysqli_multi_query($conn, $sql);
@@ -21,7 +27,7 @@
         echo '<script>alert("Unsuccessful");</script>';
         printf("error: %s\n", mysqli_error($conn));
         }
-    
+    }
     
 }
 
