@@ -12,7 +12,7 @@ include 'header-index.php';
       <div class="row">
         <div class="col-6 offset-6">
           <h1 class="banner-title">Book your COVID-19 vaccination appointment today</h1>
-          <a href="login.php" class="btn btn-info available-vax-btn">See what vaccine is available</a>
+          <a href="login.php" class="btn btn-info available-vax-btn">See available vaccines</a>
         </div>
 
       </div>

@@ -280,13 +280,14 @@ li{
   }
 
   @media only screen and (max-width: 480px){
+
     /*Banner area*/
     #main-banner{
         margin-top: -23%; 
     }
 
     .available-vax-btn{
-        padding:2px;
+        padding: 5px 15px !important;
     }
     .banner-title{
         font-size: 17.5px;
