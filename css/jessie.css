@@ -24,18 +24,6 @@ a{
   box-shadow: 0 6px 6px -6px grey;
 }
 
-.fa-bars{
-font-size: 28px;
-}
-
-.fa-bars:hover{
-    opacity: 0.8;
-}
-    
-.navbar-toggler{
-padding:5px 5px 5px 15px;
-}
-
 .nav-link:hover{
     opacity: 0.8;
 }
@@ -465,4 +453,40 @@ input{
     width: 85%;
 }
 
+}
+
+@media only screen and (max-width: 480px) {
+    .login-form{
+        padding:15px;
+    }
+    .signup-form-column{
+        padding:0;
+        margin-top: -3%;
+    }
+
+    .signup-container{
+        padding:0px;
+    }
+
+    .form-check-inline{
+        font-size: 14px;
+
+    }
+
+    #remember-me-label, #forgot-label{
+        font-size: 13.5px;
+    }
+    #forgot-label{
+        margin-top: 2px;
+    }
+
+    /*Available vaccine*/
+    .smiling-doc{
+        margin-left: -80px;
+    }
+    /*after booking*/
+    .booking-info{
+        width: 90%;
+    }
+    
 }

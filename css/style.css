@@ -201,7 +201,7 @@ li{
      
         background-size:contain;
         height: 55vh;
-        margin-top: -2%; 
+        margin-top: -12%; 
     }
 
     .banner-content{
@@ -220,8 +220,8 @@ li{
     /*below banner*/
 
     #provider{
-        padding: 50px 30px;
-        height: 30vh;
+        padding: 10px 30px;
+        height: 20vh;
     
     }
 
@@ -229,7 +229,7 @@ li{
         height: 100%;
         width: 80%;
         margin-left: 5%;
-        padding-top: 50px;
+        padding-top: 10px;
       
     }
 
@@ -239,7 +239,7 @@ li{
 
     
     .card{
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .card-text{
@@ -261,7 +261,7 @@ li{
     }
 
     .steps-card{
-        height: 40vh; 
+        height: 30vh; 
     }
 
     .fa-clipboard-list, .fa-syringe, .fa-hospital, .fa-calendar-plus{
@@ -275,6 +275,35 @@ li{
 
     .footer-header{
         font-size: 14px;
+    }
+
+  }
+
+  @media only screen and (max-width: 480px){
+    /*Banner area*/
+    #main-banner{
+        margin-top: -23%; 
+    }
+
+    .available-vax-btn{
+        padding:2px;
+    }
+    .banner-title{
+        font-size: 17.5px;
+    }
+
+    #provider{
+        padding: 10px 30px;
+        height: 28vh;
+
+    }
+    .card-title{
+        font-size: 16px;
+    }
+
+    
+    .steps-card{
+        height: 33vh; 
     }
 
   }

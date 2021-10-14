@@ -37,13 +37,13 @@ include 'header.php';
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-6">
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="remember-me">
-              <label class="form-check-label" for="remember-me"><small>Remember me</small></label>
+              <label class="form-check-label" for="remember-me" id="remember-me-label"><small>Remember me</small></label>
             </div>
           </div>
-          <div class="col text-right">
+          <div class="col-6 text-right" id="forgot-label">
             <small><a href=#>Forgot password?</a></small>
           </div>
         </div>
