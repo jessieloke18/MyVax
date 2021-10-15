@@ -287,7 +287,8 @@ li{
     }
 
     .available-vax-btn{
-        padding: 5px 15px !important;
+        padding: 5px 8px !important;
+        font-size: 11px;
     }
     .banner-title{
         font-size: 17.5px;
