@@ -72,7 +72,7 @@ if (isset($_POST['login-submit'])) {
     echo "<script>window.location.href='administrator_dashboard.php';</script>";
   } else if ($result !== null && $result['userType'] == "patient") {
     $_SESSION['username'] = $username;
-    echo "<script>window.location.href='index.php';</script>";
+    echo "<script>window.location.href='html/viewAvailableVaccine.html';</script>";
   } else {
     echo '<script>invalidLoginMessage();</script>';
   }
