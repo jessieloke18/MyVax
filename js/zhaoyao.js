@@ -13,31 +13,30 @@ function changeVaccine() {
 
     var selectedVac = document.getElementById("inputVacID");
     var vacInfo = document.getElementById("vacInfo");
-
+    var allInfo = [
+        "<small id='vacMaker' class='form-text text-muted'>Manufacturer: BioNTech</small> <small id='vacName' class='form-text text-muted'>Name: Pfizer</small>",
+        "<small id='vacMaker' class='form-text text-muted'>Manufacturer: AZ Inc</small> <small id='vacName' class='form-text text-muted'>Name: AstraZeneca</small>",
+        "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Moderna Inc</small> <small id='vacName' class='form-text text-muted'>Name: Moderna</small>",
+        "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Sinovac Biotech Ltd</small> <small id='vacName' class='form-text text-muted'>Name: Sinovac</small>",
+        "<small id='vacMaker' class='form-text text-muted'>Please select a vaccineID.</small>"
+    ];
     vacInfo.innerHTML = "";
 
     if (selectedVac.options[selectedVac.selectedIndex].value == "V00001") {
-        vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: BioNTech</small> <small id='vacName' class='form-text text-muted'>Name: Pfizer</small>";
+        vacInfo.innerHTML = allInfo[0];
     }
     else if (selectedVac.options[selectedVac.selectedIndex].value == "V00002") {
-        vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: AZ Inc</small> <small id='vacName' class='form-text text-muted'>Name: AstraZeneca</small>";
+        vacInfo.innerHTML = allInfo[1];
     }
     else if (selectedVac.options[selectedVac.selectedIndex].value == "V00003") {
-        vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Moderna Inc</small> <small id='vacName' class='form-text text-muted'>Name: Moderna</small>";
+        vacInfo.innerHTML = allInfo[2];
     }
     else if (selectedVac.options[selectedVac.selectedIndex].value == "V00004") {
-        vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Manufacturer: Sinovac Biotech Ltd</small> <small id='vacName' class='form-text text-muted'>Name: Sinovac</small>";
+        vacInfo.innerHTML = allInfo[3];
     }
-
     else {
-        vacInfo.innerHTML =
-            "<small id='vacMaker' class='form-text text-muted'>Please select a vaccineID.</small>";
+        vacInfo.innerHTML = allInfo[4];
     }
-    
 
 }
 
@@ -143,11 +142,13 @@ function validateBatch() {
     if (document.batchForm.numDoses.value <= 0 ){
         alert("Number of doses must be a positive number!");
         document.batchForm.numDoses.focus();
+        document.batchForm.numDoses.value = "";
         return false;
     } 
     if (document.batchForm.batchNo.value[0] != "B"){
         alert('Batch number must start with "B"!');
         document.batchForm.batchNo.focus();
+        document.batchForm.batchNo.value = "";
         return false;
     }
     return true;
