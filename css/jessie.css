@@ -62,11 +62,16 @@ a{
   
 }
 
+#signup-pic-patient{
+    background-image: url(../images/maskwearer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top center;
+  
+}
+
 .signup-form-admin, .signup-form-patient{
     padding: 20px 30px;
-}
-.signup-form-patient{
-    display: none;
 }
 
 .signup-form-column{

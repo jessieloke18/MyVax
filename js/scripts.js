@@ -31,16 +31,12 @@ function selectCentre() {
 
 //if user wants to register as patient
 function patientSelected() {
-    document.querySelector('.signup-form-patient').style.display = "block";
-    document.querySelector('.signup-form-admin').style.display = "none";
-    document.getElementById('signup-pic').style.backgroundImage = "url(images/maskwearer.jpg)";
+    window.location.href = "signupPatient.php";
 }
 
 //if user wants to register as admin
 function adminSelected() {
-    document.querySelector('.signup-form-patient').style.display = "none";
-    document.querySelector('.signup-form-admin').style.display = "block";
-    document.getElementById('signup-pic').style.backgroundImage = "url(images/nursebg.jpg)";
+    window.location.href = "signupAdmin.php";
 }
 
 //validate sign up form
