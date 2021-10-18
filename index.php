@@ -25,7 +25,7 @@ include 'header-index.php';
         <h1 class="banner-title">Are you a healthcare provider?</h1>
         <p>Sign up as an administrator for your healthcare centre to help manage your centre's vaccinations
         </p>
-        <a href="signup.php" class="btn btn-info provider-btn">I'm a provider</a>
+        <a href="signupAdmin.php" class="btn btn-info provider-btn">I'm a provider</a>
       </div>
       <div class="col-lg-5">
         <img src="images/doctor.png" alt="Healthcare provider" id="doctor-pic" width="620" height="450">

@@ -4,7 +4,7 @@
       <div class="col">
         <ul>
           <li class="footer-header">Quick Links</li>
-          <li class="quick-links-items"><a href="php/index.html">Home</a></li>
+          <li class="quick-links-items"><a href="index.php">Home</a></li>
           <li class="quick-links-items"><a href="#">Contact Us</a></li>
           <li class="quick-links-items"><a href="#">Terms & Conditions</a></li>
           <li class="quick-links-items"><a href="#">Privacy Policy</a></li>

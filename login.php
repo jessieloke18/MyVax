@@ -48,7 +48,7 @@ include 'header.php';
           </div>
         </div>
         <button type="submit" class="btn btn-info login-btn mt-5" id="redirect-login" name="login-submit" onclick=loginValidation()>Login</button>
-        <p class="pt-4 pb-3 text-center"><small>New here? <a href="signup.php">Sign up now</a></small></p>
+        <p class="pt-4 pb-3 text-center"><small>New here? <a href="signupPatient.php">Sign up now</a></small></p>
 
       </form>
     </div>

@@ -32,7 +32,7 @@ include 'dbconnect.php';
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-link" href="index.php">Home</a>
-            <a class="nav-link" href="signup.php">Sign Up</a>
+            <a class="nav-link" href="signupPatient.php">Sign Up</a>
             <a class="nav-link" href="login.php">Login</a>
           </div>
         </div>
