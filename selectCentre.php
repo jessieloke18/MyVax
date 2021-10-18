@@ -23,7 +23,7 @@ include 'header.php';
 
             if ($queryResult > 0) {
                 while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <a href="selectBatch.html" class="list-group-item list-group-item-action hospital-block">
+                    <a href="selectBatch.php?centreName=<?php echo $row["centreName"]; ?>" class="list-group-item list-group-item-action hospital-block">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1 hospital-name"><?php echo $row["centreName"]; ?></h5>
                             <small> <i class="fas fa-chevron-right"></i>View Batches</small>
