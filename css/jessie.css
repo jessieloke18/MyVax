@@ -161,6 +161,11 @@ a{
     height: 40vh;
 }
 
+.fa-chevron-right{
+    color: rgb(190, 190, 190);
+}
+
+
 /*Select vaccine batch*/
 .vaccine-batch-banner{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),

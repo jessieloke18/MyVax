@@ -45,7 +45,7 @@ include 'header.php';
         </tbody>
     </table>
     <!--Search bar-->
-    <form method="POST" action="selectCentres.php">
+    <form method="POST" action="selectCentre.php">
         <div class="row mb-0">
             <div class="com-sm-11 col-md-7 search-vaccine-section d-flex justify-content-center align-items-center flex-column text-center">
                 <h2 id="choice-title">Made your choice?</h2>
@@ -55,9 +55,9 @@ include 'header.php';
                 </div>
 
                 <div class="input-group mb-3 w-75">
-                    <input type="text" class="form-control" placeholder="Enter vaccine ID" aria-label="enteredVaccine" aria-describedby="enteredVaccine" id="enteredVaccine">
+                    <input type="text" class="form-control" placeholder="Enter vaccine ID" name="search" id="enteredVaccine">
                     <div class="input-group-append">
-                        <button type="submit" class="btn btn-info" id="searchVaccine" name="search"onclick=searchVaccine()>Search</button>
+                        <button type="submit" class="btn btn-info" id="searchVaccine" name="search-button">Search</button>
                     </div>
                 </div>
             </div>
