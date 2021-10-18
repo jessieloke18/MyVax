@@ -19,19 +19,30 @@ include 'header.php';
         </button>
     </div>
     <div class="row mt-5" id="cardBlocks">
-        <div class="col-md-4">
-            <div class="card batch-card">
-                <a href="selectDate.html" class="batchNo">
-                    <div class="card-body text-center">
-                        <i class="fas fa-syringe"></i>
-                        <h5 class="card-title pt-2">B000001</h5>
+        <?php
+        if (isset($_GET['centreName'])) {
+            $centreName = mysqli_real_escape_string($conn, $_GET['centreName']);
+            $sql = "SELECT* FROM batch where centreName ='$centreName'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+            while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+                <div class="col-md-4">
+                    <div class="card batch-card">
+                        <a href="selectDate.html" class="batchNo">
+                            <div class="card-body text-center">
+                                <i class="fas fa-syringe"></i>
+                                <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">Schedule appointment</div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="overlay">
-                        <div class="text">Schedule appointment</div>
-                    </div>
-                </a>
-            </div>
-        </div>
+                </div>
+        <?php }
+        }
+        ?>
     </div>
     <div class="row d-flex justify-content-center">
         <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More healthcare

@@ -17,7 +17,7 @@ include 'header.php';
         if (isset($_POST['search-button'])) {
             $search = mysqli_real_escape_string($conn, $_POST['search']);
             //join batch and healthcare centre tables to retrieve both centreName and centreAddress
-            $sql = "SELECT* FROM batch JOIN healthcarecentre ON batch.centreName = healthcareCentre.centreName WHERE vaccineID = '$search'";
+            $sql = "SELECT DISTINCT healthcarecentre.centreAddress, batch.centreName FROM batch JOIN healthcarecentre ON batch.centreName = healthcareCentre.centreName WHERE vaccineID = '$search'";
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
 
