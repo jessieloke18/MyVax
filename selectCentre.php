@@ -1,5 +1,7 @@
 <!--Header and dbconnect-->
 <?php
+header("Cache-Control: no cache");
+session_cache_limiter("private_no_expire");
 session_start();
 include 'dbconnect.php';
 include 'header.php';
