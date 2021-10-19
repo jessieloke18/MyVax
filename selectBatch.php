@@ -13,7 +13,7 @@ include 'header.php';
 <!--List of batches-->
 <div class="container batch-container my-5">
     <div class="alert alert-warning alert-dismissible fade show mt-5 sign-in-alert" role="alert">
-        <strong>Hey there!</strong> Please <a href="login.html">login </a> to continue
+        <strong>Hey there!</strong> Please <a href="login.php">login </a> to continue
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -28,8 +28,15 @@ include 'header.php';
             while ($row = mysqli_fetch_assoc($result)) {
         ?>
                 <div class="col-md-4">
-                    <div class="card batch-card">
-                        <a href="selectDate.php?batchNo=<?php echo $row["batchNo"];?>" class="batchNo">
+                    <!--If username session is not set-->
+                    <?php
+                    if (!isset($_SESSION['username'])) {
+                        echo '<div class="card batch-card" onclick="signInAlert()">';
+                        echo '<a href="#">';
+                    } else { ?>
+                        <div class="card batch-card">
+                            <a href="selectDate.php?batchNo=<?php echo $row["batchNo"]; ?>" class="batchNo">
+                            <?php } ?>
                             <div class="card-body text-center">
                                 <i class="fas fa-syringe"></i>
                                 <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
@@ -37,8 +44,8 @@ include 'header.php';
                             <div class="overlay">
                                 <div class="text">Schedule appointment</div>
                             </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
                 </div>
         <?php }
         }
