@@ -3,6 +3,8 @@
 session_start();
 include 'dbconnect.php';
 include 'header.php';
+//save the current page in a session so that after logging in can be returned to this page
+$_SESSION['current_page'] = $_SERVER['REQUEST_URI']
 ?>
 <title>Select Batch</title>
 <link rel="stylesheet" href="css/jessie.css">

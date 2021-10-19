@@ -1,5 +1,6 @@
 <!--Header and dbconnect-->
 <?php
+ob_start();
 session_start();
 include 'dbconnect.php';
 include 'header.php';
@@ -72,11 +73,14 @@ if (isset($_POST['login-submit'])) {
     echo "<script>window.location.href='administrator_dashboard.php';</script>";
   } else if ($result !== null && $result['userType'] == "patient") {
     $_SESSION['username'] = $username;
-    echo "<script>window.location.href='html/viewAvailableVaccine.html';</script>";
+    if (!isset($_SESSION['current_page'])) {
+      echo "<script>window.location.href='viewAvailableVaccines.php';</script>";
+    } else {
+      header("Location: " . $_SESSION['current_page']);
+    }
   } else {
     echo '<script>invalidLoginMessage();</script>';
   }
 }
-
-
+ob_end_flush();
 ?>
