@@ -27,6 +27,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI']
             $sql = "SELECT* FROM batch where centreName ='$centreName'";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
+            $_SESSION["centreName"] = $centreName;
             while ($row = mysqli_fetch_assoc($result)) {
         ?>
                 <div class="col-md-4">

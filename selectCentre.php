@@ -22,7 +22,6 @@ include 'header.php';
             $sql = "SELECT DISTINCT healthcarecentre.centreAddress, batch.centreName FROM batch JOIN healthcarecentre ON batch.centreName = healthcareCentre.centreName WHERE vaccineID = '$search'";
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
-
             if ($queryResult > 0) {
                 while ($row = mysqli_fetch_assoc($result)) { ?>
                     <a href="selectBatch.php?centreName=<?php echo $row["centreName"]; ?>" class="list-group-item list-group-item-action hospital-block">
@@ -47,6 +46,12 @@ include 'header.php';
         <a href="javascript:history.back()" class="btn btn-info"><i class="fas fa-chevron-left"></i>More vaccines</a>
     </div>
 </div>
+<?php 
+  $sql = "SELECT* FROM vaccine WHERE vaccineID = '$search'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  $_SESSION["vaccineName"] = $row["vaccineName"];
+?>
 <!--Footer-->
 <?php include 'footer.php'; ?>
 <script src="js/scripts.js"></script>

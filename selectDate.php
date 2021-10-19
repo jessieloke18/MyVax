@@ -27,16 +27,24 @@ include 'header.php';
         ?>
                 <div class="col-md-6">
                     <ul>
+                        <li class="font-weight-bold">Vaccine Name</li>
+                        <li> <?php echo $_SESSION["vaccineName"] ?></li>
+                    </ul>
+                    <ul>
+                        <li class="font-weight-bold">Centre Name</li>
+                        <li><?php echo $_SESSION["centreName"] ?></li>
+                    </ul>
+                    <ul>
                         <li class="font-weight-bold">Batch Number</li>
-                        <li><?php echo $row["batchNo"];?></li>
+                        <li><?php echo $row["batchNo"]; ?></li>
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Batch Expiry Date</li>
-                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"];?>"><?php echo $row["expiryDate"];?></li>
+                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo $row["expiryDate"]; ?></li>
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Quantity Available</li>
-                        <li><?php echo $row["quantityAvailable"];?></li>
+                        <li><?php echo $row["quantityAvailable"]; ?></li>
                     </ul>
                 </div>
         <?php }
