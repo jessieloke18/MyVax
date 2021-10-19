@@ -62,6 +62,9 @@ include 'header.php';
         </div>
 
     </div>
+    <div class="row d-flex justify-content-center">
+        <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More batches</a>
+    </div>
 </div>
 <!-- Appointment confirmation modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -77,7 +80,7 @@ include 'header.php';
                 Are you sure? You may not cancel the appointment after it has been made.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn modal-cancel-btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal" onclick=compareDates()>Confirm</button>
             </div>
         </div>
