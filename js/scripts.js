@@ -1,11 +1,12 @@
-// //datepicker
-// $('#datepicker').datepicker({
-//     weekStart: 1,
-//     daysOfWeekHighlighted: "6,0",
-//     autoclose: true,
-//     todayHighlight: true,
-// });
-// $('#datepicker').datepicker("setDate", new Date());
+//datepicker
+$('#datepicker').datepicker({
+    weekStart: 1,
+    daysOfWeekHighlighted: "6,0",
+    autoclose: true,
+    todayHighlight: true,
+    startDate: new Date()
+});
+$('#datepicker').datepicker("setDate", new Date());
 
 //if existing centre radio button is chosen, hide add centre option and unhide select centre option
 //if new centre radio button is chosen, unhide add centre option and hide select centre option

@@ -29,7 +29,7 @@ include 'header.php';
         ?>
                 <div class="col-md-4">
                     <div class="card batch-card">
-                        <a href="selectDate.html" class="batchNo">
+                        <a href="selectDate.php?batchNo=<?php echo $row["batchNo"];?>" class="batchNo">
                             <div class="card-body text-center">
                                 <i class="fas fa-syringe"></i>
                                 <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
