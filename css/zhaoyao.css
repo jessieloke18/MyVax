@@ -31,7 +31,7 @@ a:hover{
 }
         
 .navbar-toggler{
-    padding:5px 15px 5px 15px;
+    padding:5px 5px 5px 15px;
 }
 
 .nav-link:hover{
@@ -52,9 +52,24 @@ a:hover{
 }
 
 /* Format Icons */
-/* i{
-    color: white;
-} */
+.fa-eye{
+    color: #17A2B8;
+}
+
+.fa-syringe, .fa-list-alt, .fa-check-circle, .fa-users{
+    color:white;
+}
+
+.fa-file-signature {
+    color: #FFC300;
+    padding: 0 10px;
+}
+
+.fa-calendar-check {
+    color: #239B56;
+    padding: 0 10px;
+}
+
 
 /*Function Area*/
 #admin-functions{
@@ -77,6 +92,13 @@ a:hover{
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
     border-radius: 20px;
     height: 10rem;
+}
+
+.function-card{
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
+
 }
 
 .function-card:hover{
@@ -140,7 +162,7 @@ th, td{
 
 .info-section{
     width: 75%; 
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 15px;
 }
 
@@ -194,5 +216,39 @@ textarea{
     
 }
 
+@media only screen and (max-width: 768px) {
+
+        h1{
+            font-size: 20px;
+        }
+        h2{
+            font-size: 20px;
+        }
+
+        /*Record Vaccination Administered*/
+        .fa-user{
+            margin:30px 0;
+        }
+        
+        .appointment-info ul{
+            text-align: center;
+            padding-left: 0;
+        }
+        
+        .reject-btn, .confirm-btn{
+            margin: 10px 0;
+        }
+        
+        .appointment-info{
+            width: 85%;
+        }
+        
+        #vax-id{
+            font-size: 30px;
+        }
+        
+
+    
+}
 
 
