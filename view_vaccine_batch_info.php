@@ -29,7 +29,7 @@ include 'header.php';
     if (mysqli_num_rows($result) > 0){
       while($row = mysqli_fetch_assoc($result)){
         echo '<tr><th scope="row">' . $row['batchNo'] . "</th><td>" . $row['vaccineName'] . "</td><td>" . $row['quantityPending'] . "</td>" 
-        .'<td><a href="view_vaccination_info.html"><i class="far fa-eye"></i></a></td></tr>';
+        .'<td><a href="view_vaccination_info.php?batchNo=' . $row['batchNo'] . '"><i class="far fa-eye"></i></a></td></tr>';
       }
     } else{
       echo '<tr><td colspan="4">There is no batch in this healthcare centre yet.</td></tr>';
