@@ -73,10 +73,10 @@ if (isset($_POST['login-submit'])) {
     echo "<script>window.location.href='administrator_dashboard.php';</script>";
   } else if ($result !== null && $result['userType'] == "patient") {
     $_SESSION['username'] = $username;
-    if (!isset($_SESSION['current_page'])) {
+    if (!isset($_SESSION['batch_page'])) {
       echo "<script>window.location.href='viewAvailableVaccines.php';</script>";
     } else {
-      header("Location: " . $_SESSION['current_page']);
+      header("Location: " . $_SESSION['batch_page']);
     }
   } else {
     echo '<script>invalidLoginMessage();</script>';

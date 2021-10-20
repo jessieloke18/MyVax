@@ -14,7 +14,7 @@ if (isset($_POST['appointment-submit'])) {
     $expDate = str_replace('/', '-', $expiryDate);
     $newExpDate = date("Y-m-d", strtotime($expDate));
 
-
+    //check to see if appointment date is after expiry date
     if ($newAppDate > $newExpDate) {
         $_SESSION['errorDate'] = "The batch would have expired by then! Please choose a different date";
         header("Location: " . $_SESSION['selectDate_page']);

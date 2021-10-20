@@ -3,7 +3,7 @@
 session_start();
 include 'dbconnect.php';
 include 'header.php';
-//save the current page in a session so that after logging in can be returned to this page
+//save the current page in a session so that if appointmentdate>expirydate, can be returned to this page
 $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
 ?>
 <title>Select Date</title>
@@ -30,6 +30,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
             $sql = "SELECT* FROM batch where batchNo ='$batchNo'";
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
+                //changing the format of the retrieved date
                 $dateFormatted = date("d/m/Y", strtotime($row["expiryDate"]));
         ?>
                 <div class="col-md-6 pt-5">
