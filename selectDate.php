@@ -21,9 +21,11 @@ include 'header.php';
         <?php
         if (isset($_GET['batchNo'])) {
             $batchNo = mysqli_real_escape_string($conn, $_GET["batchNo"]);
+            $_SESSION['batchNo'] = $batchNo;
             $sql = "SELECT* FROM batch where batchNo ='$batchNo'";
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
+                $dateFormatted = date("d/m/Y", strtotime($row["expiryDate"]));
         ?>
                 <div class="col-md-6">
                     <ul>
@@ -40,7 +42,7 @@ include 'header.php';
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Batch Expiry Date</li>
-                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo $row["expiryDate"]; ?></li>
+                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo $dateFormatted; ?></li>
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Quantity Available</li>
@@ -52,13 +54,35 @@ include 'header.php';
         ?>
 
         <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
-            <p class="text-center">Please select an upcoming date for your vaccination appointment</p>
-            <div class="input-group mb-3 w-75">
-                <input data-date-format="dd/mm/yyyy" id="datepicker" class="form-control">
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-info" id="selectDate" data-toggle="modal" data-target="#staticBackdrop">Request</button>
+            <form action="selectDateProcess.php" method="POST" id="appointmentForm">
+                <p class="text-center">Please select an upcoming date for your vaccination appointment</p>
+                <div class="input-group mb-3 w-75">
+                    <input data-date-format="dd/mm/yyyy" id="datepicker" name="appointmentDate" class="form-control">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-info" id="selectDate" data-toggle="modal" data-target="#staticBackdrop">Request</button>
+                    </div>
                 </div>
-            </div>
+                <!-- Appointment confirmation modal -->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Appointment confirmation</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure? You may not cancel the appointment after it has been made.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-info" form="appointmentForm" name="appointment-submit">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
 
     </div>
@@ -66,26 +90,7 @@ include 'header.php';
         <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More batches</a>
     </div>
 </div>
-<!-- Appointment confirmation modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Appointment confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure? You may not cancel the appointment after it has been made.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-info" data-dismiss="modal" onclick=compareDates()>Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--Footer-->
 <?php include 'footer.php'; ?>
 <script src="js/scripts.js"></script>
