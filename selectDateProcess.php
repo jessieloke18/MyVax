@@ -27,7 +27,7 @@ if (isset($_POST['appointment-submit'])) {
 
         $query_run = mysqli_query($conn, $query);
         if ($query_run) {
-            echo '<script>alert("Vaccination appointment made");</script>';
+            echo "<script>window.location.href='bookingSuccess.php';</script>";
         } else {
             echo '<script>alert("Unsuccessful");</script>';
         }
