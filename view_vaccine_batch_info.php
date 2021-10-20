@@ -21,20 +21,20 @@ include 'header.php';
       </tr>
     </thead>
     <tbody>
-    <?php
-    $username = $_SESSION['username'];
-    $centreName = $_SESSION['centreName'];
-    $statement1 = "SELECT t1.batchNo, t2.vaccineName, t1.quantityPending FROM batch AS t1 INNER JOIN vaccine AS t2 ON t1.vaccineID = t2.vaccineID WHERE centreName='$centreName'";
-    $result = mysqli_query($conn, $statement1);
-    if (mysqli_num_rows($result) > 0){
-      while($row = mysqli_fetch_assoc($result)){
-        echo '<tr><th scope="row">' . $row['batchNo'] . "</th><td>" . $row['vaccineName'] . "</td><td>" . $row['quantityPending'] . "</td>" 
-        .'<td><a href="view_vaccination_info.php?batchNo=' . $row['batchNo'] . '"><i class="far fa-eye"></i></a></td></tr>';
+      <?php
+      $username = $_SESSION['username'];
+      $centreName = $_SESSION['centreName'];
+      $statement1 = "SELECT t1.batchNo, t2.vaccineName, t1.quantityPending FROM batch AS t1 INNER JOIN vaccine AS t2 ON t1.vaccineID = t2.vaccineID WHERE centreName='$centreName'";
+      $result = mysqli_query($conn, $statement1);
+      if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          echo '<tr><th scope="row">' . $row['batchNo'] . "</th><td>" . $row['vaccineName'] . "</td><td>" . $row['quantityPending'] . "</td>"
+            . '<td><a href="view_vaccination_info.php?batchNo=' . $row['batchNo'] . '"><i class="far fa-eye" style="color: #17A2B8;"></i></a></td></tr>';
+        }
+      } else {
+        echo '<tr><td colspan="4">There is no batch in this healthcare centre yet.</td></tr>';
       }
-    } else{
-      echo '<tr><td colspan="4">There is no batch in this healthcare centre yet.</td></tr>';
-    }
-    ?>
+      ?>
     </tbody>
   </table>
 </div>
