@@ -19,15 +19,17 @@ if (isset($_POST['appointment-submit'])) {
         $_SESSION['errorDate'] = "The batch would have expired by then! Please choose a different date";
         header("Location: " . $_SESSION['selectDate_page']);
     } else {
-        $sql = mysqli_query($conn, "SELECT count(*) as total from vaccination");
-        $result = mysqli_fetch_assoc($sql);
 
         $query = "INSERT INTO vaccination(appointmentDate, status, username, batchNo)
   VALUES('$newAppDate', '$status', '$username','$batchNo');";
 
         $query_run = mysqli_query($conn, $query);
         if ($query_run) {
-            echo "<script>window.location.href='bookingSuccess.php';</script>";
+            $sql = mysqli_query($conn, "SELECT vaccinationID FROM vaccination WHERE username ='$username' AND appointmentDate ='$newAppDate'");
+            $result = mysqli_fetch_assoc($sql);
+            $_SESSION['vaccinationID']=$result['vaccinationID'];
+            echo "<script>window.location.href='bookingSuccess.php?".$_SESSION['vaccinationID']."'</script>";
+
         } else {
             echo '<script>alert("Unsuccessful");</script>';
         }

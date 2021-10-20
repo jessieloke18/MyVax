@@ -19,14 +19,14 @@ include 'header.php';
         <div class="d-flex flex-column">
           <ul>
             <li class="font-weight-bold">Vaccination ID</li>
-            <li>VAX00001</li>
+            <li>VAX<?php echo $_SESSION['vaccinationID'] ?></li>
           </ul>
           <ul>
             <li class="font-weight-bold">Status</li>
             <li>Pending</li>
           </ul>
         </div>
-        <a href="index.html" class="btn btn-info my-3">Return to home</a>
+        <a href="index.php" class="btn btn-info my-3">Return to home</a>
       </div>
     </div>
   </div>
