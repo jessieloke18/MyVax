@@ -11,26 +11,35 @@ include 'header.php';
 <h2 class="mt-5 font-weight-bold">Vaccinations In This Batch</h2>
 
 <!-- A section to show information about current batch -->
+<?php
+if (isset($_GET['batchNo'])){
+  $batchNo = mysqli_real_escape_string($conn, $_GET['batchNo']);
+  $sql = "SELECT * FROM batch where batchNo = '$batchNo'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  $_SESSION["batchNo"] = $batchNo;
+}
+?>
 <div class="container border info-section mt-5">
   <div class="row">
     <div class="col-md-6">
       <p class="font-weight-bold">No. Of Pending Vaccination:</p>
-      <p id="pending">10</p>
+      <p id="pending"><?php echo $row['quantityPending']; ?></p>
     </div>
     <div class="col-md-6">
       <p class="font-weight-bold">Batch Expiry Date:</p>
-      <p id="batchExDate">12/12/2021</p>
+      <p id="batchExDate"><?php echo $row['expiryDate']; ?></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
       <p class="font-weight-bold">No. of Available Vaccination:</p>
-      <p id="available">10</p>
+      <p id="available"><?php echo $row['quantityAvailable']; ?></p>
     </div>
     <div class="col-md-6">
       <p class="font-weight-bold">No. of Administered Vaccination:</p>
-      <p id="administered">10</p>
+      <p id="administered"><?php echo $row['quantityAdministered']; ?></p>
     </div>
   </div>
 
