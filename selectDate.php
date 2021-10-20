@@ -1,10 +1,10 @@
 <!--Header and dbconnect-->
 <?php
-header("Cache-Control: no cache");
-session_cache_limiter("private_no_expire");
 session_start();
 include 'dbconnect.php';
 include 'header.php';
+//save the current page in a session so that after logging in can be returned to this page
+$_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
 ?>
 <title>Select Date</title>
 <link rel="stylesheet" href="css/jessie.css">
@@ -14,9 +14,14 @@ include 'header.php';
 </div>
 <!--Batch info-->
 <div class="container batch-info">
-    <div class="alert alert-danger alert" role="alert" id="date-alert">
-        <strong>Oops!</strong> The batch will have expired by then. Please select a different date
-    </div>
+    <!--If errorDate session is set, display error message-->
+    <?php
+    if(isset($_SESSION['errorDate'])) {
+    ?>
+        <div class="alert alert-danger alert" role="alert" id="date-alert">
+            <strong>Oops!</strong> <?php echo $_SESSION['errorDate'] ?>
+        </div>
+    <?php } ?>
     <div class="row">
         <?php
         if (isset($_GET['batchNo'])) {
@@ -27,7 +32,7 @@ include 'header.php';
             while ($row = mysqli_fetch_assoc($result)) {
                 $dateFormatted = date("d/m/Y", strtotime($row["expiryDate"]));
         ?>
-                <div class="col-md-6">
+                <div class="col-md-6 pt-5">
                     <ul>
                         <li class="font-weight-bold">Vaccine Name</li>
                         <li> <?php echo $_SESSION["vaccineName"] ?></li>
@@ -43,6 +48,10 @@ include 'header.php';
                     <ul>
                         <li class="font-weight-bold">Batch Expiry Date</li>
                         <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo $dateFormatted; ?></li>
+                        <!--saving exp date in a session-->
+                        <?php
+                        $_SESSION['expiryDate'] = $row["expiryDate"];
+                        ?>
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Quantity Available</li>
@@ -92,5 +101,7 @@ include 'header.php';
 </div>
 
 <!--Footer-->
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; 
+unset($_SESSION['errorDate']);
+?>
 <script src="js/scripts.js"></script>
