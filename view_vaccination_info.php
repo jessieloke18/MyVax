@@ -57,7 +57,29 @@ if (isset($_GET['batchNo'])){
       </tr>
     </thead>
     <tbody>
+      <?php
+        $sql2 = "SELECT vaccinationID, appointmentDate, status FROM vaccination WHERE batchNo = '$batchNo'";
+        $result2 = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        if (mysqli_num_rows($result2) <= 0){
+          echo '<tr><td colspan="4">There is no vaccination in this batch yet.</td></tr>';
+        } else {
+          while ($row2 = mysqli_fetch_assoc($result2)) {
+      ?>
       <tr>
+        <th scope="row"><?php echo $row2["vaccinationID"]; ?></th>
+        <td><?php echo $row2["appointmentDate"]; ?></td>
+        <td><?php echo $row2["status"]; ?></td>
+        <td>
+          <a href="confirmAppointment.php?vaccinationID=<?php echo $row2["vaccinationID"]; ?>"><i class="fas fa-calendar-check"></i></a>
+          <a href="record_vaccination_administered.php?vaccinationID=<?php echo $row2["vaccinationID"] ;?>"><i class="fas fa-file-signature"></i></a>
+        </td>
+      </tr>
+      <?php }
+      }
+      ?>
+
+      <!-- <tr>
         <th scope="row">VAX00001</th>
         <td>15/10/2021</td>
         <td>Pending</td>
@@ -92,7 +114,7 @@ if (isset($_GET['batchNo'])){
           <a href="confirmAppointment.html"><i class="fas fa-calendar-check"></i></a>
           <a href="record_vaccination_administered.html"><i class="fas fa-file-signature"></i></a>
         </td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>

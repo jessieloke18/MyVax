@@ -8,7 +8,7 @@ include 'header.php';
 <link rel="stylesheet" href="css/zhaoyao.css">
 
 
-<h2 class="mt-5">Available Vaccine Batches</h2>
+<h2 class="mt-5 font-weight-bold">Available Vaccine Batches</h2>
 <!-- Table to show the batches in the current healthcare centre -->
 <div class="container table-section mt-5">
   <table class="table table-bordered">
