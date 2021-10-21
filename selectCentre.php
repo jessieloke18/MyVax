@@ -23,8 +23,8 @@ include 'header.php';
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
             if ($queryResult > 0) {
-                while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <a href="selectBatch.php?centreName=<?php echo $row["centreName"]; ?>" class="list-group-item list-group-item-action hospital-block">
+                while ($row = mysqli_fetch_assoc($result)) { 
+                    echo '<a href="selectBatch.php?centreName='.$row["centreName"].'&vaccineID='.$search.'" class="list-group-item list-group-item-action hospital-block">'?>
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1 hospital-name"><?php echo $row["centreName"]; ?></h5>
                             <small> <i class="fas fa-chevron-right"></i>View Batches</small>

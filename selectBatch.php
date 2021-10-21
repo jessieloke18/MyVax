@@ -24,9 +24,9 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
         <?php
         if (isset($_GET['centreName'])) {
             $centreName = mysqli_real_escape_string($conn, $_GET['centreName']);
-            $sql = "SELECT* FROM batch where centreName ='$centreName'";
+            $vaccineID = mysqli_real_escape_string($conn, $_GET['vaccineID']);
+            $sql = "SELECT* FROM batch WHERE centreName ='$centreName' AND vaccineID ='$vaccineID'";
             $result = mysqli_query($conn, $sql);
-            $row = mysqli_fetch_assoc($result);
             $_SESSION["centreName"] = $centreName;
             while ($row = mysqli_fetch_assoc($result)) {
         ?>
