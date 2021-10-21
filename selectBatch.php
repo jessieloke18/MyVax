@@ -60,6 +60,12 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
     </div>
 
 </div>
+<?php 
+  $sql = "SELECT* FROM vaccine WHERE vaccineID = '$vaccineID'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  $_SESSION["vaccineName"] = $row["vaccineName"];
+?>
 <!--Footer-->
 <?php include 'footer.php'; ?>
 <script src="js/scripts.js"></script>
