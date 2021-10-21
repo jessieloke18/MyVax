@@ -10,6 +10,7 @@ include 'header.php';
 <!--Content of the vaccination appointment box-->
 <div class="container my-5 px-5 py-5 appointment-info">
     <div class="row d-flex justify-content-center">
+        <!--dummy value-->
         <h1 id="vax-id">VAX00001</h1>
     </div>
     <div class="row">
@@ -17,35 +18,48 @@ include 'header.php';
             <i class="fas fa-user"></i>
         </div>
         <div class="col-sm-6 order-sm-1" id="patient-vaccination-info">
-            <ul>
-                <li class="font-weight-bold">Full Name</li>
-                <li>Lim Jia Yi</li>
-            </ul>
-            <ul>
-                <li class="font-weight-bold">IC/Passport</li>
-                <li>201118101234</li>
-            </ul>
-            <ul>
-                <li class="font-weight-bold">Vaccine Batch Number</li>
-                <li>B00001</li>
-            </ul>
-            <ul>
-                <li class="font-weight-bold">Batch Expiry Date</li>
-                <li>12/12/2021</li>
-            </ul>
-            <ul>
-                <li class="font-weight-bold">Vaccine Manufacturer</li>
-                <li>BioNTech</li>
-            </ul>
-            <ul>
-                <li class="font-weight-bold">Vaccine Name</li>
-                <li>Pfizer</li>
-            </ul>
-            <ul>
-                <li class="font-weight-bold">Vaccination Date</li>
-                <li>15/10/2021</li>
-            </ul>
+            <?php
+            $sql = "SELECT fullName, ICPassport, b.batchNo, expiryDate, manufacturer, vaccineName, appointmentDate
+                FROM user AS u
+                JOIN patient AS p ON u.username = p.username
+                JOIN vaccination AS va ON va.username = p.username
+                JOIN batch AS b ON b.batchNo = va.batchNo
+                JOIN vaccine AS v ON v.vaccineID = b.vaccineID
+                WHERE vaccinationID = '00074'"; //dummy value
+            $result = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <ul>
+                    <li class="font-weight-bold">Full Name</li>
+                    <li><?php echo $row['fullName'] ?></li>
+                </ul>
+                <ul>
+                    <li class="font-weight-bold">IC/Passport</li>
+                    <li><?php echo $row['ICPassport'] ?></li>
+                </ul>
+                <ul>
+                    <li class="font-weight-bold">Vaccine Batch Number</li>
+                    <li><?php echo $row['batchNo'] ?></li>
+                </ul>
+                <ul>
+                    <li class="font-weight-bold">Batch Expiry Date</li>
+                    <li><?php echo $row['expiryDate'] ?></li>
+                </ul>
+                <ul>
+                    <li class="font-weight-bold">Vaccine Manufacturer</li>
+                    <li><?php echo $row['manufacturer'] ?></li>
+                </ul>
+                <ul>
+                    <li class="font-weight-bold">Vaccine Name</li>
+                    <li><?php echo $row['vaccineName'] ?></li>
+                </ul>
+                <ul>
+                    <li class="font-weight-bold">Vaccination Date</li>
+                    <li><?php echo $row['appointmentDate'] ?></li>
+                </ul>
         </div>
+    <?php }
+    ?>
 
     </div>
     <!-- Reject and confirm buttons -->
