@@ -26,7 +26,7 @@ include 'header.php';
             <li>Pending</li>
           </ul>
         </div>
-        <a href="#" class="btn btn-info my-3">View Appointment</a>
+        <a href="viewAppointment.php?<?php echo $_SESSION['vaccinationID'] ?>" class="btn btn-info my-3">View Appointment</a>
       </div>
     </div>
   </div>
