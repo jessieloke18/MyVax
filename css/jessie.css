@@ -270,6 +270,8 @@ a{
 .success-header{
     background-color:#d1e6e9;
     box-shadow: 0 6px 6px -6px grey;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
 }
 
 .success-title{

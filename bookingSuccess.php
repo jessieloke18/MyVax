@@ -26,7 +26,7 @@ include 'header.php';
             <li>Pending</li>
           </ul>
         </div>
-        <a href="index.php" class="btn btn-info my-3">Return to home</a>
+        <a href="#" class="btn btn-info my-3">View Appointment</a>
       </div>
     </div>
   </div>
