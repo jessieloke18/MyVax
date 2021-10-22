@@ -17,14 +17,14 @@ include 'header.php';
     <div class="list-group mt-5 mb-5" id="hospital-list-group">
         <?php
         if (isset($_POST['search-button'])) {
-            $search = mysqli_real_escape_string($conn, $_POST['search']);
+            $selectedVaccine = mysqli_real_escape_string($conn, $_POST['vaccineList']);
             //join batch and healthcare centre tables to retrieve both centreName and centreAddress
-            $sql = "SELECT DISTINCT healthcarecentre.centreAddress, batch.centreName FROM batch JOIN healthcarecentre ON batch.centreName = healthcareCentre.centreName WHERE vaccineID = '$search'";
+            $sql = "SELECT DISTINCT healthcarecentre.centreAddress, batch.centreName FROM batch JOIN healthcarecentre ON batch.centreName = healthcareCentre.centreName WHERE vaccineID = '$selectedVaccine'";
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
             if ($queryResult > 0) {
                 while ($row = mysqli_fetch_assoc($result)) { 
-                    echo '<a href="selectBatch.php?centreName='.$row["centreName"].'&vaccineID='.$search.'" class="list-group-item list-group-item-action hospital-block">'?>
+                    echo '<a href="selectBatch.php?centreName='.$row["centreName"].'&vaccineID='.$selectedVaccine.'" class="list-group-item list-group-item-action hospital-block">'?>
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1 hospital-name"><?php echo $row["centreName"]; ?></h5>
                             <small> <i class="fas fa-chevron-right"></i>View Batches</small>

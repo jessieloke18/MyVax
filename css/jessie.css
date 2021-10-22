@@ -132,6 +132,11 @@ a{
     height: 40vh;
   
 }
+.custom-select{
+ border-top-left-radius: 50px !important;
+ border-bottom-left-radius: 50px !important;
+ max-width: 75% !important;
+}
 
 #choice-title{
     font-weight: bold;

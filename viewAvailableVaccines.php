@@ -21,41 +21,36 @@ include 'header.php';
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">V00001</th>
-                <td>Pfizer</td>
-                <td>BioNTech</td>
-            </tr>
-            <tr>
-                <th scope="row">V00002</th>
-                <td>AstraZeneca</td>
-                <td>AZ Inc</td>
-
-            </tr>
-            <tr>
-                <th scope="row">V00003</th>
-                <td>Moderna</td>
-                <td>Moderna Inc</td>
-            </tr>
-            <tr>
-                <th scope="row">V00004</th>
-                <td>Sinovac</td>
-                <td>Sinovac Biotech Ltd</td>
-            </tr>
+            <?php
+            $sql = "SELECT* FROM vaccine";
+            $result = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+                <tr>
+                    <th scope="row"><?php echo $row['vaccineID'] ?></th>
+                    <td><?php echo $row['vaccineName'] ?></td>
+                    <td><?php echo $row['manufacturer'] ?></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
-    <!--Search bar-->
+    <!--Choose vaccine-->
     <form method="POST" action="selectCentre.php">
         <div class="row mb-0">
-            <div class="com-sm-11 col-md-7 search-vaccine-section d-flex justify-content-center align-items-center flex-column text-center">
+            <div class="com-sm-11 col-md-7 search-vaccine-section d-flex justify-content-center align-items-center flex-column">
                 <h2 id="choice-title">Made your choice?</h2>
                 <p>Find our which healthcare centres are offering your preferred vaccines</p>
-                <div class="alert alert-warning fade show" role="alert" id="search-alert">
-                    <strong>Oops!</strong> That vaccine does not exist.
-                </div>
-
-                <div class="input-group mb-3 w-75">
-                    <input type="text" class="form-control" placeholder="Enter vaccine ID" name="search" id="enteredVaccine">
+                <div class="input-group d-flex justify-content-center">
+                    <select class="custom-select" name="vaccineList">
+                        <option selected>Select a vaccineID</option>
+                        <?php
+                        $sql = "SELECT* FROM vaccine";
+                        $result = mysqli_query($conn, $sql);
+                        while ($row = mysqli_fetch_array($result)) {
+                        ?>
+                            <option value="<?php echo $row['vaccineID'] ?>"><?php echo $row['vaccineID'] ?></option>
+                        <?php } ?>
+                    </select>
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-info" id="searchVaccine" name="search-button">Search</button>
                     </div>

@@ -35,9 +35,30 @@ if (isset($_POST['appointment-submit'])) {
 
             if ($query_run) {
                 echo "<script>window.location.href='bookingSuccess.php?" . $_SESSION['vaccinationID'] . "'</script>";
+                
+    $to = 'jessieloke18@gmail.com'; 
+    $subject = 'Customer Inquiry';
+    $body = "Bodysdisds";
+    $headers = "From: sender\'s email";
+
+
+    if (mail ($to, $subject, $body, $headers)) 
+    { 
+        echo '<p>Your message has been sent!</p>';
+    } 
+    else 
+    { 
+        echo '<p>Something went wrong, go back and try again!</p>'; 
+    }
             }
         } else {
             echo '<script>alert("Unsuccessful");</script>';
         }
     }
 }
+
+
+   
+
+
+?>
