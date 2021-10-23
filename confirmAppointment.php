@@ -62,38 +62,41 @@ include 'header.php';
     ?>
 
     </div>
-    <!-- Reject and confirm buttons -->
-    <div class="row text-center my-3">
-        <div class="col-sm-6">
-            <button type="button" class="btn btn-danger reject-btn" data-toggle="modal" data-target="#rejectButton">Reject</button>
+    <form action="confirmAppointmentProcess.php" method="POST">
+        <!-- Reject and confirm buttons -->
+        <div class="row text-center my-3">
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-danger reject-btn" data-toggle="modal" data-target="#rejectButton">Reject</button>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-info confirm-btn" name="confirm-appointment">Confirm</button>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <a href="view_vaccination_info.html" class="btn btn-info confirm-btn">Confirm</a>
-        </div>
-    </div>
-    <!-- Modal for entering remarks when reject button is clicked -->
-    <div class="modal fade" id="rejectButton" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rejectButtonLabel">Reject Appointment</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="rejectRemarks">Remarks</label>
-                        <textarea class="form-control" placeholder="The reason is..." id="rejectRemarks" rows="5"></textarea>
+        <!-- Modal for entering remarks when reject button is clicked -->
+        <div class="modal fade" id="rejectButton" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rejectButtonLabel">Reject Appointment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn close-btn" data-dismiss="modal">Close</button>
-                    <a href="view_vaccination_info.html" type="button" class="btn btn-info">Save</a>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="rejectRemarks">Remarks</label>
+                            <textarea class="form-control" placeholder="The reason is..." id="rejectRemarks" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn close-btn" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info" name="reject-appointment">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+
 </div>
 
 

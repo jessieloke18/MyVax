@@ -63,7 +63,7 @@ include 'dbconnect.php';
             if ($row['userType'] == "admin")
               $navItem = '<a class="nav-link" href="administrator_dashboard.php">Dashboard</a>';
             else
-              $navItem = '<a class="nav-link" href="#">Contact Us</a>';
+              $navItem = '<a class="nav-link" href="viewAppointment.php">My Appointments</a>';
             ?>
             <li class="nav-item">
               <?php echo $navItem ?>
