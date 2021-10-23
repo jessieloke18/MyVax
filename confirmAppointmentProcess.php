@@ -14,8 +14,25 @@ if (isset($_POST['confirm-appointment'])) {
     vaccination.vaccinationID = '$vaccinationID'";
     $query_run = mysqli_query($conn, $query);
 
+    //retrieve patient's email
+    $query = "SELECT email 
+    FROM user AS u
+    JOIN vaccination AS va
+    ON u.username = va.username
+    WHERE vaccinationID ='$vaccinationID'";
+    $query_run = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($query_run);
+    $email = $row["email"];
+
     if ($query_run) {
         echo '<script>alert("Successful");</script>';
+        //send automated email to patient
+        $to = "$email";
+        $subject = 'MyVax Appointment- VAX' . "$vaccinationID";
+        $message = "Hello!\n\nYour appointment has been confirmed. Please attend your appointment on the scheduled date\n\nMyVax";
+        $headers = "From: jessieloke18@gmail.com\r\nReply-To: jessieloke18@gmail.com";
+        $mail_sent = @mail($to, $subject, $message, $headers);
+        //echo $mail_sent ? "Mail sent" : "Mail failed";
     } else {
         echo '<script>alert("Unsuccessful");</script>';
     }
