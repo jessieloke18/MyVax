@@ -18,6 +18,12 @@ if (isset($_GET['batchNo'])) {
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
   $_SESSION["batchNo"] = $batchNo;
+  function convertDate($date){
+    $timestamp = strtotime($date);
+    $new_timestamp = date("d-m-Y", $timestamp);
+    $new_date = str_replace('-', '/', $new_timestamp);
+    echo $new_date;
+  }
 }
 ?>
 <div class="container border info-section mt-5">
@@ -28,7 +34,7 @@ if (isset($_GET['batchNo'])) {
     </div>
     <div class="col-md-6">
       <p class="font-weight-bold">Batch Expiry Date:</p>
-      <p id="batchExDate"><?php echo $row['expiryDate']; ?></p>
+      <p id="batchExDate"><?php convertDate($row['expiryDate']) ?></p>
     </div>
   </div>
 
@@ -67,7 +73,7 @@ if (isset($_GET['batchNo'])) {
       ?>
           <tr>
             <th scope="row"><?php echo $row2["vaccinationID"]; ?></th>
-            <td><?php echo $row2["appointmentDate"]; ?></td>
+            <td><?php convertDate($row2['appointmentDate']) ?></td>
             <td><?php echo $row2["status"]; ?></td>
             <td>
               <a href="vaccination_info.php?vaccinationID=<?php echo $row2["vaccinationID"]; ?>"><i class="far fa-eye"></i></a>

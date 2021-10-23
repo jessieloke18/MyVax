@@ -21,6 +21,12 @@ if (isset($_GET['vaccinationID'])) {
     WHERE vaccinationID = '$vaccinationID'";
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
+  function convertDate($date){
+    $timestamp = strtotime($date);
+    $new_timestamp = date("d-m-Y", $timestamp);
+    $new_date = str_replace('-', '/', $new_timestamp);
+    echo $new_date;
+  }
 }
 ?>
 <!-- A section to show vaccination information in a card form -->
@@ -47,7 +53,7 @@ if (isset($_GET['vaccinationID'])) {
       </ul>
       <ul>
         <li class="font-weight-bold">Batch Expiry Date</li>
-        <li><?php echo $row['expiryDate']; ?></li>
+        <li><?php convertDate($row['expiryDate']) ?></li>
       </ul>
       <ul>
         <li class="font-weight-bold">Vaccine Manufacturer</li>
@@ -59,7 +65,7 @@ if (isset($_GET['vaccinationID'])) {
       </ul>
       <ul>
         <li class="font-weight-bold">Vaccination Date</li>
-        <li><?php echo $row['appointmentDate']; ?></li>
+        <li><?php convertDate($row['appointmentDate']) ?></li>
       </ul>
     </div>
 
