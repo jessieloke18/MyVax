@@ -60,7 +60,7 @@ if (isset($_GET['vaccinationID'])) {
         if ($row['status'] == "pending") {
             echo '<a href="confirmAppointment.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Confirm Appointment</button></a>';
         } else if ($row['status'] == "confirmed") {
-            echo '<a href="record_vaccination_administered.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Confirm Appointment</button></a>';
+            echo '<a href="record_vaccination_administered.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Log As Administered</button></a>';
         }
         ?>
         <a href="javascript:history.back()"><button class="btn button-pcvs btn-secondary"><i class="fas fa-chevron-left"></i>Other Vaccinations</button></a>
