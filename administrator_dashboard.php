@@ -50,7 +50,7 @@ $_SESSION["centreName"] = $centreName;
         <div class="col-6 col-lg-3 mb-3">
             <a href="#" class="card-links">
                 <div class="card function-card h-100 rounded-0">
-                    <img src="images/editprofile.jpg" class="card-img-top" alt="Edit Profile">
+                    <img src="images/editprofile.jpg" class="card-img-top" alt="Manage Centre">
                     <div class="card-body">
                         <p class="card-text">
                             Manage Centre
@@ -63,7 +63,7 @@ $_SESSION["centreName"] = $centreName;
         <div class="col-6 col-lg-3 mb-3">
             <a href="#" class="card-links">
                 <div class="card function-card h-100 rounded-0">
-                    <img src="images/managepatients.jpg" class="card-img-top" alt="Logout">
+                    <img src="images/managepatients.jpg" class="card-img-top" alt="Manage Patients">
                     <div class="card-body">
                         <p class="card-text">
                             Manage Patients
