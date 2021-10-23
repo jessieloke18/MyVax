@@ -82,7 +82,7 @@ if (isset($_GET['batchNo'])) {
 
 <!-- A button to go back to dashboard -->
 <div class="container d-flex justify-content-center mb-5">
-  <a href="javascript:history.back()"><button class="btn button-pcvs btn-info"><i class="fas fa-chevron-left"></i>Other Batches</button></a>
+  <a href="view_vaccine_batch_info.php"><button class="btn button-pcvs btn-info"><i class="fas fa-chevron-left"></i>Other Batches</button></a>
 </div>
 
 <!--Footer-->

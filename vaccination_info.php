@@ -4,6 +4,9 @@ session_start();
 include 'dbconnect.php';
 include 'header.php';
 ?>
+<title>Vaccination <?php echo $vaccinationID; ?></title>
+<link rel="stylesheet" href="css/zhaoyao.css">
+<script src="https://kit.fontawesome.com/2310cb5c3b.js" crossorigin="anonymous"></script>
 
 <?php
 if (isset($_GET['vaccinationID'])) {
@@ -19,9 +22,6 @@ if (isset($_GET['vaccinationID'])) {
     $row = mysqli_fetch_assoc($result);
 }
 ?>
-<title>Vaccination <?php echo $vaccinationID; ?></title>
-<link rel="stylesheet" href="css/zhaoyao.css">
-<script src="https://kit.fontawesome.com/2310cb5c3b.js" crossorigin="anonymous"></script>
 
 <h2 class="mt-5 font-weight-bold">Vaccination <?php echo $vaccinationID; ?></h2>
 
@@ -61,6 +61,8 @@ if (isset($_GET['vaccinationID'])) {
             echo '<a href="confirmAppointment.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Confirm Appointment</button></a>';
         } else if ($row['status'] == "confirmed") {
             echo '<a href="record_vaccination_administered.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Log As Administered</button></a>';
+        } else {
+            echo '<button class="btn button-pcvs btn-warning" style="color: white;" type="button" disabled>Administered</button>';
         }
         ?>
         <a href="javascript:history.back()"><button class="btn button-pcvs btn-secondary"><i class="fas fa-chevron-left"></i>Other Vaccinations</button></a>

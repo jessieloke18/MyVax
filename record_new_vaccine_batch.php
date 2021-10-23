@@ -34,10 +34,16 @@ include 'header.php';
                 <div class="form-group col-md-6">
                     <label for="inputBatchNo">Batch Number</label>
                     <input type="text" class="form-control" id="inputBatchNo" placeholder="e.g. B00001" name="batchNo" required>
+                    <div>
+                      <small class='form-text text-muted'>Batch number must starts with "B".</small>
+                    </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputNumDoses">Quantity of Doses</label>
                     <input type="number" class="form-control" id="inputNumDoses" placeholder="e.g. 100" name="numDoses" required>
+                    <div>
+                      <small id='vacMaker' class='form-text text-muted'>Quantity must be a positive number.</small>
+                    </div>
                 </div>
             </div>
 
