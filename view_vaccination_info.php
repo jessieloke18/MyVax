@@ -8,9 +8,6 @@ include 'header.php';
 <link rel="stylesheet" href="css/zhaoyao.css">
 <script src="https://kit.fontawesome.com/2310cb5c3b.js" crossorigin="anonymous"></script>
 
-<h2 class="mt-5 font-weight-bold">Vaccinations In This Batch</h2>
-
-<!-- A section to show information about current batch -->
 <?php
 if (isset($_GET['batchNo'])) {
   $batchNo = mysqli_real_escape_string($conn, $_GET['batchNo']);
@@ -26,6 +23,10 @@ if (isset($_GET['batchNo'])) {
   }
 }
 ?>
+
+<h2 class="mt-5 font-weight-bold">Batch <?php echo $batchNo; ?></h2>
+
+<!-- A section to show information about current batch -->
 <div class="container border info-section mt-5">
   <div class="row">
     <div class="col-md-6">
