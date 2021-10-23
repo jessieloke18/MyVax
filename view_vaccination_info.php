@@ -42,7 +42,6 @@ if (isset($_GET['batchNo'])) {
       <p id="administered"><?php echo $row['quantityAdministered']; ?></p>
     </div>
   </div>
-
 </div>
 
 <!-- A table to show vaccinations inside current batch -->
@@ -53,7 +52,7 @@ if (isset($_GET['batchNo'])) {
         <th scope="col">VaccinationID</th>
         <th scope="col">Appointment Date</th>
         <th scope="col">Status</th>
-        <th scope="col">Actions</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -71,109 +70,20 @@ if (isset($_GET['batchNo'])) {
             <td><?php echo $row2["appointmentDate"]; ?></td>
             <td><?php echo $row2["status"]; ?></td>
             <td>
-              <a href="confirmAppointment.php?vaccinationID=<?php echo $row2["vaccinationID"]; ?>"><i class="fas fa-calendar-check"></i></a>
-              <a href="record_vaccination_administered.php?vaccinationID=<?php echo $row2["vaccinationID"]; ?>"><i class="fas fa-file-signature"></i></a>
+              <a href="vaccination_info.php?vaccinationID=<?php echo $row2["vaccinationID"]; ?>"><i class="far fa-eye"></i></a>
             </td>
           </tr>
       <?php } while ($row2 = mysqli_fetch_assoc($result2));
       }
       ?>
-
-      <!-- <tr>
-        <th scope="row">VAX00001</th>
-        <td>15/10/2021</td>
-        <td>Pending</td>
-        <td>
-          <a href="confirmAppointment.html"><i class="fas fa-calendar-check"></i></a>
-          <a href="record_vaccination_administered.html"><i class="fas fa-file-signature"></i></a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">VAX00002</th>
-        <td>24/11/2021</td>
-        <td>Pending</td>
-        <td>
-          <a href="confirmAppointment.html"><i class="fas fa-calendar-check"></i></a>
-          <a href="record_vaccination_administered.html"><i class="fas fa-file-signature"></i></a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">VAX00003</th>
-        <td>13/04/2021</td>
-        <td>Confirmed</td>
-        <td>
-          <a href="confirmAppointment.html"><i class="fas fa-calendar-check"></i></a>
-          <a href="record_vaccination_administered.html"><i class="fas fa-file-signature"></i></a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">VAX00004</th>
-        <td>02/01/2021</td>
-        <td>Confirmed</td>
-        <td class="d-flex justify-content-center">
-          <a href="confirmAppointment.html"><i class="fas fa-calendar-check"></i></a>
-          <a href="record_vaccination_administered.html"><i class="fas fa-file-signature"></i></a>
-        </td>
-      </tr> -->
     </tbody>
   </table>
 </div>
 
-<!-- A selection box to select a vaccination and view details -->
-<div class="container combo-section">
-  <form>
-    <div class="form-group row" style="margin:0 auto;">
-      <label for="selectedVax" class="col-form-label col-sm-6">VaccinationID</label>
-      <div class="col-sm-6">
-        <select id="selectedVax" class="form-control" onchange="changeVax()" required>
-          <option value="">Select a vaccineID to view details</option>
-          <option value="1">VAX00001</option>
-          <option value="2">VAX00002</option>
-          <option value="3">VAX00003</option>
-          <option value="4">VAX00004</option>
-        </select>
-      </div>
-    </div>
-
-
-  </form>
-</div>
-
-<!-- A section to show seleted vaccination's information -->
-<div class="container border info-section">
-  <div class="row">
-    <div class="col-md-6">
-      <p class="font-weight-bold">Patient Name:</p>
-      <p id="pname"></p>
-    </div>
-    <div class="col-md-6">
-      <p class="font-weight-bold">Patient IC/Passport:</p>
-      <p id="vicpass"></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <p class="font-weight-bold">Batch Number:</p>
-      <p id="vbatchno"></p>
-    </div>
-    <div class="col-md-6">
-      <p class="font-weight-bold">Vaccine Name:</p>
-      <p id="vname"></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <p class="font-weight-bold">Status:</p>
-      <p id="vstatus"></p>
-    </div>
-  </div>
-</div>
-
 <!-- A button to go back to dashboard -->
-<div class="container d-flex justify-content-center mt-5 mb-5">
-  <a href="administrator_dashboard.php"><button class="btn button-pcvs btn-info">Back To Dashboard</button></a>
+<div class="container d-flex justify-content-center mb-5">
+  <a href="javascript:history.back()"><button class="btn button-pcvs btn-info"><i class="fas fa-chevron-left"></i>Other Batches</button></a>
 </div>
-
 
 <!--Footer-->
 <?php include 'footer.php'; ?>

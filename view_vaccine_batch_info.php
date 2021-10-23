@@ -7,7 +7,6 @@ include 'header.php';
 <title>View Vaccine Batch Info</title>
 <link rel="stylesheet" href="css/zhaoyao.css">
 
-
 <h2 class="mt-5 font-weight-bold">Available Vaccine Batches</h2>
 <!-- Table to show the batches in the current healthcare centre -->
 <div class="container table-section mt-5">
@@ -40,13 +39,8 @@ include 'header.php';
 </div>
 
 <div class="container d-flex justify-content-center mb-5 mt-5">
-  <a href="administrator_dashboard.php"><button class="btn button-pcvs btn-info">Back To Dashboard</button></a>
-
+  <a href="administrator_dashboard.php"><button class="btn button-pcvs btn-info"><i class="fas fa-chevron-left"></i>Back To Dashboard</button></a>
 </div>
-
-
-
-
 
 <!--Footer-->
 <?php include 'footer.php'; ?>
