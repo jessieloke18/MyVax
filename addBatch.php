@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
         $query_run = mysqli_multi_query($conn, $sql);
         if ($query_run) {
-            echo '<script>alert("Successful");</script>';
+            echo '<script>alert("Batch is added successfully.");</script>';
             echo "<script>window.location.href='administrator_dashboard.php';</script>";
         } else {
             echo '<script>alert("Unsuccessful");</script>';
