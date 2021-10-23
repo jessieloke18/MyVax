@@ -23,17 +23,18 @@ include 'header.php';
                 <th scope="col">Vaccination Date</th>
                 <th scope="col">Vaccination ID</th>
                 <th scope="col">Status</th>
+                <th scope="col">Remarks</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            $vaccinationID = $_SESSION['vaccinationID'];
-            $sql = "SELECT vaccineName, hc.centreName, b.batchNo, expiryDate, appointmentDate, vaccinationID, status
+            $username = $_SESSION['username'];
+            $sql = "SELECT vaccineName, hc.centreName, b.batchNo, expiryDate, appointmentDate, vaccinationID, status, remarks
             FROM healthcarecentre AS hc
             JOIN batch AS b ON hc.centreName = b.centreName
             JOIN vaccine AS v ON v.vaccineID = b.vaccineID
             JOIN vaccination AS va ON va.batchNo = b.batchNo
-            WHERE vaccinationID = '$vaccinationID'"; //dummy value
+            WHERE username = '$username'"; //dummy value
 
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) {
@@ -46,6 +47,7 @@ include 'header.php';
                     <td><?php echo $row['appointmentDate'] ?></td>
                     <td><?php echo 'VAX'.$row['vaccinationID'] ?></td>
                     <td><?php echo $row['status'] ?></td>
+                    <td><?php echo $row['remarks'] ?></td>
                 </tr>
             <?php } ?>
         </tbody>
