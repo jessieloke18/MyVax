@@ -84,7 +84,7 @@ include 'header.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="rejectRemarks">Remarks</label>
-                            <textarea class="form-control" placeholder="The reason is..." id="rejectRemarks" rows="5"></textarea>
+                            <textarea class="form-control" placeholder="The reason is..." name="rejectRemarks" id="rejectRemarks" rows="5"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
