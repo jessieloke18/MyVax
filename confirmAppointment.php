@@ -25,7 +25,7 @@ include 'header.php';
                 JOIN vaccination AS va ON va.username = p.username
                 JOIN batch AS b ON b.batchNo = va.batchNo
                 JOIN vaccine AS v ON v.vaccineID = b.vaccineID
-                WHERE vaccinationID = '00074'"; //dummy value
+                WHERE vaccinationID = '00073'"; //dummy value
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
@@ -57,10 +57,9 @@ include 'header.php';
                     <li class="font-weight-bold">Vaccination Date</li>
                     <li><?php echo $row['appointmentDate'] ?></li>
                 </ul>
+            <?php }
+            ?>
         </div>
-    <?php }
-    ?>
-
     </div>
     <form action="confirmAppointmentProcess.php" method="POST">
         <!-- Reject and confirm buttons -->
@@ -96,7 +95,6 @@ include 'header.php';
             </div>
         </div>
     </form>
-
 </div>
 
 
