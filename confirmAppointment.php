@@ -68,7 +68,27 @@ include 'header.php';
                 <button type="button" class="btn btn-danger reject-btn" data-toggle="modal" data-target="#rejectButton">Reject</button>
             </div>
             <div class="col-sm-6">
-                <button type="submit" class="btn btn-info confirm-btn" name="confirm-appointment">Confirm</button>
+                <button type="button" class="btn btn-info confirm-btn" data-toggle="modal" data-target="#confirmButton">Confirm</button>
+            </div>
+        </div>
+        <!-- Modal for confirming the appointment when confirm button is clicked -->
+        <div class="modal fade" id="confirmButton" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Confirm Appointment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        You are about to confirm this patient's appointment
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-info" name="confirm-appointment">Confirm</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Modal for entering remarks when reject button is clicked -->
@@ -76,20 +96,20 @@ include 'header.php';
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="rejectButtonLabel">Reject Appointment</h5>
+                        <h5 class="modal-title font-weight-bold" id="rejectButtonLabel">Reject Appointment</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="rejectRemarks">Remarks</label>
-                            <textarea class="form-control" placeholder="The reason is..." name="rejectRemarks" id="rejectRemarks" rows="5"></textarea>
+                            <label for="rejectRemarks">Please provide remarks</label>
+                            <textarea class="form-control" placeholder="The reason is..." name="rejectRemarks" id="rejectRemarks" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn close-btn" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info" name="reject-appointment">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger" name="reject-appointment">Reject</button>
                     </div>
                 </div>
             </div>
