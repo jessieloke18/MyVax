@@ -31,7 +31,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
         ?>
-                <div class="col-md-6 pt-5">
+                <div class="col-md-5 pt-5">
                     <ul>
                         <li class="font-weight-bold">Vaccine Name</li>
                         <li> <?php echo $_SESSION["vaccineName"] ?></li>
@@ -61,8 +61,8 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
         }
         ?>
 
-        <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
-            <form action="selectDateProcess.php" method="POST" id="appointmentForm">
+        <div class="col-md-7 d-flex justify-content-center">
+            <form action="selectDateProcess.php" method="POST" id="appointmentForm" class="d-flex justify-content-center align-items-center flex-column">
                 <p class="text-center">Please select an upcoming date for your vaccination appointment</p>
                 <div class="input-group mb-3 w-75">
                     <input data-date-format="dd/mm/yyyy" id="datepicker" name="appointmentDate" class="form-control">
