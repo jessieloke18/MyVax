@@ -43,8 +43,8 @@ include 'header.php';
                     <th scope="row"><?php echo $row['vaccineName'] ?></th>
                     <td><?php echo $row['centreName'] ?></td>
                     <td><?php echo $row['batchNo'] ?></td>
-                    <td><?php echo $row['expiryDate'] ?></td>
-                    <td><?php echo $row['appointmentDate'] ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($row["expiryDate"]))?></td>
+                    <td><?php echo date("d/m/Y", strtotime($row["appointmentDate"]))?></td>
                     <td><?php echo 'VAX'.$row['vaccinationID'] ?></td>
                     <td><?php echo $row['status'] ?></td>
                     <td><?php echo $row['remarks'] ?></td>

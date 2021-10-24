@@ -30,8 +30,6 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
             $sql = "SELECT* FROM batch where batchNo ='$batchNo'";
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
-                //changing the format of the retrieved date
-                $dateFormatted = date("d/m/Y", strtotime($row["expiryDate"]));
         ?>
                 <div class="col-md-6 pt-5">
                     <ul>
@@ -48,7 +46,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Batch Expiry Date</li>
-                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo $dateFormatted; ?></li>
+                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo date("d/m/Y", strtotime($row["expiryDate"]))?></li>
                         <!--saving exp date in a session-->
                         <?php
                         $_SESSION['expiryDate'] = $row["expiryDate"];

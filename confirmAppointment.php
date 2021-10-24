@@ -43,7 +43,8 @@ include 'header.php';
                 </ul>
                 <ul>
                     <li class="font-weight-bold">Batch Expiry Date</li>
-                    <li><?php echo $row['expiryDate'] ?></li>
+                    <li><?php echo date("d/m/Y", strtotime($row["expiryDate"]))?></li>
+                    
                 </ul>
                 <ul>
                     <li class="font-weight-bold">Vaccine Manufacturer</li>
