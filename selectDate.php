@@ -25,7 +25,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
     <div class="row">
         <?php
         if (isset($_GET['batchNo'])) {
-            $batchNo = mysqli_real_escape_string($conn, $_GET["batchNo"]);
+            $batchNo = $_GET["batchNo"];
             $_SESSION['batchNo'] = $batchNo;
             $sql = "SELECT* FROM batch where batchNo ='$batchNo'";
             $result = mysqli_query($conn, $sql);

@@ -23,8 +23,8 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
     <div class="row mt-5" id="cardBlocks">
         <?php
         if (isset($_GET['centreName'])) {
-            $centreName = mysqli_real_escape_string($conn, $_GET['centreName']);
-            $vaccineID = mysqli_real_escape_string($conn, $_GET['vaccineID']);
+            $centreName = $_GET['centreName'];
+            $vaccineID = $_GET['vaccineID'];
             $sql = "SELECT* FROM batch WHERE centreName ='$centreName' AND vaccineID ='$vaccineID'";
             $result = mysqli_query($conn, $sql);
             $_SESSION["centreName"] = $centreName;
