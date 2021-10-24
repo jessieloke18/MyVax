@@ -22,35 +22,43 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
     </div>
     <div class="row mt-5" id="cardBlocks">
         <?php
+        $currentDate = date('Y-m-d');
         if (isset($_GET['centreName'])) {
             $centreName = $_GET['centreName'];
             $vaccineID = $_GET['vaccineID'];
-            $sql = "SELECT* FROM batch WHERE centreName ='$centreName' AND vaccineID ='$vaccineID'";
+            $sql = "SELECT* FROM batch WHERE centreName ='$centreName' AND vaccineID ='$vaccineID' AND quantityAvailable>0 AND expiryDate>'$currentDate'";
             $result = mysqli_query($conn, $sql);
             $_SESSION["centreName"] = $centreName;
-            while ($row = mysqli_fetch_assoc($result)) {
+            $queryResult = mysqli_num_rows($result);
+            if ($queryResult > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
         ?>
-                <div class="col-md-4">
-                    <!--If username session is not set-->
-                    <?php
-                    if (!isset($_SESSION['username'])) {
-                        echo '<div class="card batch-card" onclick="signInAlert()">';
-                        echo '<a href="#">';
-                    } else { ?>
-                        <div class="card batch-card">
-                            <a href="selectDate.php?batchNo=<?php echo $row["batchNo"]; ?>" class="batchNo">
-                            <?php } ?>
-                            <div class="card-body text-center">
-                                <i class="fas fa-syringe"></i>
-                                <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
+                    <div class="col-md-4">
+                        <!--If username session is not set-->
+                        <?php
+                        if (!isset($_SESSION['username'])) {
+                            echo '<div class="card batch-card" onclick="signInAlert()">';
+                            echo '<a href="#">';
+                        } else { ?>
+                            <div class="card batch-card">
+                                <a href="selectDate.php?batchNo=<?php echo $row["batchNo"]; ?>" class="batchNo">
+                                <?php } ?>
+                                <div class="card-body text-center">
+                                    <i class="fas fa-syringe"></i>
+                                    <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Schedule appointment</div>
+                                </div>
+                                </a>
                             </div>
-                            <div class="overlay">
-                                <div class="text">Schedule appointment</div>
-                            </div>
-                            </a>
-                        </div>
-                </div>
+                    </div>
         <?php }
+            } else {
+                echo '<div class="alert alert-info" role="alert">';
+                echo "There are no available batches from this healthcare centre at the moment!";
+                echo '</div>';
+            }
         }
         ?>
     </div>
@@ -60,11 +68,11 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
     </div>
 
 </div>
-<?php 
-  $sql = "SELECT* FROM vaccine WHERE vaccineID = '$vaccineID'";
-  $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($result);
-  $_SESSION["vaccineName"] = $row["vaccineName"];
+<?php
+$sql = "SELECT* FROM vaccine WHERE vaccineID = '$vaccineID'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$_SESSION["vaccineName"] = $row["vaccineName"];
 ?>
 <!--Footer-->
 <?php include 'footer.php'; ?>
