@@ -56,7 +56,7 @@ include 'header.php';
                 </ul>
                 <ul>
                     <li class="font-weight-bold">Vaccination Date</li>
-                    <li><?php echo $row['appointmentDate'] ?></li>
+                    <li><?php echo date("d/m/Y", strtotime($row["appointmentDate"]))?></li>
                 </ul>
             <?php }
             ?>

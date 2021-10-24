@@ -14,8 +14,8 @@ include 'header.php';
       </div>
       <div class="card-body">
         <h1 class="card-title mt-5 success-title">Success</h1>
-        <p class="card-text mb-4">The appointment was successfully booked. An email has been sent to your registered
-          email address</p>
+        <p class="card-text mb-4">The appointment was successfully booked. Please wait 1-3 working days for an email regarding the status of your appointment
+        </p>
         <div class="d-flex flex-column">
           <ul>
             <li class="font-weight-bold">Vaccination ID</li>
