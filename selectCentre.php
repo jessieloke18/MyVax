@@ -17,9 +17,12 @@ include 'header.php';
     <div class="list-group mt-5 mb-5" id="hospital-list-group">
         <?php
         if (isset($_POST['search-button'])) {
-            $selectedVaccine = mysqli_real_escape_string($conn, $_POST['vaccineList']);
+            $selectedVaccine = $_POST['vaccineList'];
             //join batch and healthcare centre tables to retrieve both centreName and centreAddress
-            $sql = "SELECT DISTINCT healthcarecentre.centreAddress, batch.centreName FROM batch JOIN healthcarecentre ON batch.centreName = healthcareCentre.centreName WHERE vaccineID = '$selectedVaccine'";
+            $sql = "SELECT DISTINCT hc.centreAddress, b.centreName 
+            FROM batch AS b
+            JOIN healthcarecentre AS hc ON b.centreName = hc.centreName 
+            WHERE vaccineID = '$selectedVaccine'";
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
             if ($queryResult > 0) {
@@ -33,12 +36,18 @@ include 'header.php';
                     </a>
         <?php
                 }
-            } else {
+            } else if($_POST['vaccineList']=="notSelected"){
 
                 echo '<div class="alert alert-info" role="alert">';
-                echo "There are no results matching your search!";
+                echo "Please select a vaccine!";
                 echo '</div>';
             }
+            else{
+                echo '<div class="alert alert-info" role="alert">';
+                echo "There are currently no healthcare centres offering this vaccine!";
+                echo '</div>';
+            }
+
         }
         ?>
     </div>

@@ -42,7 +42,7 @@ include 'header.php';
                 <p>Find our which healthcare centres are offering your preferred vaccines</p>
                 <div class="input-group d-flex justify-content-center">
                     <select class="custom-select" name="vaccineList">
-                        <option selected>Select a vaccineID</option>
+                        <option value='notSelected' selected>Select a vaccineID</option>
                         <?php
                         $sql = "SELECT* FROM vaccine";
                         $result = mysqli_query($conn, $sql);
