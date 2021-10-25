@@ -34,11 +34,12 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
                 while ($row = mysqli_fetch_assoc($result)) {
         ?>
                     <div class="col-md-4">
-                        <!--If username session is not set-->
+                        <!--Call the signInAlert() function if patient is not logged in and don't allow them to select a batch-->
                         <?php
                         if (!isset($_SESSION['username'])) {
                             echo '<div class="card batch-card" onclick="signInAlert()">';
                             echo '<a href="#">';
+                            //if patient is logged in, they can select a batch
                         } else { ?>
                             <div class="card batch-card">
                                 <a href="selectDate.php?batchNo=<?php echo $row["batchNo"]; ?>" class="batchNo">
@@ -54,6 +55,7 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
                             </div>
                     </div>
         <?php }
+                //if the healthcare centre does not have available batches
             } else {
                 echo '<div class="alert alert-info" role="alert">';
                 echo "There are no available batches from this healthcare centre at the moment!";

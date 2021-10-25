@@ -16,7 +16,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
 <div class="container batch-info">
     <!--If errorDate session is set, display error message-->
     <?php
-    if(isset($_SESSION['errorDate'])) {
+    if (isset($_SESSION['errorDate'])) {
     ?>
         <div class="alert alert-danger alert" role="alert" id="date-alert">
             <strong>Oops!</strong> <?php echo $_SESSION['errorDate'] ?>
@@ -46,7 +46,8 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
                     </ul>
                     <ul>
                         <li class="font-weight-bold">Batch Expiry Date</li>
-                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>"><?php echo date("d/m/Y", strtotime($row["expiryDate"]))?></li>
+                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>">
+                            <?php echo date("d/m/Y", strtotime($row["expiryDate"])) ?></li>
                         <!--saving exp date in a session-->
                         <?php
                         $_SESSION['expiryDate'] = $row["expiryDate"];
@@ -100,7 +101,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
 </div>
 
 <!--Footer-->
-<?php include 'footer.php'; 
+<?php include 'footer.php';
 unset($_SESSION['errorDate']);
 ?>
 <script src="js/scripts.js"></script>
