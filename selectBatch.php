@@ -57,7 +57,7 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
         <?php }
                 //if the healthcare centre does not have available batches
             } else {
-                echo '<div class="alert alert-info" role="alert">';
+                echo '<div class="alert alert-danger" role="alert">';
                 echo "There are no available batches from this healthcare centre at the moment!";
                 echo '</div>';
             }
@@ -65,7 +65,7 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
         ?>
     </div>
     <div class="row d-flex justify-content-center">
-        <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More healthcare
+        <a href="javascript:history.back()" class="btn btn-info mt-4"><i class="fas fa-chevron-left"></i>More healthcare
             centres</a>
     </div>
 

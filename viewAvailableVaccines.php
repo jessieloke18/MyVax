@@ -17,7 +17,7 @@ include 'header.php';
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Vaccine Name</th>
-                <th scope="col">Manufacurer</th>
+                <th scope="col">Manufacturer</th>
             </tr>
         </thead>
         <tbody>
