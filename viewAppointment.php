@@ -12,8 +12,8 @@ include 'header.php';
 </div>
 <!--Vaccine table-->
 <div class="container available-vac-container">
-    <h3 class="mt-5">First Dose</h3>
-    <table class="table table-striped mb-5">
+    <h3 class="mt-5 first-dose">First Dose</h3>
+    <table class="table table-striped mb-5 table-responsive-md">
         <thead>
             <tr>
                 <th scope="col">Vaccine Name</th>
@@ -34,7 +34,7 @@ include 'header.php';
             JOIN batch AS b ON hc.centreName = b.centreName
             JOIN vaccine AS v ON v.vaccineID = b.vaccineID
             JOIN vaccination AS va ON va.batchNo = b.batchNo
-            WHERE username = '$username'"; //dummy value
+            WHERE username = '$username'";
 
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) {

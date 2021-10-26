@@ -406,7 +406,7 @@ input{
     font-size: 25px;
 }
 
-.available-vaccine-banner, .healthcare-centre-banner, .batch-banner, .vaccine-batch-banner{
+.available-vaccine-banner, .healthcare-centre-banner, .batch-banner, .vaccine-batch-banner, .my-appointments-banner{
     height: 30vh;
 }
 
@@ -506,6 +506,12 @@ input{
 .login-container{
     padding: 5%;
     width: 85%;
+}
+
+/*my appointments*/
+
+.first-dose{
+    font-size: 20px !important;
 }
 
 }
