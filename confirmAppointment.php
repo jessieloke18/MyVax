@@ -105,7 +105,7 @@ include 'header.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="rejectRemarks">Please provide remarks</label>
-                            <textarea class="form-control" placeholder="The reason is..." name="rejectRemarks" id="rejectRemarks" rows="3"></textarea>
+                            <textarea class="form-control" placeholder="The reason is..." name="rejectRemarks" id="rejectRemarks" rows="3" required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
