@@ -73,9 +73,7 @@ include 'dbconnect.php';
               </a>
               <form action="logout.php" method="POST">
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Edit Profile</a>
                   <input type="submit" class="dropdown-item" name="logout" value="Logout">
-
                 </div>
               </form>
 
