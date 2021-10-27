@@ -15,7 +15,8 @@ if (isset($_GET['batchNo'])) {
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
   $_SESSION["batchNo"] = $batchNo;
-  function convertDate($date){
+  function convertDate($date)
+  {
     $timestamp = strtotime($date);
     $new_timestamp = date("d-m-Y", $timestamp);
     $new_date = str_replace('-', '/', $new_timestamp);
@@ -52,11 +53,12 @@ if (isset($_GET['batchNo'])) {
 </div>
 
 <div class="container mt-5" style="width:80%; padding: 0px 20px;">
-<div class="row">
-<div class="col-md-4"><i class="fas fa-calendar-check" style="margin-right:0px;"></i> Confirm Appointment</div>
-<div class="col-md-4"><i class="fas fa-file-signature" style="margin-right:0px;"></i> Log As Administered</div>
-<div class="col-md-4"><i class="fas fa-eye" style="margin-right:0px;"></i> View Details</div>
-</div>
+  <div class="row">
+    <div class="col-md-3">Action Column: </div>
+    <div class="col-md-3"><i class="fas fa-calendar-check" style="margin-right:0px;"></i> Confirm Appointment</div>
+    <div class="col-md-3"><i class="fas fa-file-signature" style="margin-right:0px;"></i> Log As Administered</div>
+    <div class="col-md-3"><i class="fas fa-eye" style="margin-right:0px;"></i> View Details</div>
+  </div>
 </div>
 <!-- A table to show vaccinations inside current batch -->
 <div class="container table-section">
@@ -84,16 +86,16 @@ if (isset($_GET['batchNo'])) {
             <td><?php convertDate($row2['appointmentDate']) ?></td>
             <td><?php echo $row2['status']; ?></td>
             <td>
-              <?php 
-                if ($row2['status'] == "pending"){
-                  echo '<a href="confirmAppointment.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-calendar-check"></i></a>';
-                } else if ($row2['status'] == "confirmed"){
-                  echo '<a href="record_vaccination_administered.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-file-signature"></i></a>';
-                } else if ($row2['status'] == "administered"){
-                  echo '<a href="vaccination_info.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-eye"></i></a>';
-                } else {
-                  echo "error";
-                }
+              <?php
+              if ($row2['status'] == "pending") {
+                echo '<a href="confirmAppointment.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-calendar-check"></i></a>';
+              } else if ($row2['status'] == "confirmed") {
+                echo '<a href="record_vaccination_administered.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-file-signature"></i></a>';
+              } else if ($row2['status'] == "administered") {
+                echo '<a href="vaccination_info.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-eye"></i></a>';
+              } else {
+                echo "error";
+              }
               ?>
             </td>
           </tr>
