@@ -70,6 +70,10 @@ a:hover{
     
 }
 
+.fas{
+    margin-right: 0px !important;
+}
+
 
 /*Function Area*/
 #admin-functions{

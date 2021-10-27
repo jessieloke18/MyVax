@@ -51,8 +51,15 @@ if (isset($_GET['batchNo'])) {
   </div>
 </div>
 
+<div class="container mt-5" style="width:80%; padding: 0px 20px;">
+<div class="row">
+<div class="col-md-4"><i class="fas fa-calendar-check" style="margin-right:0px;"></i> Confirm Appointment</div>
+<div class="col-md-4"><i class="fas fa-file-signature" style="margin-right:0px;"></i> Log As Administered</div>
+<div class="col-md-4"><i class="fas fa-eye" style="margin-right:0px;"></i> View Details</div>
+</div>
+</div>
 <!-- A table to show vaccinations inside current batch -->
-<div class="container table-section mt-5">
+<div class="container table-section">
   <table class="table table-bordered">
     <thead class="thead-light">
       <tr>
@@ -75,9 +82,19 @@ if (isset($_GET['batchNo'])) {
           <tr>
             <th scope="row"><?php echo $row2["vaccinationID"]; ?></th>
             <td><?php convertDate($row2['appointmentDate']) ?></td>
-            <td><?php echo $row2["status"]; ?></td>
+            <td><?php echo $row2['status']; ?></td>
             <td>
-              <a href="vaccination_info.php?vaccinationID=<?php echo $row2["vaccinationID"]; ?>"><i class="far fa-eye"></i></a>
+              <?php 
+                if ($row2['status'] == "pending"){
+                  echo '<a href="confirmAppointment.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-calendar-check"></i></a>';
+                } else if ($row2['status'] == "confirmed"){
+                  echo '<a href="record_vaccination_administered.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-file-signature"></i></a>';
+                } else if ($row2['status'] == "administered"){
+                  echo '<a href="vaccination_info.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-eye"></i></a>';
+                } else {
+                  echo "error";
+                }
+              ?>
             </td>
           </tr>
       <?php } while ($row2 = mysqli_fetch_assoc($result2));
