@@ -197,11 +197,11 @@ a{
   }
 
   .batch-card:hover .card-body {
-    opacity: 0.4;
+    opacity: 0.2;
   }
   
   .batch-card:hover .overlay {
-    opacity: 0.8;
+    opacity: 0.5;
   }
 
   .text {
