@@ -56,24 +56,30 @@ a:hover{
     color: #17A2B8;
 }
 
-.fa-syringe, .fa-list-alt, .fa-check-circle, .fa-users{
+.fa-syringe, .fa-users{
     color:white;
+    padding: 0px;
+}
+
+.fa-list-alt, .fa-check-circle{
+    color: white;
 }
 
 .fa-file-signature {
     color: #FFC300;
-    
 }
 
 .fa-calendar-check {
     color: #239B56;
-    
 }
 
 .fas{
-    margin-right: 0px !important;
+    margin-right: 0px;
 }
 
+.fa-chevron-left{
+    margin-right: 10px;
+}
 
 /*Function Area*/
 #admin-functions{
@@ -102,25 +108,12 @@ a:hover{
     border: none;
     margin-bottom: 20px;
     box-shadow: 11px 13px 22px -6px rgba(0,0,0,0.57);
-
 }
 
 .function-card:hover{
     opacity: 0.9;
 }
 
-#covid-stats{
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:10px 0px;
-}
-
- #jumbotron-color{
-    background-color:#17A2B8; 
-    color:white;
- }
 
  /*Record New Vaccine Batch*/
 .batch-form{
@@ -135,8 +128,6 @@ a:hover{
     justify-content:center;
     padding:10px;
 }
-
-
 
 .button-pcvs{
     margin: 20px;
@@ -201,7 +192,6 @@ li{
 
 .confirm-btn, .reject-btn{
     width: 60%;
-    
 }
 
 textarea{
