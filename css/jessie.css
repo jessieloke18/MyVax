@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body{
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 .btn, .form-control{
@@ -244,12 +245,8 @@ a{
 } 
 /*selectDate*/
 .batch-info{
-    margin-top: 50px;
-    margin-bottom: 50px;
     padding: 30px 30px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    border-radius: 15px !important;
-  
 }
 
 .batch-banner{
@@ -263,16 +260,15 @@ a{
 }
 
 /*after booking*/
+
+.booking-success-card{
+    border-radius: 0 !important;
+}
+
 .fa-check-circle{
     color: #d1e6e9;
     font-size: 80px;
     margin-top: 55px;
-}
-
-.success-header{
-
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important;
 }
 
 .success-title{

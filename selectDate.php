@@ -13,7 +13,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
     <h1 class="banner-title">Schedule Appointment</h1>
 </div>
 <!--Batch info-->
-<div class="container batch-info">
+<div class="container batch-info mt-5 mb-4">
     <!--If errorDate session is set, display error message-->
     <?php
     if (isset($_SESSION['errorDate'])) {
@@ -95,9 +95,10 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
         </div>
 
     </div>
-    <div class="row d-flex justify-content-center">
-        <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More batches</a>
-    </div>
+
+</div>
+<div class="row d-flex justify-content-center mb-5">
+    <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More batches</a>
 </div>
 
 <!--Footer-->
