@@ -9,12 +9,10 @@ include 'header.php';
  <!--Booking info area-->
  <div class="container my-5 booking-info">
     <div class="card text-center">
-      <div class="card-header success-header">
         <i class="fas fa-check-circle"></i>
-      </div>
       <div class="card-body">
-        <h1 class="card-title mt-5 success-title">Success</h1>
-        <p class="card-text mb-4">The appointment was successfully booked. Please wait 1-3 working days for an email regarding the status of your appointment
+        <h1 class="card-title mt-3 success-title">Success</h1>
+        <p class="card-text mb-4">The appointment has been booked. Please wait 1-3 working days for an email regarding the status of your appointment
         </p>
         <div class="d-flex flex-column">
           <ul>

@@ -263,14 +263,13 @@ a{
 
 /*after booking*/
 .fa-check-circle{
-    background-color:#d1e6e9 ;
-    color: white;
+    color: #d1e6e9;
     font-size: 80px;
+    margin-top: 55px;
 }
 
 .success-header{
-    background-color:#d1e6e9;
-    box-shadow: 0 6px 6px -6px grey;
+
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
 }
