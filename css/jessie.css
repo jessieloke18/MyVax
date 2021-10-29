@@ -197,11 +197,11 @@ a{
   }
 
   .batch-card:hover .card-body {
-    opacity: 0.2;
+    opacity: 0.5;
   }
   
   .batch-card:hover .overlay {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
   .text {
@@ -209,7 +209,7 @@ a{
     color: white;
     border-radius: 15px;
     font-size: 16px;
-    padding: 30px 32px;
+    padding: 15px 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
   }
 

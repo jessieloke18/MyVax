@@ -31,7 +31,7 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
         ?>
-                <div class="col-md-5 pt-5">
+                <div class="col-md-5 pt-3">
                     <ul>
                         <li class="font-weight-bold">Vaccine Name</li>
                         <li> <?php echo $_SESSION["vaccineName"] ?></li>
