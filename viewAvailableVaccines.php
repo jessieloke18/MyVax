@@ -15,7 +15,7 @@ include 'header.php';
     <table class="table table-striped mt-5 mb-5">
         <thead>
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">Vaccine ID</th>
                 <th scope="col">Vaccine Name</th>
                 <th scope="col">Manufacturer</th>
             </tr>

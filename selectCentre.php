@@ -6,11 +6,20 @@ session_start();
 include 'dbconnect.php';
 include 'header.php';
 ?>
+
 <title>Select Centre</title>
 <link rel="stylesheet" href="css/jessie.css">
 <!--Banner-->
-<div class="container-fluid d-flex justify-content-center align-items-center healthcare-centre-banner">
+<div class="container-fluid d-flex justify-content-center align-items-center healthcare-centre-banner flex-column">
     <h1 class="banner-title">Healthcare Centres</h1>
+    <?php
+    $vaccineID = $_POST['vaccineList'];
+    $sql = "SELECT vaccineName FROM vaccine WHERE vaccineID = '$vaccineID'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION["vaccineName"] = $row["vaccineName"];
+    ?>
+    <h4 class="banner-sub-title"><?php echo $vaccineID . " - " .$_SESSION["vaccineName"] ?></h4>
 </div>
 <!--List of hospitals offering the searched vaccine-->
 <div class="container my-5 centre-container" onmouseover=hospitalNameBold()>

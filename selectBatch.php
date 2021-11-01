@@ -9,8 +9,9 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
 <title>Select Batch</title>
 <link rel="stylesheet" href="css/jessie.css">
 <!--Banner-->
-<div class="container-fluid d-flex justify-content-center align-items-center vaccine-batch-banner">
+<div class="container-fluid d-flex justify-content-center align-items-center vaccine-batch-banner flex-column">
     <h1 class="banner-title">Vaccine Batches</h1>
+    <h4 class="banner-sub-title"><?php echo $_GET['centreName'] ?></h4>
 </div>
 <!--List of batches-->
 <div class="container batch-container my-5">
@@ -48,9 +49,6 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
                                     <i class="fas fa-syringe"></i>
                                     <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
                                 </div>
-                                <div class="overlay">
-                                    <div class="text">Schedule appointment</div>
-                                </div>
                                 </a>
                             </div>
                     </div>
@@ -70,12 +68,6 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
     </div>
 
 </div>
-<?php
-$sql = "SELECT* FROM vaccine WHERE vaccineID = '$vaccineID'";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-$_SESSION["vaccineName"] = $row["vaccineName"];
-?>
 <!--Footer-->
 <?php include 'footer.php'; ?>
 <script src="js/scripts.js"></script>
