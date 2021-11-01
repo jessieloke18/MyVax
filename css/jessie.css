@@ -180,9 +180,16 @@ a{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
   
   }
+
+.batch-card:hover{
+    filter: brightness(98%);
+}
+
+
 a .card-title{
     color:black !important;
 }
+
 .vaccine-batch-banner{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(../images/batch.jpg);
