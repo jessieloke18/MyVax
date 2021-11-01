@@ -21,7 +21,7 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="row mt-5" id="cardBlocks">
+    <div class="row mt-5" id="cardBlocks" onmouseover=batchNoBold()>
         <?php
         $currentDate = date('Y-m-d');
         if (isset($_GET['centreName'])) {
