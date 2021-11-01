@@ -19,7 +19,7 @@ include 'header.php';
     $row = mysqli_fetch_assoc($result);
     $_SESSION["vaccineName"] = $row["vaccineName"];
     ?>
-    <h4 class="banner-sub-title"><?php echo $vaccineID . " - " .$_SESSION["vaccineName"] ?></h4>
+    <h4 class="banner-sub-title"><?php echo $vaccineID . " - " . $_SESSION["vaccineName"] ?></h4>
 </div>
 <!--List of hospitals offering the searched vaccine-->
 <div class="container my-5 centre-container" onmouseover=hospitalNameBold()>
@@ -47,12 +47,6 @@ include 'header.php';
                     </a>
         <?php
                 }
-                //if patient did not select any vaccine
-            } else if ($_POST['vaccineList'] == "notSelected") {
-
-                echo '<div class="alert alert-danger" role="alert" style="margin-bottom:-7px">';
-                echo "Please select a vaccine!";
-                echo '</div>';
                 //if there are no healthcare centres offering the selected vaccine
             } else {
                 echo '<div class="alert alert-danger" role="alert" style="margin-bottom:-7px">';

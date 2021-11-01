@@ -40,8 +40,11 @@ include 'header.php';
             <div class="com-sm-11 col-md-7 search-vaccine-section d-flex justify-content-center align-items-center flex-column">
                 <h2 id="choice-title">Made your choice?</h2>
                 <p>Find our which healthcare centres are offering your preferred vaccines</p>
+                <div class="alert alert-danger fade show" role="alert" id="search-alert">
+                    <strong>Oops!</strong> Please select a vaccine.
+                </div>
                 <div class="input-group d-flex justify-content-center">
-                    <select class="custom-select" name="vaccineList">
+                    <select class="custom-select" name="vaccineList" id="vaccineList">
                         <option value='notSelected' selected>Select a vaccineID</option>
                         <?php
                         $sql = "SELECT* FROM vaccine";
@@ -62,6 +65,16 @@ include 'header.php';
         </div>
     </form>
 </div>
+<script>
+    document.getElementById("searchVaccine").addEventListener("click", function(event) {
+        var selectedVaccine = document.getElementById("vaccineList");
+        if (selectedVaccine.options[selectedVaccine.selectedIndex].value == "notSelected") {
+            event.preventDefault();
+            vaccineAlert();
+        }
+    });
+</script>
+
 
 <!--Footer-->
 <?php include 'footer.php'; ?>

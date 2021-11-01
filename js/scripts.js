@@ -110,6 +110,12 @@ function changeAddress() {
         address.innerHTML = "";
 }
 
+//display alert if no vaccine is chosen
+function vaccineAlert(){
+    document.getElementById("search-alert").style.display="block";
+
+}
+
 //Make hospital name bold when hovered
 function hospitalNameBold() {
     $(document).ready(function () {
