@@ -66,6 +66,8 @@ include 'header.php';
     </form>
 </div>
 <script>
+    //if user clicks on the Search btn without selecting any vaccine, stop them from going 
+    //to the next page and call function to display error msg
     document.getElementById("searchVaccine").addEventListener("click", function(event) {
         var selectedVaccine = document.getElementById("vaccineList");
         if (selectedVaccine.options[selectedVaccine.selectedIndex].value == "notSelected") {
