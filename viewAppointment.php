@@ -16,12 +16,11 @@ include 'header.php';
     <table class="table table-striped mb-5 table-responsive-md">
         <thead>
             <tr>
+                <th scope="col">Vaccination ID</th>
+                <th scope="col">Vaccination Date</th>
                 <th scope="col">Vaccine Name</th>
                 <th scope="col">Centre Name</th>
                 <th scope="col">Batch Number</th>
-                <th scope="col">Expiry Date</th>
-                <th scope="col">Vaccination Date</th>
-                <th scope="col">Vaccination ID</th>
                 <th scope="col">Status</th>
                 <th scope="col">Remarks</th>
             </tr>
@@ -29,7 +28,7 @@ include 'header.php';
         <tbody>
             <?php
             $username = $_SESSION['username'];
-            $sql = "SELECT vaccineName, hc.centreName, b.batchNo, expiryDate, appointmentDate, vaccinationID, status, remarks
+            $sql = "SELECT vaccinationID, appointmentDate, vaccineName, hc.centreName, b.batchNo, status, remarks
             FROM healthcarecentre AS hc
             JOIN batch AS b ON hc.centreName = b.centreName
             JOIN vaccine AS v ON v.vaccineID = b.vaccineID
@@ -40,12 +39,11 @@ include 'header.php';
             while ($row = mysqli_fetch_array($result)) {
             ?>
                 <tr>
-                    <th scope="row"><?php echo $row['vaccineName'] ?></th>
+                    <th scope="row"><?php echo 'VAX'.$row['vaccinationID'] ?></th>
+                    <td><?php echo date("d/m/Y", strtotime($row["appointmentDate"]))?></td>
+                    <td><?php echo $row['vaccineName'] ?></td>
                     <td><?php echo $row['centreName'] ?></td>
                     <td><?php echo $row['batchNo'] ?></td>
-                    <td><?php echo date("d/m/Y", strtotime($row["expiryDate"]))?></td>
-                    <td><?php echo date("d/m/Y", strtotime($row["appointmentDate"]))?></td>
-                    <td><?php echo 'VAX'.$row['vaccinationID'] ?></td>
                     <td><?php echo $row['status'] ?></td>
                     <td><?php echo $row['remarks'] ?></td>
                 </tr>
