@@ -5,15 +5,23 @@ include 'dbconnect.php';
 $vaccinationID = "00073"; //dummy value
 $batchNo = "B00003"; //dummy value
 
-//retrieve patient's email
-$query = "SELECT email 
+//retrieve info to be included in the email
+$query = "SELECT fullName, email, appointmentDate, centreName, vaccineName
 FROM user AS u
 JOIN vaccination AS va
 ON u.username = va.username
+JOIN batch AS b
+ON b.batchNo = va.batchNo
+JOIN vaccine AS v
+ON v.vaccineID = b.vaccineID
 WHERE vaccinationID ='$vaccinationID'";
 $query_run = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($query_run);
 $email = $row["email"];
+$fullName = $row["fullName"];
+$centreName = $row["centreName"];
+$vaccineName = $row["vaccineName"];
+$appointmentDate = date("d/m/Y", strtotime($row["appointmentDate"]));
 
 if (isset($_POST['confirm-appointment'])) {
     $status = "Confirmed";
@@ -26,11 +34,12 @@ if (isset($_POST['confirm-appointment'])) {
 
     if ($query_run) {
         echo '<script>alert("Successful");</script>';
-        $message = "Hello!\n\nYour appointment has been confirmed. Please attend your appointment on the scheduled date\n\nMyVax";
+        $message = "Dear " . $fullName . ", \n\nYour appointment has been confirmed. Please attend the appointment on "
+            . $appointmentDate . " at " . $centreName . " for your first dose of " . $vaccineName . "." .
+            "\n\nSincerely, \nMyVax";
     } else {
         echo '<script>alert("Unsuccessful");</script>';
     }
-
 } else if (isset($_POST['reject-appointment'])) {
     $status = "Rejected";
     $remarks = $_POST['rejectRemarks'];
@@ -45,11 +54,10 @@ if (isset($_POST['confirm-appointment'])) {
 
     if ($query_run) {
         echo '<script>alert("Successful");</script>';
-        $message = "Sorry!\n\nYour appointment was rejected.\n\nReason: " . "$remarks" . "\n\nMyVax";
+        $message = "Dear ".$fullName .", \n\nWe are sorry to inform you that your appointment has been rejected.\n\nReason: " . "$remarks" .  "\n\nSincerely, \nMyVax";
     } else {
         echo '<script>alert("Unsuccessful");</script>';
     }
-
 }
 //send automated email to patient
 $to = "$email";
