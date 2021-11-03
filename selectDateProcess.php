@@ -9,6 +9,7 @@ if (isset($_POST['appointment-submit'])) {
     $username = $_SESSION['username'];
     $batchNo = $_SESSION['batchNo'];
     $expiryDate = $_SESSION['expiryDate'];
+    //reformat date for querying and inserting into database
     $appDate = str_replace('/', '-', $appointmentDate);
     $newAppDate = date("Y-m-d", strtotime($appDate));
     $expDate = str_replace('/', '-', $expiryDate);

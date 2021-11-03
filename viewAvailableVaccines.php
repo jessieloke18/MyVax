@@ -40,6 +40,7 @@ include 'header.php';
             <div class="com-sm-11 col-md-7 search-vaccine-section d-flex justify-content-center align-items-center flex-column">
                 <h2 id="choice-title">Made your choice?</h2>
                 <p>Find our which healthcare centres are offering your preferred vaccines</p>
+                <!--display alert message if no vaccine is selected-->
                 <div class="alert alert-danger fade show" role="alert" id="search-alert">
                     <strong>Oops!</strong> Please select a vaccine.
                 </div>

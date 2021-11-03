@@ -35,24 +35,24 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
             if ($queryResult > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
         ?>
-        <div class="col-md-4">
-            <!--Call the signInAlert() function if patient is not logged in and don't allow them to select a batch-->
-            <?php
+                    <div class="col-md-4">
+                        <!--Call the signInAlert() function if patient is not logged in and don't allow them to select a batch-->
+                        <?php
                         if (!isset($_SESSION['username'])) {
                             echo '<div class="card batch-card" onclick="signInAlert()">';
                             echo '<a href="#">';
                             //if patient is logged in, they can select a batch
                         } else { ?>
-            <div class="card batch-card">
-                <a href="selectDate.php?batchNo=<?php echo $row["batchNo"]; ?>" class="batchNo">
-                    <?php } ?>
-                    <div class="card-body text-center">
-                        <i class="fas fa-syringe"></i>
-                        <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
+                            <div class="card batch-card">
+                                <a href="selectDate.php?batchNo=<?php echo $row["batchNo"]; ?>" class="batchNo">
+                                <?php } ?>
+                                <div class="card-body text-center">
+                                    <i class="fas fa-syringe"></i>
+                                    <h5 class="card-title pt-2"><?php echo $row["batchNo"]; ?></h5>
+                                </div>
+                                </a>
+                            </div>
                     </div>
-                </a>
-            </div>
-        </div>
         <?php }
                 //if the healthcare centre does not have available batches
             } else {

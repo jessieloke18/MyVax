@@ -39,8 +39,8 @@ include 'header.php';
             while ($row = mysqli_fetch_array($result)) {
             ?>
                 <tr>
-                    <th scope="row"><?php echo 'VAX'.$row['vaccinationID'] ?></th>
-                    <td><?php echo date("d/m/Y", strtotime($row["appointmentDate"]))?></td>
+                    <th scope="row"><?php echo 'VAX' . $row['vaccinationID'] ?></th>
+                    <td><?php echo date("d/m/Y", strtotime($row["appointmentDate"])) ?></td>
                     <td><?php echo $row['vaccineName'] ?></td>
                     <td><?php echo $row['centreName'] ?></td>
                     <td><?php echo $row['batchNo'] ?></td>

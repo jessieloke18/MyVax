@@ -23,6 +23,7 @@ $centreName = $row["centreName"];
 $vaccineName = $row["vaccineName"];
 $appointmentDate = date("d/m/Y", strtotime($row["appointmentDate"]));
 
+//if admin chooses to confirm appointment
 if (isset($_POST['confirm-appointment'])) {
     $status = "Confirmed";
     $query = "UPDATE batch, vaccination 
@@ -40,6 +41,8 @@ if (isset($_POST['confirm-appointment'])) {
     } else {
         echo '<script>alert("Unsuccessful");</script>';
     }
+    
+//if admin chooses to reject appointment
 } else if (isset($_POST['reject-appointment'])) {
     $status = "Rejected";
     $remarks = $_POST['rejectRemarks'];
@@ -54,7 +57,8 @@ if (isset($_POST['confirm-appointment'])) {
 
     if ($query_run) {
         echo '<script>alert("Successful");</script>';
-        $message = "Dear ".$fullName .", \n\nWe are sorry to inform you that your appointment has been rejected.\n\nReason: " . "$remarks" .  "\n\nSincerely, \nMyVax";
+        $message = "Dear " . $fullName . ", \n\nWe are sorry to inform you that your appointment 
+        has been rejected.\n\nReason: " . "$remarks" .  "\n\nSincerely, \nMyVax";
     } else {
         echo '<script>alert("Unsuccessful");</script>';
     }
