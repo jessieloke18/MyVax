@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     $vaccinationID = $_SESSION["vaccinationID"];
     $remarks = $_POST['remarks'];
     $batchNo = $_SESSION['batchNo'];
-    $sql = "UPDATE vaccination SET remarks = '$remarks', status = 'administered' WHERE vaccinationID = '$vaccinationID';";
+    $sql = "UPDATE vaccination SET remarks = '$remarks', status = 'Administered' WHERE vaccinationID = '$vaccinationID';";
     $sql .= "UPDATE batch SET quantityAdministered = quantityAdministered + 1 WHERE batchNo = '$batchNo';";
     $query_run = mysqli_multi_query($conn, $sql);
     if ($query_run) {

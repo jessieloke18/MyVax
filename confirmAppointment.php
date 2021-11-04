@@ -10,8 +10,12 @@ include 'header.php';
 <!--Content of the vaccination appointment box-->
 <div class="container my-5 px-5 py-5 appointment-info">
     <div class="row d-flex justify-content-center">
-        <!--dummy value-->
-        <h1 id="vax-id">VAX00001</h1>
+        <?php
+          //retrieve vaccinationID and batchNo from url and store in session
+          $_SESSION["vaccinationID"] = $_GET["vaccinationID"]; 
+          $_SESSION["batchNo"] = $_GET["batchNo"]; 
+        ?>
+        <h1 id="vax-id">VAX<?php echo $_SESSION["vaccinationID"] ?></h1>
     </div>
     <div class="row">
         <div class="col-sm-6 order-sm-12 d-flex justify-content-center align-items-center">
@@ -25,7 +29,7 @@ include 'header.php';
                 JOIN vaccination AS va ON va.username = p.username
                 JOIN batch AS b ON b.batchNo = va.batchNo
                 JOIN vaccine AS v ON v.vaccineID = b.vaccineID
-                WHERE vaccinationID = '00073'"; //dummy value
+                WHERE vaccinationID = ' $_SESSION[vaccinationID]'";
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
@@ -55,7 +59,7 @@ include 'header.php';
                     <li><?php echo $row['vaccineName'] ?></li>
                 </ul>
                 <ul>
-                    <li class="font-weight-bold">Vaccination Date</li>
+                    <li class="font-weight-bold">Appointment Date</li>
                     <li><?php echo date("d/m/Y", strtotime($row["appointmentDate"])) ?></li>
                 </ul>
             <?php }

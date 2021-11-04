@@ -2,9 +2,8 @@
 session_start();
 include 'dbconnect.php';
 
-$vaccinationID = "00073"; //dummy value
-$batchNo = "B00003"; //dummy value
-
+$vaccinationID = $_SESSION["vaccinationID"]; 
+$batchNo = $_SESSION["batchNo"]; 
 //retrieve info to be included in the email
 $query = "SELECT fullName, email, appointmentDate, centreName, vaccineName
 FROM user AS u
@@ -57,8 +56,7 @@ if (isset($_POST['confirm-appointment'])) {
 
     if ($query_run) {
         echo '<script>alert("Successful");</script>';
-        $message = "Dear " . $fullName . ", \n\nWe are sorry to inform you that your appointment 
-        has been rejected.\n\nReason: " . "$remarks" .  "\n\nSincerely, \nMyVax";
+        $message = "Dear " . $fullName . ", \n\nWe are sorry to inform you that your appointment has been rejected.\n\nReason: " . "$remarks" .  "\n\nSincerely, \nMyVax";
     } else {
         echo '<script>alert("Unsuccessful");</script>';
     }
