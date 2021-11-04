@@ -32,7 +32,7 @@ if (isset($_GET['vaccinationID'])) {
 <!-- A section to show vaccination information in a card form -->
 <div class="container my-5 px-5 py-5 appointment-info" style="width:80%">
   <div class="row d-flex justify-content-center">
-    <h1 id="vax-id">Vaccination <?php echo $vaccinationID; ?></h1>
+    <h1 id="vax-id">VAX<?php echo $vaccinationID; ?></h1>
   </div>
   <div class="row">
     <div class="col-sm-6 order-sm-12 d-flex justify-content-center align-items-center">
@@ -48,7 +48,7 @@ if (isset($_GET['vaccinationID'])) {
         <li><?php echo $row['ICPassport']; ?></li>
       </ul>
       <ul>
-        <li class="font-weight-bold">Vaccine Batch Number</li>
+        <li class="font-weight-bold">Batch Number</li>
         <li><?php echo $row['batchNo']; ?></li>
       </ul>
       <ul>
@@ -64,7 +64,7 @@ if (isset($_GET['vaccinationID'])) {
         <li><?php echo $row['vaccineName']; ?></li>
       </ul>
       <ul>
-        <li class="font-weight-bold">Vaccination Date</li>
+        <li class="font-weight-bold">Appointment Date</li>
         <li><?php convertDate($row['appointmentDate']) ?></li>
       </ul>
     </div>
@@ -74,7 +74,7 @@ if (isset($_GET['vaccinationID'])) {
   <!-- A button to trigger the add remarks modal -->
   <div class="row text-center my-3">
     <div class="col">
-      <button type="button" class="btn btn-info confirm-btn" data-toggle="modal" data-target="#confirmButton" style="width: 200px;">Confirm</button>
+      <button type="button" class="btn btn-info confirm-btn" data-toggle="modal" data-target="#confirmButton" style="width: 250px;">Log as Administered</button>
     </div>
 
   </div>
@@ -97,8 +97,8 @@ if (isset($_GET['vaccinationID'])) {
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn close-btn" data-dismiss="modal">Close</button>
-            <button type="submit" name="submit" class="btn btn-info">Save</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="submit" class="btn btn-info">Confirm</a>
           </div>
         </div>
       </div>

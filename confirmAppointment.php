@@ -42,7 +42,7 @@ include 'header.php';
                     <li><?php echo $row['ICPassport'] ?></li>
                 </ul>
                 <ul>
-                    <li class="font-weight-bold">Vaccine Batch Number</li>
+                    <li class="font-weight-bold">Batch Number</li>
                     <li><?php echo $row['batchNo'] ?></li>
                 </ul>
                 <ul>
