@@ -64,6 +64,6 @@ if (isset($_POST['confirm-appointment'])) {
 //send automated email to patient
 $to = "$email";
 $subject = 'MyVax Appointment- VAX' . "$vaccinationID";
-$headers = "From: jessieloke18@gmail.com\r\nReply-To: jessieloke18@gmail.com";
+$headers = "From: officialmyvax@gmail.com\r\nReply-To: officialmyvax@gmail.com";
 $mail_sent = @mail($to, $subject, $message, $headers);
 //echo $mail_sent ? "Mail sent" : "Mail failed";
