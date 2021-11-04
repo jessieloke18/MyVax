@@ -21,19 +21,6 @@ a:hover{
     box-shadow: 0 6px 6px -6px grey;
 }
 
-.fa-bars{
-    font-size: 28px;
-    font-weight: lighter;
-}
-    
-.fa-bars:hover{
-    opacity: 0.8;
-}
-        
-.navbar-toggler{
-    padding:5px 5px 5px 15px;
-}
-
 .nav-link:hover{
     opacity:0.6 ;
 }
@@ -73,9 +60,10 @@ a:hover{
     color: #239B56;
 }
 
-.fas{
+/*this will affect the icons in footer*/
+/* .fas{
     margin-right: 0px;
-}
+} */
 
 .fa-chevron-left{
     margin-right: 10px;
