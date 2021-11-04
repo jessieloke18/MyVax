@@ -8,7 +8,7 @@ include 'header.php';
 <link rel="stylesheet" href="css/zhaoyao.css">
 <?php
 $username = $_SESSION['username'];
-$result = mysqli_query($conn, "SELECT* FROM healthcareadministrator WHERE username='$username'");
+$result = mysqli_query($conn, "SELECT * FROM healthcareadministrator WHERE username='$username'");
 $row = mysqli_fetch_assoc($result);
 $centreName =  $row['centreName'];
 $_SESSION["centreName"] = $centreName;
@@ -79,6 +79,16 @@ $_SESSION["centreName"] = $centreName;
     <h5>Overview</h5>
 </div>
 
+<?php
+$result1 = mysqli_query($conn, "SELECT * FROM vaccination;");
+$vaccinations = mysqli_num_rows($result1);
+$result2 = mysqli_query($conn, 'SELECT * FROM vaccination WHERE status = "Pending";');
+$pendings = mysqli_num_rows($result2);
+$result3 = mysqli_query($conn, 'SELECT * FROM vaccination WHERE status = "Administered";');
+$administereds = mysqli_num_rows($result3);
+$result4 = mysqli_query($conn, "SELECT * FROM patient;");
+$patients = mysqli_num_rows($result4);
+?>
 <div class="container mb-5" style="width:80%">
     <div class="row">
         <div class="col-md-3">
@@ -88,7 +98,12 @@ $_SESSION["centreName"] = $centreName;
                         <i class="fas fa-syringe syringe-admin fa-2x" style="color:white !important; padding:0"></i>
                     </div>
                     <div class="mt-auto">
-                        <p class="card-text" id="overview-text">Vaccinations <span class="badge badge-light badge-pill">110</span></p>
+                        <p class="card-text" id="overview-text">
+                            Vaccinations 
+                            <span class="badge badge-light badge-pill">
+                                <?php echo $vaccinations ?>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -101,7 +116,12 @@ $_SESSION["centreName"] = $centreName;
                         <i class="far fa-list-alt fa-2x" style="color:white"></i>
                     </div>
                     <div class="mt-auto">
-                        <p class="card-text" id="overview-text">Pending <span class="badge badge-light badge-pill">20</span></p>
+                        <p class="card-text" id="overview-text">
+                            Pending 
+                            <span class="badge badge-light badge-pill">
+                                <?php echo $pendings ?>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -114,7 +134,12 @@ $_SESSION["centreName"] = $centreName;
                         <i class="far fa-check-circle fa-2x" style="color:white"></i>
                     </div>
                     <div class="mt-auto">
-                        <p class="card-text" id="overview-text">Administered <span class="badge badge-light badge-pill">89</span></p>
+                        <p class="card-text" id="overview-text">
+                            Administered 
+                            <span class="badge badge-light badge-pill">
+                                <?php echo $administereds ?>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -127,7 +152,12 @@ $_SESSION["centreName"] = $centreName;
                         <i class="fas fa-users fa-2x"></i>
                     </div>
                     <div class="mt-auto">
-                        <p class="card-text" id="overview-text">Users <span class="badge badge-light badge-pill">31</span></p>
+                        <p class="card-text" id="overview-text">
+                            Patients
+                            <span class="badge badge-light badge-pill">
+                                <?php echo $patients ?>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>

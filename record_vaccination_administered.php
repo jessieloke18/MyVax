@@ -105,6 +105,9 @@ if (isset($_GET['vaccinationID'])) {
     </div>
   </form>
 </div>
+<div class="row d-flex justify-content-center mb-5">
+    <a href="javascript:history.back()" class="btn btn-info mt-3"><i class="fas fa-chevron-left"></i>More vaccinations</a>
+</div>
 
 <!--Footer-->
 <?php include 'footer.php'; ?>

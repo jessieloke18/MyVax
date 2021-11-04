@@ -88,11 +88,13 @@ if (isset($_GET['batchNo'])) {
             <td>
               <?php
               if ($row2['status'] == "Pending") {
-                echo '<a href="confirmAppointment.php?vaccinationID=' . $row2["vaccinationID"] . '&batchNo='.$batchNo.'"><i class="fas fa-calendar-check"></i></a>';
+                echo '<a href="confirmAppointment.php?vaccinationID=' . $row2["vaccinationID"] . '&batchNo='.$batchNo.'"><i class="fas fa-calendar-check" style="margin:0px;"></i></a>';
               } else if ($row2['status'] == "Confirmed") {
-                echo '<a href="record_vaccination_administered.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-file-signature"></i></a>';
+                echo '<a href="record_vaccination_administered.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-file-signature" style="margin-left:15px;"></i></a>';
               } else if ($row2['status'] == "Administered") {
-                echo '<a href="vaccination_info.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-eye"></i></a>';
+                echo '<a href="vaccination_info.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-eye" style="margin:0px;"></i></a>';
+              } else if ($row2['status'] == "Rejected"){
+                echo '<a href="vaccination_info.php?vaccinationID=' . $row2["vaccinationID"] . '"><i class="fas fa-eye" style="margin:0px;"></i></a>';
               } else {
                 echo "-";
               }
