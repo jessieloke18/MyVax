@@ -33,7 +33,7 @@ if (isset($_POST['confirm-appointment'])) {
     $query_run = mysqli_query($conn, $query);
 
     if ($query_run) {
-        echo '<script>alert("Successful");</script>';
+        echo "<script>window.location.href='view_vaccination_info.php?batchNo=$batchNo';</script>";
         $message = "Dear " . $fullName . ", \n\nYour appointment has been confirmed. Please attend the appointment on "
             . $appointmentDate . " at " . $centreName . " for your first dose of " . $vaccineName . "." .
             "\n\nSincerely, \nMyVax";
@@ -55,7 +55,7 @@ if (isset($_POST['confirm-appointment'])) {
     $query_run = mysqli_query($conn, $query);
 
     if ($query_run) {
-        echo '<script>alert("Successful");</script>';
+        echo "<script>window.location.href='view_vaccination_info.php?batchNo=$batchNo';</script>";
         $message = "Dear " . $fullName . ", \n\nWe are sorry to inform you that your appointment has been rejected.\n\nReason: " . "$remarks" .  "\n\nSincerely, \nMyVax";
     } else {
         echo '<script>alert("Unsuccessful");</script>';
