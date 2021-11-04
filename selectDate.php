@@ -76,17 +76,17 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Appointment confirmation</h5>
+                                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Are you sure?</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Are you sure? You may not cancel the appointment after it has been made.
+                                You may not cancel the appointment after it has been made.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-info" form="appointmentForm" name="appointment-submit">Confirm</button>
+                                <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-info w-25" form="appointmentForm" name="appointment-submit">Yes</button>
                             </div>
                         </div>
                     </div>

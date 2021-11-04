@@ -70,10 +70,10 @@ include 'header.php';
         <!-- Reject and confirm buttons -->
         <div class="row text-center my-3">
             <div class="col-sm-6">
-                <button type="button" class="btn btn-danger reject-btn" data-toggle="modal" data-target="#rejectButton">Reject</button>
+                <button type="button" class="btn btn-danger reject-btn my-2" data-toggle="modal" data-target="#rejectButton">Reject</button>
             </div>
             <div class="col-sm-6">
-                <button type="button" class="btn btn-info confirm-btn" data-toggle="modal" data-target="#confirmButton">Confirm</button>
+                <button type="button" class="btn btn-info confirm-btn my-2" data-toggle="modal" data-target="#confirmButton">Confirm</button>
             </div>
         </div>
         <!-- Modal for confirming the appointment when confirm button is clicked -->
@@ -81,7 +81,7 @@ include 'header.php';
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Confirm Appointment</h5>
+                        <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Are you sure?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -90,8 +90,8 @@ include 'header.php';
                         You are about to confirm this patient's appointment
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-info" name="confirm-appointment">Confirm</button>
+                        <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-info w-25" name="confirm-appointment">Yes</button>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@ include 'header.php';
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title font-weight-bold" id="rejectButtonLabel">Reject Appointment</h5>
+                        <h5 class="modal-title font-weight-bold" id="rejectButtonLabel">Are you sure?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -113,8 +113,8 @@ include 'header.php';
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-danger" name="reject-appointment">Reject</button>
+                        <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-danger w-25" name="reject-appointment">Yes</button>
                     </div>
                 </div>
             </div>
