@@ -11,7 +11,7 @@ include 'header.php';
 <?php
 if (isset($_GET['vaccinationID'])) {
     $vaccinationID = mysqli_real_escape_string($conn, $_GET['vaccinationID']);
-    $sql = "SELECT u.fullName, p.ICPassport, b.batchNo, v.vaccineName, va.status 
+    $sql = "SELECT u.fullName, p.ICPassport, b.batchNo, v.vaccineName, va.status, va.remarks 
     FROM vaccination AS va 
     JOIN patient AS p ON va.username = p.username
     JOIN user AS u ON u.username = p.username
@@ -23,7 +23,7 @@ if (isset($_GET['vaccinationID'])) {
 }
 ?>
 
-<h2 class="mt-5 font-weight-bold">Vaccination <?php echo $vaccinationID; ?></h2>
+<h2 class="mt-5 font-weight-bold">VAX<?php echo $vaccinationID; ?></h2>
 
 <div class="container border info-section mt-5">
     <div class="row">
@@ -48,8 +48,8 @@ if (isset($_GET['vaccinationID'])) {
     </div>
     <div class="row">
         <div class="col-md-6">
-            <p class="font-weight-bold">Status:</p>
-            <p id="vstatus"><?php echo $row['status']; ?></p>
+            <p class="font-weight-bold">Remarks:</p>
+            <p id="vremarks"><?php echo $row['remarks']; ?></p>
         </div>
     </div>
 </div>
@@ -57,12 +57,14 @@ if (isset($_GET['vaccinationID'])) {
 <div class="container mb-5 mt-5">
     <div class="row d-flex justify-content-center align-items-center">
         <?php
-        if ($row['status'] == "pending") {
+        if ($row['status'] == "Pending") {
             echo '<a href="confirmAppointment.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Confirm Appointment</button></a>';
-        } else if ($row['status'] == "confirmed") {
+        } else if ($row['status'] == "Confirmed") {
             echo '<a href="record_vaccination_administered.php?vaccinationID=' . $vaccinationID . '"><button class="btn button-pcvs btn-info">Log As Administered</button></a>';
-        } else {
+        } else if ($row['status'] == "Administered"){
             echo '<button class="btn button-pcvs btn-warning" style="color: white;" type="button" disabled>Administered</button>';
+        } else {
+            echo '<button class="btn button-pcvs btn-danger" style="color: white;" type="button" disabled>Rejected</button>';
         }
         ?>
         <a href="javascript:history.back()"><button class="btn button-pcvs btn-secondary"><i class="fas fa-chevron-left"></i>Other Vaccinations</button></a>

@@ -15,7 +15,7 @@ include 'header.php';
   </div>
 </div>
 <!-- Table to show the batches in the current healthcare centre -->
-<div class="container table-section">
+<div class="container table-section mb-5">
   <table class="table table-bordered">
     <thead class="thead-light">
       <tr>
@@ -44,9 +44,6 @@ include 'header.php';
   </table>
 </div>
 
-<div class="container d-flex justify-content-center mb-5 mt-5">
-  <a href="administrator_dashboard.php"><button class="btn button-pcvs btn-info"><i class="fas fa-chevron-left"></i>Back To Dashboard</button></a>
-</div>
 
 <!--Footer-->
 <?php include 'footer.php'; ?>
