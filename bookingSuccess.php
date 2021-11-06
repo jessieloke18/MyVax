@@ -30,5 +30,6 @@ include 'header.php';
     </div>
 </div>
 <!--Footer-->
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; 
+unset($_SESSION['vaccinationID']);?>
 <script src="js/scripts.js"></script>
