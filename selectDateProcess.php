@@ -19,10 +19,15 @@ if (isset($_POST['appointment-submit'])) {
     if ($newAppDate > $newExpDate) {
         $_SESSION['errorDate'] = "The batch would have expired by then! Please choose a different date";
         header("Location: " . $_SESSION['selectDate_page']);
-    } else {
-
+    }
+      //check to see if patient has a pending appointment
+    else if(mysqli_num_rows(mysqli_query($conn, "SELECT* FROM vaccination WHERE username='$username' AND status = 'Pending'"))>= 1){
+        $_SESSION['errorPending'] = "You already have a pending appointment!";
+        header("Location: " . $_SESSION['selectDate_page']);
+    }
+    else {
         $query = "INSERT INTO vaccination(appointmentDate, status, username, batchNo)
-  VALUES('$newAppDate', '$status', '$username','$batchNo');";
+        VALUES('$newAppDate', '$status', '$username','$batchNo');";
 
         $query_run = mysqli_query($conn, $query);
         if ($query_run) {

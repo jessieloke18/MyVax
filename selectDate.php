@@ -18,10 +18,17 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
     <?php
     if (isset($_SESSION['errorDate'])) {
     ?>
-        <div class="alert alert-danger alert" role="alert" id="date-alert">
-            <strong>Oops!</strong> <?php echo $_SESSION['errorDate'] ?>
-        </div>
-    <?php } ?>
+    <div class="alert alert-danger alert" role="alert" id="date-alert">
+        <strong>Oops!</strong> <?php echo $_SESSION['errorDate'] ?>
+    </div>
+      <!--If errorPending session is set, display error message-->
+    <?php } else if(isset($_SESSION['errorPending'])){?>
+    <div class="alert alert-danger alert" role="alert" id="date-alert">
+        <strong>Oops!</strong> <?php echo $_SESSION['errorPending'] ?>
+    </div>
+    <?php
+    }
+    ?>
     <div class="row">
         <?php
         if (isset($_GET['batchNo'])) {
@@ -31,48 +38,51 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
         ?>
-                <div class="col-md-5 pt-3">
-                    <ul>
-                        <li class="font-weight-bold">Vaccine Name</li>
-                        <li> <?php echo $_SESSION["vaccineName"] ?></li>
-                    </ul>
-                    <ul>
-                        <li class="font-weight-bold">Centre Name</li>
-                        <li><?php echo $_SESSION["centreName"] ?></li>
-                    </ul>
-                    <ul>
-                        <li class="font-weight-bold">Batch Number</li>
-                        <li><?php echo $row["batchNo"]; ?></li>
-                    </ul>
-                    <ul>
-                        <li class="font-weight-bold">Batch Expiry Date</li>
-                        <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>">
-                            <?php echo date("d/m/Y", strtotime($row["expiryDate"])) ?></li>
-                        <!--saving exp date in a session-->
-                        <?php
+        <div class="col-md-5 pt-3">
+            <ul>
+                <li class="font-weight-bold">Vaccine Name</li>
+                <li> <?php echo $_SESSION["vaccineName"] ?></li>
+            </ul>
+            <ul>
+                <li class="font-weight-bold">Centre Name</li>
+                <li><?php echo $_SESSION["centreName"] ?></li>
+            </ul>
+            <ul>
+                <li class="font-weight-bold">Batch Number</li>
+                <li><?php echo $row["batchNo"]; ?></li>
+            </ul>
+            <ul>
+                <li class="font-weight-bold">Batch Expiry Date</li>
+                <li id="batch-expiry-date" data-value="<?php echo $row["expiryDate"]; ?>">
+                    <?php echo date("d/m/Y", strtotime($row["expiryDate"])) ?></li>
+                <!--saving exp date in a session-->
+                <?php
                         $_SESSION['expiryDate'] = $row["expiryDate"];
                         ?>
-                    </ul>
-                    <ul>
-                        <li class="font-weight-bold">Quantity Available</li>
-                        <li><?php echo $row["quantityAvailable"]; ?></li>
-                    </ul>
-                </div>
+            </ul>
+            <ul>
+                <li class="font-weight-bold">Quantity Available</li>
+                <li><?php echo $row["quantityAvailable"]; ?></li>
+            </ul>
+        </div>
         <?php }
         }
         ?>
 
         <div class="col-md-7 d-flex justify-content-center">
-            <form action="selectDateProcess.php" method="POST" id="appointmentForm" class="d-flex justify-content-center align-items-center flex-column">
+            <form action="selectDateProcess.php" method="POST" id="appointmentForm"
+                class="d-flex justify-content-center align-items-center flex-column">
                 <p class="text-center">Please select an upcoming date for your vaccination appointment</p>
                 <div class="input-group mb-3 w-75">
                     <input data-date-format="dd/mm/yyyy" id="datepicker" name="appointmentDate" class="form-control">
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-info" id="selectDate" data-toggle="modal" data-target="#staticBackdrop">Request</button>
+                        <button type="button" class="btn btn-info" id="selectDate" data-toggle="modal"
+                            data-target="#staticBackdrop">Request</button>
                     </div>
                 </div>
                 <!-- Appointment confirmation modal -->
-                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -86,7 +96,8 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>
-                                <button type="submit" class="btn btn-info w-25" form="appointmentForm" name="appointment-submit">Yes</button>
+                                <button type="submit" class="btn btn-info w-25" form="appointmentForm"
+                                    name="appointment-submit">Yes</button>
                             </div>
                         </div>
                     </div>
@@ -104,5 +115,6 @@ $_SESSION['selectDate_page'] = $_SERVER['REQUEST_URI']
 <!--Footer-->
 <?php include 'footer.php';
 unset($_SESSION['errorDate']);
+unset($_SESSION['errorPending']);
 ?>
 <script src="js/scripts.js"></script>
