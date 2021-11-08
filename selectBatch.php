@@ -15,7 +15,7 @@ $_SESSION['batch_page'] = $_SERVER['REQUEST_URI']
 </div>
 <!--List of batches-->
 <div class="container batch-container my-5">
-    <div class="alert alert-warning alert-dismissible fade show mt-5 sign-in-alert" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show mt-5 sign-in-alert" role="alert">
         <strong>Hey there!</strong> Please <a href="login.php">login </a> to continue
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
