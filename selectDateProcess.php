@@ -28,21 +28,19 @@ if (isset($_POST['appointment-submit'])) {
     else {
         $query = "INSERT INTO vaccination(appointmentDate, status, username, batchNo)
         VALUES('$newAppDate', '$status', '$username','$batchNo');";
-
         $query_run = mysqli_query($conn, $query);
         if ($query_run) {
-            //retrieve and store vaccinationID in session
+             //retrieve vaccination ID
             $query = "SELECT vaccinationID FROM vaccination WHERE username ='$username' AND appointmentDate ='$newAppDate'";
             $query_run = mysqli_query($conn, $query);
             $row = mysqli_fetch_assoc($query_run);
-            $_SESSION['vaccinationID'] = $row["vaccinationID"];
-
+            $vaccinationID = $row["vaccinationID"];
             //update quantityAvailable and quantityPending
             $query = "UPDATE batch SET quantityAvailable = quantityAvailable-1, quantityPending = quantityPending+1 WHERE batchNo = '$batchNo'";
             $query_run = mysqli_query($conn, $query);
 
             if ($query_run) {
-                echo "<script>window.location.href='bookingSuccess.php?" . $_SESSION['vaccinationID'] . "'</script>";
+                echo "<script>window.location.href='bookingSuccess.php?vaccinationID=".$vaccinationID."'</script>";
                 
             } else {
                 echo '<script>alert("Unsuccessful");</script>';

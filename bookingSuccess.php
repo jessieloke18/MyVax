@@ -18,7 +18,7 @@ include 'header.php';
             <div class="d-flex flex-column">
                 <ul>
                     <li class="font-weight-bold">Vaccination ID</li>
-                    <li>VAX<?php echo $_SESSION['vaccinationID'] ?></li>
+                    <li>VAX<?php echo $_GET['vaccinationID'] ?></li>
                 </ul>
                 <ul>
                     <li class="font-weight-bold">Status</li>
@@ -30,6 +30,5 @@ include 'header.php';
     </div>
 </div>
 <!--Footer-->
-<?php include 'footer.php'; 
-unset($_SESSION['vaccinationID']);?>
+<?php include 'footer.php';?>
 <script src="js/scripts.js"></script>
