@@ -31,7 +31,7 @@ if (isset($_GET['batchNo'])) {
 <div class="container border info-section mt-5">
   <div class="row">
     <div class="col-md-6">
-      <p class="font-weight-bold">No. Of Pending Vaccination:</p>
+      <p class="font-weight-bold">No. of Pending Vaccinations:</p>
       <p id="pending"><?php echo $row['quantityPending']; ?></p>
     </div>
     <div class="col-md-6">
@@ -42,11 +42,11 @@ if (isset($_GET['batchNo'])) {
 
   <div class="row">
     <div class="col-md-6">
-      <p class="font-weight-bold">No. of Available Vaccination:</p>
+      <p class="font-weight-bold">No. of Available Vaccines:</p>
       <p id="available"><?php echo $row['quantityAvailable']; ?></p>
     </div>
     <div class="col-md-6">
-      <p class="font-weight-bold">No. of Administered Vaccination:</p>
+      <p class="font-weight-bold">No. of Administered Vaccinations:</p>
       <p id="administered"><?php echo $row['quantityAdministered']; ?></p>
     </div>
   </div>
